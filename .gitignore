@@ -20,6 +20,8 @@ Thumbs.db
 *.zip
 *.tar
 *.tar.gz
+__pycache__/
+*.py[cod]
 
 # Common CAD backup/cache files
 *.FCBak

@@ -17,8 +17,19 @@ Maintain the public hardware resources and durable project memory for Open Cinem
 - For experiments and build sessions, add a dated entry in `docs/worklog/` with
   observations and evidence.
 - Update `ROADMAP.md` when milestone state, priorities, or major unknowns change.
+- Use the `open-cinema-memory` repository skill to organize incoming project
+  information and maintain `docs/reference/INDEX.md` plus its topic pages.
 - Never rewrite historical records to hide a change of direction. Supersede them
   with a new record and link both directions.
+
+## Context retrieval
+
+- Start with `docs/reference/INDEX.md` instead of scanning the whole repository.
+- Search the reference book, decisions, work logs, and roadmap before assuming
+  project context is missing.
+- Follow topic-page links to original evidence when accuracy matters.
+- Distinguish confirmed facts, decisions, observations, interpretations, and open
+  questions in summaries.
 
 ## Hardware documentation
 

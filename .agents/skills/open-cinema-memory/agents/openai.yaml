@@ -1,0 +1,5 @@
+interface:
+  display_name: "Open Cinema Librarian"
+  short_description: "Organize and retrieve Open Cinema knowledge"
+  default_prompt: "Use $open-cinema-memory to organize these materials and update the project reference book."
+

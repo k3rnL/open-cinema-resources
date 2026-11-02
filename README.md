@@ -17,6 +17,8 @@ understand and revisit.
 - `verification/` — test plans, results, photos, and measurements
 - `docs/decisions/` — durable architecture and design decision records
 - `docs/worklog/` — dated experiment and development logs
+- `docs/reference/` — searchable project reference book and topic index
+- `docs/inbox/` — temporary triage for material that cannot yet be classified
 - `ROADMAP.md` — current priorities, milestones, and open questions
 
 ## Working memory
@@ -27,7 +29,9 @@ chain-of-thought:
 1. Record important choices in `docs/decisions/`.
 2. Record experiments and sessions in `docs/worklog/`.
 3. Update `ROADMAP.md` when priorities or milestone status change.
-4. Link records to commits, issues, pull requests, CAD files, measurements, and
+4. Maintain `docs/reference/INDEX.md` and its topic pages as the current knowledge
+   map.
+5. Link records to commits, issues, pull requests, CAD files, measurements, and
    photos whenever possible.
 
 Templates are provided in both memory folders.
