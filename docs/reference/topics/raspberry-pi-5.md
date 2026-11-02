@@ -11,6 +11,7 @@ sources:
   - https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf
   - https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-mechanical-drawing.pdf
   - https://github.com/k3rnL/open-cinema/blob/master/deployment/SUPPORTED_PLATFORMS.md
+  - docs/worklog/2026-11-02-enclosure-requirements-update.md
 ---
 
 # Raspberry Pi 5
@@ -29,6 +30,9 @@ software production boundary is the 8 GB Model B fixture on Debian 13 Trixie.
   physical board because connector/component tolerances apply.
 - The board uses 5 V/5 A USB-C Power Delivery for full peripheral allowance.
 - Raspberry Pi recommends active cooling for best sustained performance.
+- A basic Raspberry Pi cooling fan has already been purchased for the enclosure.
+  Its manufacturer, part number, mounting, and inclusion of a heatsink have not
+  been recorded.
 - Relevant interfaces include two USB 3.0 ports, two USB 2.0 ports, Gigabit
   Ethernet, Wi-Fi, Bluetooth 5/BLE, PCIe 2.0 x1, the 40-pin header, and a dedicated
   four-pin fan connector.
@@ -54,10 +58,12 @@ software production boundary is the 8 GB Model B fixture on Debian 13 Trixie.
 - Confirm that the enclosure unit is the same 8 GB board revision as the accepted
   software fixture.
 - Which connectors must remain externally accessible?
-- Which active cooler and airflow direction will be used?
+- Identify the purchased fan and determine its mounting, airflow direction,
+  heatsink requirements, and thermal acceptance test.
 - How will the 5 V rail be generated from the enclosure's main DC bus?
 
 ## Related
 
 - [Open Cinema software system](open-cinema-software.md)
 - [Enclosure and appliance system](enclosure-appliance.md)
+- [Front-panel interface](front-panel-interface.md)

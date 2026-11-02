@@ -1,5 +1,7 @@
 category,manufacturer,part_number,description,status,variant_or_revision,quantity,reference,notes
 compute,Raspberry Pi Ltd,Raspberry Pi 5,Open Cinema appliance computer,selected,"8 GB Model B is the currently accepted software fixture",,docs/reference/topics/raspberry-pi-5.md,"Confirm physical board memory and revision"
+cooling,,,Basic Raspberry Pi 5 cooling fan,purchased,"Exact model and mounting not recorded",1,docs/reference/topics/raspberry-pi-5.md,"Verify airflow and whether a heatsink is included or required"
 digital audio,Cirrus Logic / Wolfson,WM8804,S/PDIF transceiver with PLL,selected,"Rev 4.5 datasheet",,docs/reference/topics/wm8804.md,"Discontinued; carrier circuit and sourcing plan unresolved"
 power amplifier,WONDOM / Sure Electronics,AA-KA32473,Configurable KAB9 eight-channel Class-D amplifier,selected,"Vendor document dated 2021-09-15",,docs/reference/topics/wondom-kab9.md,"Official listing currently out of stock"
-power supply,MEAN WELL,UHP-500 series,Low-profile 500 W AC/DC supply family,selected,"Exact voltage and R/non-R suffix unresolved",,docs/reference/topics/mean-well-uhp-500.md,"Local datasheet is a 2019 snapshot; confirm current revision"
+power supply,MEAN WELL,UHP-500-24 / UHP-500R-24,Low-profile 24 V 500 W AC/DC supply,selected,"24 V output confirmed; R/non-R suffix unresolved",,docs/reference/topics/mean-well-uhp-500.md,"Local datasheet is a 2019 snapshot; confirm current revision"
+display,Waveshare,7.9inch DSI LCD,7.9-inch capacitive touch display,candidate,"400 x 1280 IPS; DSI display; I2C touch",,docs/reference/topics/front-panel-interface.md,"Candidate only; front-panel design and local software have not started"

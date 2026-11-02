@@ -21,11 +21,16 @@ project knows and link back to decisions, work logs, and original evidence.
   boundary.
 - [Enclosure and appliance system](topics/enclosure-appliance.md) — selected major
   components, system-level constraints, and unresolved integration work.
+- [Auxiliary control electronics](topics/auxiliary-control-electronics.md) — input
+  front-end and delegated power, shutdown, and IR-control functions still to be
+  designed.
 
 ### Mechanical
 
 - [Enclosure and appliance system](topics/enclosure-appliance.md) — current layout,
   thermal, safety, and serviceability context.
+- [Front-panel interface](topics/front-panel-interface.md) — candidate touch screen,
+  encoder and power-button requirements, and unstarted local UI.
 
 ### Electronics
 
@@ -36,9 +41,18 @@ project knows and link back to decisions, work logs, and original evidence.
 - [WONDOM KAB9](topics/wondom-kab9.md) — selected configurable eight-channel
   amplifier.
 - [MEAN WELL UHP-500](topics/mean-well-uhp-500.md) — selected power-supply family;
-  exact variant remains open.
+  24 V output selected and redundancy suffix still open.
+- [Front-panel interface](topics/front-panel-interface.md) — Waveshare display
+  candidate and unresolved controls/integration.
+- [Auxiliary control electronics](topics/auxiliary-control-electronics.md) —
+  unimplemented input and power/control board functions.
 
 ### Firmware
+
+- [Front-panel interface](topics/front-panel-interface.md) — local display software
+  has not started.
+- [Auxiliary control electronics](topics/auxiliary-control-electronics.md) —
+  delegated controller firmware and host protocol remain undefined.
 
 ### Manufacturing and assembly
 
@@ -54,10 +68,14 @@ No unclassified material.
 
 - Enclosure CAD, target dimensions, materials, mounting, and service clearances are
   not yet imported.
-- The exact UHP-500 variant, Raspberry Pi board revision, and supporting power
-  conversion are not yet confirmed.
+- The UHP-500 is confirmed as 24 V, but its `R`/non-`R` suffix, the Raspberry Pi
+  board revision, and supporting 5 V conversion are not yet confirmed.
+- The purchased Raspberry Pi fan has not been identified by model, mounting, or
+  verified thermal performance.
 - The WM8804 carrier/interface implementation and KAB9 input/channel configuration
   are not yet recorded.
+- The front panel, encoder, power button, rear panel, connectors, auxiliary boards,
+  and local-screen software are not yet designed.
 - Wiring, connectors, mains safety, thermal validation, and regulatory constraints
   remain to be defined.
 - The hardware license has not yet been selected.
