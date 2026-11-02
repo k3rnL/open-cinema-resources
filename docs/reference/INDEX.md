@@ -14,14 +14,29 @@ project knows and link back to decisions, work logs, and original evidence.
 
 ## Topics by domain
 
-No topic pages have been added yet. New topics belong in `topics/` and should be
-listed here once they contain durable project knowledge.
-
 ### Architecture and systems
+
+- [Open Cinema software system](topics/open-cinema-software.md) — desired-state
+  audio control plane, runtime ownership, supported platform, and current release
+  boundary.
+- [Enclosure and appliance system](topics/enclosure-appliance.md) — selected major
+  components, system-level constraints, and unresolved integration work.
 
 ### Mechanical
 
+- [Enclosure and appliance system](topics/enclosure-appliance.md) — current layout,
+  thermal, safety, and serviceability context.
+
 ### Electronics
+
+- [Raspberry Pi 5](topics/raspberry-pi-5.md) — selected computer and supported
+  appliance target.
+- [WM8804 S/PDIF transceiver](topics/wm8804.md) — selected digital-audio interface
+  and lifecycle constraints.
+- [WONDOM KAB9](topics/wondom-kab9.md) — selected configurable eight-channel
+  amplifier.
+- [MEAN WELL UHP-500](topics/mean-well-uhp-500.md) — selected power-supply family;
+  exact variant remains open.
 
 ### Firmware
 
@@ -37,8 +52,14 @@ No unclassified material.
 
 ## Known gaps
 
-- Existing project resources have not yet been inventoried or imported.
-- Authoritative CAD and electronics tools are not yet recorded.
+- Enclosure CAD, target dimensions, materials, mounting, and service clearances are
+  not yet imported.
+- The exact UHP-500 variant, Raspberry Pi board revision, and supporting power
+  conversion are not yet confirmed.
+- The WM8804 carrier/interface implementation and KAB9 input/channel configuration
+  are not yet recorded.
+- Wiring, connectors, mains safety, thermal validation, and regulatory constraints
+  remain to be defined.
 - The hardware license has not yet been selected.
 
 ## Retrieval notes

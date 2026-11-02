@@ -5,6 +5,11 @@
 - [ ] Inventory existing mechanical resources
 - [ ] Inventory existing electronics resources
 - [ ] Inventory existing firmware and device configuration
+- [x] Import the initial main-component datasheets and create a preliminary
+  component register
+- [x] Capture the existing Open Cinema software and supported-appliance context
+- [ ] Import the current enclosure CAD and mechanical constraints
+- [ ] Confirm exact component variants, power tree, wiring, and cooling design
 - [ ] Establish the first bill of materials
 - [ ] Select a hardware license
 - [ ] Define the first reproducible verification baseline
