@@ -1,12 +1,14 @@
 ---
 title: Auxiliary control electronics
-summary: Required input front-end and delegated power, shutdown, IR, and housekeeping electronics that have not yet been designed.
+summary: Delegated power, shutdown, IR and housekeeping functions, with the input-audio architecture tracked separately.
 status: active
-updated: 2026-11-02
+updated: 2026-11-03
 tags: [electronics, control, inputs, power, infrared]
 aliases: [logic-board, input-board, power-control-board, housekeeping-controller]
 sources:
   - docs/worklog/2026-11-02-enclosure-requirements-update.md
+  - docs/worklog/2026-11-03-rear-panel-and-audio-architecture.md
+  - docs/decisions/0003-prefer-earc-and-lvds-input-architecture.md
 ---
 
 # Auxiliary control electronics
@@ -14,8 +16,10 @@ sources:
 ## Summary
 
 The appliance requires at least one input board between external inputs and the
-Raspberry Pi, plus a power/control board for delegated low-level functions. No
-components, interfaces, schematic, or firmware have been selected.
+Raspberry Pi, plus a power/control board for delegated low-level functions. The
+[digital input architecture](digital-audio-input.md) now has a working eARC/ARC
+and LVDS direction. The power/controller components, host protocol, schematic and
+firmware remain unselected.
 
 ## Confirmed facts
 
@@ -26,7 +30,10 @@ components, interfaces, schematic, or firmware have been selected.
 - A power/control board is also required for power management and basic delegated
   electronics. Examples supplied so far are main-power shutdown and infrared
   control.
-- The number of input boards and the detailed function split remain open.
+- The proposed audio split is a rear input PCB and a small adapter beside the Pi.
+  The controller partition, exact board count and detailed circuits remain open;
+  [decision 0003](../../decisions/0003-prefer-earc-and-lvds-input-architecture.md)
+  establishes direction only.
 
 ## Constraints
 
@@ -42,8 +49,9 @@ components, interfaces, schematic, or firmware have been selected.
 
 ## Open questions
 
-- Which physical inputs and signal formats must the input board accept, condition,
-  switch, detect, or convert?
+- How will the [captured rear interfaces](rear-panel-interface.md) and
+  [audio-input architecture](digital-audio-input.md) be implemented, controlled and
+  coordinated with mute, shutdown and fault handling?
 - Which functions must continue while the Raspberry Pi is off or unresponsive?
 - Which controller, power domains, isolation, watchdogs, nonvolatile state, and
   Raspberry Pi communication interface are required?
@@ -60,3 +68,5 @@ components, interfaces, schematic, or firmware have been selected.
 - [Raspberry Pi 5](raspberry-pi-5.md)
 - [WM8804 S/PDIF transceiver](wm8804.md)
 - [WONDOM KAB9 amplifier](wondom-kab9.md)
+- [Digital audio input and LVDS transport](digital-audio-input.md)
+- [Rear-panel interface](rear-panel-interface.md)

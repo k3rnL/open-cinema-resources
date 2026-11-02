@@ -2,7 +2,7 @@
 title: Enclosure and appliance system
 summary: Current system-level enclosure context, selected major components, and unresolved integration constraints.
 status: active
-updated: 2026-11-02
+updated: 2026-11-03
 tags: [architecture, enclosure, mechanical, electronics, thermal]
 aliases: [case, chassis, appliance-enclosure]
 sources:
@@ -10,6 +10,9 @@ sources:
   - docs/decisions/0002-select-24v-main-supply.md
   - docs/worklog/2026-11-02-initial-resource-import.md
   - docs/worklog/2026-11-02-enclosure-requirements-update.md
+  - docs/worklog/2026-11-03-rear-panel-and-audio-architecture.md
+  - docs/decisions/0003-prefer-earc-and-lvds-input-architecture.md
+  - hardware/mechanical/enclosure-layout/README.md
   - bom/preliminary-components.csv
 ---
 
@@ -18,9 +21,10 @@ sources:
 ## Summary
 
 The physical enclosure effort has started. The initial major component set is
-selected. The front and back panels, auxiliary electronics, detailed mechanical
-layout, power distribution, cooling validation, connectors, and safety
-implementation remain to be designed.
+selected. Owner-supplied enclosure views and rear interface requirements are now
+recorded. A rear input board and LVDS link are the working audio architecture;
+native CAD, detailed panels/PCBs, power distribution, cooling and safety
+implementation remain open.
 
 ## Confirmed facts
 
@@ -40,10 +44,14 @@ implementation remain to be designed.
   the `R`/non-`R` suffix is still open.
 - The intended front panel needs a touch screen, an encoder, and a power button.
   The Waveshare 7.9inch DSI LCD is a candidate, not a selected part.
-- The back panel still needs to be designed and its components have not been
-  selected.
+- The back-panel interface requirements and enclosure orientation are captured in
+  the [rear-panel topic](rear-panel-interface.md), with original screenshots.
+  The PSU spans the rear; the Pi and amplifier are at the front. Exact rear-panel
+  parts and manufacturing dimensions are not selected.
 - The appliance needs at least one input front-end board and a power/control board
-  for delegated functions. Their components and interfaces are not yet decided.
+  for delegated functions. The [digital-input working direction](digital-audio-input.md)
+  targets eARC/ARC and multichannel I2S over LVDS; power/control electronics and
+  detailed implementations remain open.
 
 ## Constraints
 
@@ -60,18 +68,22 @@ implementation remain to be designed.
 
 - [Initial enclosure main components](../../decisions/0001-initial-enclosure-components.md)
 - [Select the 24 V main supply](../../decisions/0002-select-24v-main-supply.md)
+- [Prefer eARC/ARC and LVDS input architecture](../../decisions/0003-prefer-earc-and-lvds-input-architecture.md)
 
 ## Evidence
 
 - [Preliminary component register](../../../bom/preliminary-components.csv)
 - [Initial resource import work log](../../worklog/2026-11-02-initial-resource-import.md)
 - [Enclosure requirements update](../../worklog/2026-11-02-enclosure-requirements-update.md)
+- [Rear-panel and audio discussion](../../worklog/2026-11-03-rear-panel-and-audio-architecture.md)
+- [Owner-supplied enclosure views](../../../hardware/mechanical/enclosure-layout/README.md)
 - Component topic pages and linked manufacturer datasheets.
 
 ## Open questions
 
-- What are the enclosure's target outside dimensions, orientation, materials,
-  acoustic limits, mounting method, and service-clearance requirements?
+- What is the precise internal/outside height datum for the owner's 80 mm total
+  height, and what are the width/depth, materials, acoustic limits, mounting and
+  service-clearance requirements? Orientation is now recorded.
 - Is the non-redundant `UHP-500-24` or the `UHP-500R-24` required?
 - What protected DC/DC stage will provide the Raspberry Pi's 5 V rail?
 - What are the AC inlet, fuse, switch, protective-earth, creepage/clearance, and
@@ -82,7 +94,10 @@ implementation remain to be designed.
   the Raspberry Pi and the accepted software audio path?
 - Which front-panel display, encoder, and power button will be selected, and what
   cutouts, mounting, and service access do they require?
-- Which rear-panel connectors, controls, and labels are required?
+- Which exact rear connector parts, cutouts, labels and mounting details implement
+  the captured requirements? Does "6" mean six speaker pairs?
+- Can the above-PSU input-board location satisfy manufacturer guidance and actual
+  thermal, EMI, mains-separation and maintenance requirements?
 - How many input boards are needed, which input functions belong on them, and
   which power, shutdown, IR, and housekeeping functions belong on the delegated
   controller?
@@ -96,3 +111,5 @@ implementation remain to be designed.
 - [WM8804](wm8804.md)
 - [Front-panel interface](front-panel-interface.md)
 - [Auxiliary control electronics](auxiliary-control-electronics.md)
+- [Rear-panel interface](rear-panel-interface.md)
+- [Digital audio input and LVDS transport](digital-audio-input.md)

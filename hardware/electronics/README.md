@@ -9,3 +9,7 @@ Third-party component documents are catalogued in
 owners and must be checked against current manufacturer revisions before final
 design or procurement.
 
+[Rear-input manufacturer evidence](notes/rear-input-evidence.md) supports the
+[working eARC/ARC and LVDS architecture](../../docs/reference/topics/digital-audio-input.md).
+The proposed circuit has not yet been implemented or validated.
+

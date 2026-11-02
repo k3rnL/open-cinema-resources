@@ -2,13 +2,16 @@
 title: MEAN WELL UHP-500 power supply
 summary: Selected low-profile 24 V AC/DC supply; redundancy suffix remains to be confirmed.
 status: active
-updated: 2026-11-02
+updated: 2026-11-03
 tags: [electronics, power-supply, mains, thermal, enclosure]
 aliases: [uhp-500, uhp-500r, mean-well-uhp-500]
 sources:
   - hardware/electronics/datasheets/mean-well-uhp-500-series-2019.pdf
   - docs/decisions/0002-select-24v-main-supply.md
+  - docs/worklog/2026-11-03-rear-panel-and-audio-architecture.md
+  - hardware/electronics/notes/rear-input-evidence.md
   - https://www.meanwell.com/Upload/PDF/UHP-500%28R%29/UHP-500-spec.pdf
+  - https://www.meanwell.com/Upload/PDF/Enclosed_Type_EN.pdf
 ---
 
 # MEAN WELL UHP-500 power supply
@@ -45,10 +48,38 @@ suffix has not yet been selected.
 - Confirm actual thermal performance in the final enclosure rather than assuming
   the 500 W headline rating applies under every mounting condition.
 
+## Rear-board placement and thermal interpretation
+
+The current online specification reviewed on 2026-11-03 is dated **2025-08-01**;
+the local 2019 document remains preserved as the original supplied evidence.
+The [rear-panel proposal](rear-panel-interface.md) places a narrow vertical input
+PCB above the PSU. That placement has not been approved or physically tested.
+
+- At rated output, using the listed 94.5% typical efficiency gives estimated loss
+  `501.6 W x (1 / 0.945 - 1) = 29.2 W`. This is a calculation, not a measurement
+  or a prediction of normal programme load; variant, input voltage and loading
+  affect efficiency.
+- The illustrated thermal reference plate's area, mounting/contact and external
+  heat rejection matter as well as its 3 mm thickness. A smaller 3 mm enclosure
+  bottom is not automatically thermally equivalent.
+- The generic enclosed-type installation manual includes the UHP family, requires
+  unobstructed ventilation and specifies **10-15 cm clearance when an adjacent
+  device is a heat source**. Resolve how that guidance applies to this compact
+  PSU/input-board/amplifier assembly with manufacturer guidance or an appropriate
+  design change; an arbitrary smaller PCB gap is not established as equivalent.
+- Closed-enclosure temperature and interference testing under representative
+  sustained load is still needed. A successful temperature test alone does not
+  waive an applicable manufacturer installation requirement.
+
+Sources: [current specification](https://www.meanwell.com/Upload/PDF/UHP-500%28R%29/UHP-500-spec.pdf),
+[installation manual](https://www.meanwell.com/Upload/PDF/Enclosed_Type_EN.pdf),
+[discussion/evidence register](../../../hardware/electronics/notes/rear-input-evidence.md).
+
 ## Evidence
 
 - [Local 2019 datasheet](../../../hardware/electronics/datasheets/mean-well-uhp-500-series-2019.pdf)
 - [Current manufacturer datasheet](https://www.meanwell.com/Upload/PDF/UHP-500%28R%29/UHP-500-spec.pdf)
+- [Enclosed-type installation manual](https://www.meanwell.com/Upload/PDF/Enclosed_Type_EN.pdf)
 
 ## Decisions
 
@@ -60,6 +91,8 @@ suffix has not yet been selected.
 - Is the enclosure itself intended to serve as the specified heat-spreading plate?
 - What load, headroom, inrush, fuse, wiring, and thermal acceptance criteria apply?
 - What protected converter provides the Raspberry Pi 5 V rail?
+- How will the rear input PCB preserve ventilation, mains separation and service
+  access, and what manufacturer guidance resolves the compact thermal layout?
 
 ## Related
 
@@ -67,3 +100,4 @@ suffix has not yet been selected.
 - [Raspberry Pi 5](raspberry-pi-5.md)
 - [Enclosure and appliance system](enclosure-appliance.md)
 - [Auxiliary control electronics](auxiliary-control-electronics.md)
+- [Rear-panel interface](rear-panel-interface.md)

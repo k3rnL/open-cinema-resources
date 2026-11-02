@@ -2,7 +2,7 @@
 title: Raspberry Pi 5
 summary: Selected appliance computer and current supported Open Cinema deployment target.
 status: active
-updated: 2026-11-02
+updated: 2026-11-03
 tags: [compute, raspberry-pi, enclosure, thermal, power]
 aliases: [rpi5, pi-5, raspberry-pi-5-model-b]
 sources:
@@ -12,6 +12,8 @@ sources:
   - https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-mechanical-drawing.pdf
   - https://github.com/k3rnL/open-cinema/blob/master/deployment/SUPPORTED_PLATFORMS.md
   - docs/worklog/2026-11-02-enclosure-requirements-update.md
+  - docs/decisions/0003-prefer-earc-and-lvds-input-architecture.md
+  - hardware/electronics/notes/rear-input-evidence.md
 ---
 
 # Raspberry Pi 5
@@ -44,6 +46,10 @@ software production boundary is the 8 GB Model B fixture on Debian 13 Trixie.
   which interfaces become internal-only.
 - Do not use approximate product-brief dimensions as production CAD authority;
   use the current mechanical drawing/STEP model and verify the physical board.
+- The proposed multichannel capture uses the Pi's I2S clock-consumer interface.
+  The [digital audio input topic](digital-audio-input.md) records candidate GPIO
+  assignments and clocking constraints. This is not yet a tested Linux capture
+  configuration, and it must be checked against other GPIO users.
 
 ## Evidence
 
@@ -67,3 +73,4 @@ software production boundary is the 8 GB Model B fixture on Debian 13 Trixie.
 - [Open Cinema software system](open-cinema-software.md)
 - [Enclosure and appliance system](enclosure-appliance.md)
 - [Front-panel interface](front-panel-interface.md)
+- [Digital audio input and LVDS transport](digital-audio-input.md)
