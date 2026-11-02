@@ -1,0 +1,28 @@
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated archives and temporary outputs
+*.bak
+*.tmp
+*.temp
+*.autosave
+*.zip
+*.tar
+*.tar.gz
+
+# Common CAD backup/cache files
+*.FCBak
+*.f3d.lock
+*.lck
+
