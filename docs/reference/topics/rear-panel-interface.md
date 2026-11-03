@@ -6,6 +6,7 @@ updated: 2026-11-03
 tags: [mechanical, enclosure, rear-panel, fasteners, connectors, thermal, electronics]
 aliases: [back-panel, rear-input-board, tongues, self-clinching-nuts, pem, jlccnc, s-m3-2, s-m3-2zi]
 sources:
+  - docs/worklog/2026-11-03-remove-plate-and-brackets-A9.md
   - docs/decisions/0011-horizontal-pcb-with-all-connectors.md
   - docs/worklog/2026-11-03-horizontal-rear-io-A8.md
   - docs/worklog/2026-11-03-restore-alignment-holes.md
@@ -146,3 +147,7 @@ DFM review and first-article inspection.
 - [Digital audio input and LVDS transport](digital-audio-input.md)
 - [Front-panel interface](front-panel-interface.md)
 - [WONDOM KAB9](wondom-kab9.md)
+
+## A9 model scope correction
+
+The owner will design the connection backplate and L brackets. The current PCB export contains only PCB and connectors, retaining its four PCB mounting holes. Earlier plate/support solids and their vertical alignment holes are historical. [A9 record](../../worklog/2026-11-03-remove-plate-and-brackets-A9.md).

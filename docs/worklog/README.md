@@ -26,3 +26,5 @@ evidence, conclusions, and next steps. Separate observations from interpretation
 - [2026-11-03: Rear panel and digital-audio architecture](2026-11-03-rear-panel-and-audio-architecture.md)
 - [2026-11-03: JLCCNC rear-panel fastening selection](2026-11-03-jlccnc-rear-panel-fastening.md)
 
+
+- [2026-11-03: Remove backplate and L brackets from PCB model](2026-11-03-remove-plate-and-brackets-A9.md)

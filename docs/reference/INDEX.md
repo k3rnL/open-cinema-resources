@@ -33,7 +33,7 @@ project knows and link back to decisions, work logs, and original evidence.
 ### Electronics
 
 - [Hardware repository and KiCad mechanical PCB](topics/hardware-repository-and-kicad.md)
-  — A8 horizontal PCB with every connector directly soldered; rigid movement and nominal frame/PSU fit verified, speaker qualification open.
+  — A9 exports the horizontal PCB and connectors only; owner designs plate/brackets; speaker qualification open.
 
 - [Raspberry Pi 5](topics/raspberry-pi-5.md) — selected computer and supported
   appliance target.
@@ -77,7 +77,7 @@ No unclassified material.
   capture, supported encoded formats and the LVDS harness are not validated.
 - WM8804 integration and KAB9 input/channel configuration remain unresolved.
   Six working pairs now solder to one horizontal board along with the audio inputs. A8's KLS speaker candidate has unverified current rating/supply. Tails point upward; optical daughterboards/cradle are historical.
-- A8 preserves the220 ×35 opening and four vertical Ø3 reference holes via provisional supports. Nominal frame/PSU interference checks pass; tight plate/PCB gaps, cable mating, hardware, tolerances and production qualification remain open. Frame CAD reads2 mm versus the3 mm fabrication baseline; Ø4.5 frame holes differ from nominal Ø3.8.
+- A9 keeps the PCB holes but removes the provisional plate and supports; the owner designs those parts. The opening remains 220 × 35 mm. Nominal frame/PSU interference checks pass; tight plate/PCB gaps, cable mating, hardware, tolerances and production qualification remain open. Frame CAD reads2 mm versus the3 mm fabrication baseline; Ø4.5 frame holes differ from nominal Ø3.8.
 - Above-PSU board placement needs thermal, airflow, EMI and mains-separation
   validation, including resolution of manufacturer adjacent-heat-source guidance.
 - The hardware license has not yet been selected.
@@ -89,4 +89,6 @@ topic summaries as orientation; follow their evidence and decision links for
 conclusions that matter.
 
 
-- Fusion A8 cloud integration is partial: source save pending; see [A8 work log](../worklog/2026-11-03-horizontal-rear-io-A8.md#authorized-fusion-update--incomplete-source-save).
+- Fusion A9 cloud integration is partial: source save pending; see [A8 work log](../worklog/2026-11-03-horizontal-rear-io-A8.md#authorized-fusion-update--incomplete-source-save).
+
+- [A9 scope change: owner-designed plate and brackets](../worklog/2026-11-03-remove-plate-and-brackets-A9.md).

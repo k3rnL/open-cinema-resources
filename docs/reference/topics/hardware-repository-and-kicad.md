@@ -1,11 +1,12 @@
 ---
 title: Hardware repository and KiCad connector assembly
-summary: A8 tries one horizontal PCB with all connectors directly soldered, upward solder tails and preserved alignment holes; speaker qualification remains open.
+summary: A9 delivers the horizontal PCB and connectors only; the owner designs the backplate and L brackets. Speaker qualification remains open.
 status: active
 updated: 2026-11-03
 tags: [hardware, repository, kicad, pcb, connectors, mechanical]
-aliases: [open-cinema-hardware, kikad, connector-board, connection-plate, rear-io, a0, a1, a2, a3, a7, a8, horizontal, inverted, kls, fe6930, spare-pairs, daughterboard, pt-603b, straight-pins, surface-mount, fcr684205r, rcj-021, 10078837-001lf]
+aliases: [open-cinema-hardware, kikad, connector-board, connection-plate, rear-io, a0, a1, a2, a3, a7, a8, a9, horizontal, inverted, kls, fe6930, spare-pairs, daughterboard, pt-603b, straight-pins, surface-mount, fcr684205r, rcj-021, 10078837-001lf]
 sources:
+  - docs/worklog/2026-11-03-remove-plate-and-brackets-A9.md
   - docs/decisions/0011-horizontal-pcb-with-all-connectors.md
   - docs/worklog/2026-11-03-horizontal-rear-io-A8.md
   - docs/decisions/0010-select-cliff-fe6930-and-two-spare-pairs.md
@@ -24,7 +25,7 @@ sources:
 
 [open-cinema-hardware](https://github.com/k3rnL/open-cinema-hardware) owns editable PCB sources; resources owns memory. Both repositories live in `Documents/Open Cinema`.
 
-## Current A8 direction
+## Current A9 export / A8 PCB layout
 
 The owner requested a **horizontal PCB with all connectors soldered directly to it**, including conventional speaker clips. This supersedes the vertical carrier and optical daughterboards. Six working pairs remain required; two spares are allowed but are not required. [Decision 0011](../../decisions/0011-horizontal-pcb-with-all-connectors.md).
 
@@ -32,15 +33,15 @@ The A8 fit experiment places the component side downward at z67 mm, with solder 
 
 **The KLS L-KLS1-WP-6P-03B-B/R blocks are mechanical candidates only.** Operating-current rating and exact retail supply remain unverified. They must not inherit the FE6930's 7 A rating; the prior 3 A alternative remains rejected for 4 ohm/mixed loads. This is not an order-ready BOM. [Sourcing](component-sourcing.md).
 
-The owner aperture remains220 ×35 R5, z34…69. Provisional brackets and a1.5 mm connection plate carry real Ø3 reference holes at x±115,z44/59, with separate horizontal mounting holes in the PCB. The0.2 mm PCB-to-plate edge setback, tight opening margins and recessed RCA cable access need physical/tolerance review. These dimensions are an experiment, not an owner-approved manufacturing specification.
+The owner designs the backplate and L brackets. A9 removes those three solids and retains all four horizontal Ø3 PCB holes at x±110 mm, inward depths 12/30 mm. Previous vertical plate holes remain owner-side mechanical references; the PCB model does not contain them. The opening remains 220 × 35 R5. [Owner request and A9 evidence](../../worklog/2026-11-03-remove-plate-and-brackets-A9.md).
 
 ## Integration and evidence
 
-The A8 rigid STEP/F3D contains one component with70 bodies. A joint to one reference hole moved all70 together; disable Ground to Parent before alignment. The raw KiCad export remains hierarchical and in native board coordinates. The KiCad component side is F.Cu and the installation export rotates the board; do not mirror artwork.
+The A9 rigid STEP/F3D contains one component with 67 solids: PCB and connectors only. Both formats reimported with unchanged geometry and no child occurrences. The native PCB layout is unchanged. The open linked Fusion source has been updated, but its cloud save remains unresolved at v2. [A9 record](../../worklog/2026-11-03-remove-plate-and-brackets-A9.md).
 
 KiCad10.0.5 DRC reports zero violations;45 electrical pads and10 NPTH holes are present, all pad centers lie on the board and model paths resolve. There are no nets, tracks, schematic, decoding or LVDS circuitry. Zero unconnected items does not establish electrical completeness.
 
-Read-only copies of the current frame and PSU in Home Cinema v7 show no modeled collision with the new assembly/supports. PSU top is z35 mm; minimum assembly/PSU distance is2 mm; maximum assembly height72.5 mm. Thermal behavior, airflow, EMI, mains separation, tolerances, cable bodies and support loads remain unqualified.
+Historical A8 verification: read-only copies of the current frame and PSU in Home Cinema v7 show no modeled collision with the new assembly/supports. PSU top is z35 mm; minimum assembly/PSU distance is2 mm; maximum assembly height72.5 mm. Thermal behavior, airflow, EMI, mains separation, tolerances, cable bodies and support loads remain unqualified.
 
 Sources: [A8 session with exact implementation revision](../../worklog/2026-11-03-horizontal-rear-io-A8.md), [current hardware record](https://github.com/k3rnL/open-cinema-hardware/blob/main/docs/horizontal-assembly-A8.md), [editable project and exports](https://github.com/k3rnL/open-cinema-hardware/tree/main/boards/rear-io).
 

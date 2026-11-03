@@ -18,3 +18,7 @@ A8 places the component side downward at z 67 mm so solder tails point upward. I
 The compact KLS L-KLS1-WP-6P-03B-B/R speaker block is only a mechanical candidate: its operating-current rating and exact small-quantity purchase route remain unverified. This is not acceptance of a lower current rating. The prior 3 A part remains rejected for 4 Ω/mixed loads, and FE6930's 7 A rating must not be attributed to KLS.
 
 Nominal geometry, rigid Fusion movement and KiCad checks pass in the scope recorded in the [A8 work log](../worklog/2026-11-03-horizontal-rear-io-A8.md). Electrical qualification, tolerances, bracket hardware, cable insertion, tight plate clearance and above-PSU thermal behavior remain open. No manufacturing or purchase release exists.
+
+## A9 scope clarification
+
+The owner subsequently took responsibility for the backplate and L brackets and requested their removal from the model. The horizontal/direct-solder decision remains; the proposed A8 support solids are superseded. [A9 record](../worklog/2026-11-03-remove-plate-and-brackets-A9.md).
