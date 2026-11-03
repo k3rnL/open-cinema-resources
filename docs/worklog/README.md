@@ -9,6 +9,10 @@ evidence, conclusions, and next steps. Separate observations from interpretation
 
 ## Sessions
 
+- [2026-11-03: A6 rigid Fusion integration, optical support and sourcing](2026-11-03-rigid-fusion-and-optical-support.md)
+- [2026-11-03: Four alignment holes, A4/A5](2026-11-03-restore-alignment-holes.md)
+- [2026-11-03: Straight speaker terminals, A3](2026-11-03-straight-speaker-terminals.md)
+
 - [2026-11-03: Speaker clip correction and A2](2026-11-03-speaker-clip-correction.md)
 - [2026-11-03: A1 connector selection](2026-11-03-rear-connector-selection.md) — speaker choice subsequently rejected.
 

@@ -8,6 +8,9 @@ record with status `Supersedes` and link the earlier record rather than erasing 
 
 ## Records
 
+- [0009: Prefer JLCPCB, permit external suppliers](0009-prefer-jlcpcb-allow-external-parts.md) — accepted sourcing policy; no order placed.
+- [0008: Straight speaker terminals](0008-require-straight-speaker-terminals.md) — accepted pin-direction constraint.
+
 - [0007: Conventional red/black speaker clips](0007-use-conventional-speaker-clips.md) — accepted style correction; exact part pending.
 - [0006: Vertical carrier and optical daughterboards](0006-vertical-carrier-and-optical-daughterboards.md) — orientation active; speaker selection superseded by 0007.
 

@@ -22,7 +22,9 @@
 - [x] Replace A1 industrial terminals in the mechanical model with red/black clip candidates (A2)
 - [x] Replace rejected downward speaker tails with straight rear-facing pins in the A3 fit study; record measured 220 × 35 opening
 - [ ] Qualify PT-603B current rating, supply, sample geometry, termination and full panel fit
-- [ ] Complete back-panel mounting, plate cutouts, daughterboard support/interconnect and sample-fit qualification
+- [x] Add A6 rigid Fusion integration files and a bolted optical-cradle prototype
+- [x] Audit connector sourcing and record permission to use outside suppliers
+- [ ] Complete back-panel mounting, plate cutouts, optical-cradle fit/load/temperature qualification, daughterboard interconnect and sample-fit checks
 - [ ] Define the input front-end and delegated power/control electronics
 - [ ] Select/document an eARC/ARC receiver and validate multichannel Pi capture,
   supported encoded formats, source switching and the LVDS interconnect
@@ -50,7 +52,7 @@
 - Which exact eARC/ARC receiver, controller and audio formats can be supported
   end to end by the existing software? Does it absorb the WM8804's S/PDIF role?
 - What are the internal height datum, rear gap and connector service volumes?
-  How will A3 speaker blocks and optical modules be supported and accessed? How should the current Ø4.5 frame holes
+  How will the speaker blocks be supported and accessed, and does the A6 optical cradle pass fit/load/temperature checks? How should the current Ø4.5 frame holes
   be reconciled with the nominal Ø3.8 fastening baseline, and 2 mm frame CAD with the 3 mm material baseline?
 - How does manufacturer adjacent-heat-source guidance apply to the proposed
   compact PSU/input-board/amplifier arrangement?
