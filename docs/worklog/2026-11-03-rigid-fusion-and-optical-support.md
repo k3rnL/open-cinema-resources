@@ -30,3 +30,7 @@ Exact PT-603B public stock and current rating remain unverified. Harfington item
 - [Sourcing audit and exact links](https://github.com/k3rnL/open-cinema-hardware/blob/66f69f2acba4282ec5b1e67392752482bb2918ad/docs/sourcing-A6.md)
 
 Next: qualify the exact speaker choice against load/current requirements and physical samples, validate cradle fit/temperature/load and full plate/PSU stack, then finish the circuit and assembly procurement. Do not describe the whole BOM or the cradle as manufacturing-ready.
+
+## Late owner clarification
+
+The owner confirmed **4 Ω or mixed/unknown loads**. The3A Uxcell alternative is consequently rejected for the intended full-power application. Subsequent research found CliffFE6930, rated7A with straight rear pins and distributor stock, but two blocks would provide eight speaker pairs. Pair-count preference and revised geometry remain pending; A6 was not silently substituted. FE6935 has bent/downward terminals and does not meet the straight-tail requirement. See the current [sourcing audit](https://github.com/k3rnL/open-cinema-hardware/blob/main/docs/sourcing-A6.md) for manufacturer/distributor links.

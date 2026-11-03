@@ -16,6 +16,6 @@ Record exact manufacturer/part and supplier SKU, dated availability, and whether
 
 No purchase quantity, budget or permission to place an order was supplied. External components can be assembled manually, or consigned only if JLC accepts them. Final mechanical assembly is separate from PCBA. The PCB remains a mechanical prototype without circuitry.
 
-The A6 audit finds stocked HDMI at JLC and outside stock for the selected RCA and Cliff optical receivers. Exact PT-603B speaker supply/current qualification remains unresolved. A stocked Uxcell WP6-03 is only a sample candidate; its3A claim does not qualify50W/4Ω use.
+The A6 audit finds stocked HDMI at JLC and outside stock for the selected RCA and Cliff optical receivers. Exact PT-603B speaker supply/current qualification remains unresolved. The owner subsequently confirmed4Ω or mixed/unknown loads. The stocked3A Uxcell alternative is rejected for the intended full-power use. A7A Cliff alternative would change the pair count/layout and has not been accepted.
 
 Sources: owner instructions in the 2026-11-03 session; [work log](../worklog/2026-11-03-rigid-fusion-and-optical-support.md); [dated hardware sourcing audit](https://github.com/k3rnL/open-cinema-hardware/blob/66f69f2acba4282ec5b1e67392752482bb2918ad/docs/sourcing-A6.md).
