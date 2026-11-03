@@ -45,3 +45,11 @@ A small mezzanine is an acceptable fallback when a documented receiver module or
 PSU proximity is a manageable design concern, not demonstrated immunity. Include Class-D speaker wiring and local converters as interference sources. Proposed measures: continuous reference planes, compact clock routes, local decoupling/filtering, specified differential impedance and termination, deliberate connector-shell/chassis bonding, and separation of mains/high-current speaker paths from input/clock circuits. LVDS neither isolates grounds nor protects receiver power/clock circuits from every interference path. [TI layout guidance](https://www.ti.com/lit/an/snla302/snla302.pdf).
 
 Validate with the assembled enclosure under amplifier load and during power/source transitions: receiver lock/errors, capture stability, audible artifacts and temperatures. Preserve unobstructed PSU vents; the manufacturer's installation and thermal conditions still apply. [MEAN WELL installation manual](https://www.meanwell.com/Upload/PDF/Enclosed_Type_EN.pdf).
+
+## Owner answers after this discussion
+
+The owner subsequently requested broad compatibility (“Any” TV) and made lossless formats and Atmos essential initially. The proposed narrower first-version scope is therefore not accepted. [Decision 0012](../decisions/0012-require-lossless-audio-and-atmos.md) records this and the current software gap.
+
+The owner then confirmed 5.1 amplifier use initially, retaining the option for 7.1. Preserve an eight-channel output target; no height speakers were requested.
+
+After a question about Atmos rendering, the owner explicitly clarified that all audio processing will be done on the Raspberry Pi and that the requested hardware work is audio extraction only. Keep decoding/rendering/DSP on the Pi; do not add a decoder module or block extraction-board development on its selection. Qualify the receiver output, clocks and bit-preserving transport/capture interface. The discovered software gaps remain separate Pi work and do not change this allocation.

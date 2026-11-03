@@ -6,6 +6,7 @@ updated: 2026-11-03
 tags: [electronics, audio, inputs, earc, arc, spdif, i2s, lvds]
 aliases: [input-board, hdmi-audio-extraction, differential-i2s, rear-to-pi, ds90lv047a, ds90lv048a]
 sources:
+  - docs/decisions/0012-require-lossless-audio-and-atmos.md
   - docs/worklog/2026-11-03-enlarged-enclosure-and-input-architecture.md
   - docs/worklog/2026-11-03-rear-connector-selection.md
   - docs/decisions/0006-vertical-carrier-and-optical-daughterboards.md
@@ -20,9 +21,14 @@ sources:
 ## Summary
 
 The working direction is a rear input board feeding a small adapter beside the
-Raspberry Pi through an LVDS cable link. Main decoding and DSP stay on the Pi.
+Raspberry Pi through an LVDS cable link. All audio decoding, Atmos processing
+and DSP stay on the Pi, as explicitly reaffirmed by the owner.
 eARC plus explicit legacy ARC support is the compatibility target. This is an
 architecture to validate, not a completed circuit or demonstrated capture path.
+
+## First-version compatibility requirement
+
+The owner requires broad TV compatibility and lossless TrueHD/DTS-HD plus Atmos in the initial version, with 5.1 initially and an option for 7.1. [Decision 0012](../../decisions/0012-require-lossless-audio-and-atmos.md) confirms the responsibility boundary: the rear board extracts/selects/transports audio; all audio processing runs on the Pi. Preserve PCM and encoded payloads, including the necessary HBR/MAT transport cases, with documented packing and clocks. The current decoder gap is separate Pi software work, not a reason to add a hardware decoder or renderer.
 
 ## Project direction
 

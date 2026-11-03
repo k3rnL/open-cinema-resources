@@ -74,3 +74,7 @@ payload handling before freezing the PCB and cutouts. Validate timing, powered
 states, temperatures and interference in the closed enclosure under representative
 sustained load. Resolve applicable manufacturer clearance guidance before treating
 the arrangement as acceptable.
+
+## Later requirement refinement
+
+[Decision 0012](0012-require-lossless-audio-and-atmos.md) makes lossless TrueHD/DTS-HD and Atmos first-version requirements and confirms that all audio decoding/rendering/DSP stays on the Raspberry Pi. The rear electronics only extract, select and transport audio. Qualify receiver output packing, clocks and bit-preserving capture before finalizing the interconnect; Pi codec implementation remains separate work.

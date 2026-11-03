@@ -43,8 +43,7 @@ project knows and link back to decisions, work logs, and original evidence.
 - [MEAN WELL UHP-500](topics/mean-well-uhp-500.md) — selected power-supply family;
   24 V output selected and redundancy suffix still open.
 - [Digital audio input and LVDS transport](topics/digital-audio-input.md) — eARC/ARC
-  working direction, rear-to-Pi multichannel link, candidate parts and unvalidated
-  capture/clocking details.
+  working direction, mandatory lossless/Atmos transport, extraction hardware and Pi processing boundary.
 - [Auxiliary control electronics](topics/auxiliary-control-electronics.md) —
   delegated power, shutdown, IR and housekeeping functions; controller and firmware
   still undefined.

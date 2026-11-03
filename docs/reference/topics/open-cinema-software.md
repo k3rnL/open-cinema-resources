@@ -2,10 +2,11 @@
 title: Open Cinema software system
 summary: Control plane that turns versioned desired audio graphs into a reconciled PipeWire/WirePlumber appliance runtime.
 status: active
-updated: 2026-11-02
+updated: 2026-11-03
 tags: [architecture, software, audio, raspberry-pi]
 aliases: [open-cinema, control-plane, audio-orchestrator]
 sources:
+  - docs/decisions/0012-require-lossless-audio-and-atmos.md
   - https://github.com/k3rnL/open-cinema
   - https://github.com/k3rnL/open-cinema/commit/e52008996dd35fe645e2bd682e9c1d2a5277a0f1
   - https://github.com/k3rnL/open-cinema/blob/master/README.md
@@ -83,3 +84,7 @@ reconciles the result with the native Linux audio runtime.
 - [Raspberry Pi 5](raspberry-pi-5.md)
 - [WM8804 S/PDIF transceiver](wm8804.md)
 - [WONDOM KAB9 amplifier](wondom-kab9.md)
+
+## New lossless/Atmos requirement
+
+The owner now requires lossless formats and Atmos initially. The existing software acceptance does not cover that path. Read-only inspection of pinned pcm-auto-decoder v0.2.2 confirms its limited IEC61937 type handling and absence of an integrated Atmos renderer. See [requirement and source evidence](../../decisions/0012-require-lossless-audio-and-atmos.md). This does not invalidate the previously accepted S/PDIF fixture; it identifies additional Pi software work. The owner explicitly keeps all decoding, Atmos processing and DSP on the Raspberry Pi; the current hardware task covers extraction, selection and transport only.

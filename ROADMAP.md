@@ -29,8 +29,8 @@
 - [ ] Owner to design backplate and L brackets; then verify plate cutouts, cable insertion, tolerances, loads and temperatures
 - [ ] Integrate the recommended DC11 mains inlet: resolve panel thickness, reserve its mounting/wiring volume, and design protection/earth bonding; [selection evidence](docs/worklog/2026-11-03-compact-mains-inlet.md)
 - [ ] Define the input front-end and delegated power/control electronics
-- [ ] Select/document an eARC/ARC receiver and validate multichannel Pi capture,
-  supported encoded formats, source switching and the LVDS interconnect
+- [ ] Qualify eARC/ARC extraction, lossless/Atmos payload transport, source selection and LVDS-to-Pi capture; [requirement and responsibility boundary 0012](docs/decisions/0012-require-lossless-audio-and-atmos.md)
+- [ ] Separately extend Pi audio processing for the required lossless/Atmos formats and validate 5.1→7.1 output mapping; no decoder/renderer is planned on the rear PCB
 - [ ] Resolve above-PSU placement against manufacturer thermal guidance, airflow,
   mains separation and loaded-enclosure temperature/interference measurements
 - [ ] Design and implement the local touch-screen software
