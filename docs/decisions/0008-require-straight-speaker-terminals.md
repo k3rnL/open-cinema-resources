@@ -3,6 +3,7 @@
 - Date: 2026-11-03
 - Status: Accepted owner geometry/terminal-direction constraint; PT-603B is an unqualified mechanical candidate
 - Owner: @k3rnL
+- Implementation update: [A4](../worklog/2026-11-03-restore-alignment-holes.md) restores actual alignment holes at the owner's request; earlier graphics-only treatment below is superseded.
 - Supersedes: A2 downward-tail packaging and upward-opening assumption associated with [0007](0007-use-conventional-speaker-clips.md); preserves conventional red/black clips and six pairs
 
 The owner rejected A2's speaker blocks because their pins descend toward the PSU. The owner suggested surface-mounted parts and supplied a new **220 × 35 mm R5** opening. Read-only Fusion Sketch3 measurement confirms x−110…110,z34…69, with Ø3 reference fixing points at x−115,z44/59. The assistant did not edit the frame.

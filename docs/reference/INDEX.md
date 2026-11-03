@@ -33,7 +33,7 @@ project knows and link back to decisions, work logs, and original evidence.
 ### Electronics
 
 - [Hardware repository and KiCad mechanical PCB](topics/hardware-repository-and-kicad.md)
-  — A3 straight-pin red/black speaker clips on a vertical PCB; 220 × 35 opening, current rating and full fit unqualified.
+  — A4 restores two real alignment holes; A3 straight-pin speakers and 220 × 35 opening retained, current rating/full fit unqualified.
 
 - [Raspberry Pi 5](topics/raspberry-pi-5.md) — selected computer and supported
   appliance target.
