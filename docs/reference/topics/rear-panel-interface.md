@@ -6,6 +6,7 @@ updated: 2026-11-03
 tags: [mechanical, enclosure, rear-panel, fasteners, connectors, thermal, electronics]
 aliases: [back-panel, rear-input-board, tongues, self-clinching-nuts, pem, jlccnc, s-m3-2, s-m3-2zi]
 sources:
+  - docs/decisions/0007-use-conventional-speaker-clips.md
   - docs/worklog/2026-11-03-rear-connector-selection.md
   - docs/decisions/0006-vertical-carrier-and-optical-daughterboards.md
   - docs/worklog/2026-11-03-kicad-rear-io-mechanical.md
@@ -27,7 +28,7 @@ The PSU spans the rear of the enclosure; the Pi/electronics stack and amplifier
 are at the front. A compact input board high on the rear panel is proposed within
 the space above the PSU. The owner has drawn a frame for a separate connection
 plate and PCB; a first [KiCad mechanical study](hardware-repository-and-kicad.md)
-now has A1 selected connectors and optical daughterboards. Mounting depth, cutouts and final qualification remain open.
+now has an A2 red/black speaker-clip fit study and optical daughterboards. Mounting depth, cutouts and final qualification remain open.
 
 ## Confirmed owner-supplied context
 
@@ -62,7 +63,11 @@ for A0, evolving the earlier suggestion of separate speaker/input assemblies.
 The mains module remains separate. A1 keeps a vertical main PCB and adds two small horizontal optical daughterboards, by owner decision. Speaker wiring must preserve the
 amplifier topology; do not assume common speaker-negative terminals.
 
-## Current frame and mechanical PCB study
+## A2 correction
+
+The owner rejected industrial speaker terminals and allowed a taller **210 × 35 R5** opening, z39…74. A2 models two six-contact red/black KLS blocks on the connection plate and a **99 × 32 mm vertical input PCB** beside them. Separate amplifier wiring is proposed. Part current rating, support and termination remain unverified. The upper frame holes at x±40,z75 intersect the new opening; speaker tails reach z36 below its lower edge. Frame CAD remains unchanged. [Decision 0007](../../decisions/0007-use-conventional-speaker-clips.md), [A2 session](../../worklog/2026-11-03-speaker-clip-correction.md).
+
+## Historical A1 frame and mechanical PCB study
 
 The measured opening remains **210 × 25 mm, R5**, z39…64, in a 260 × 80 frame. A1 keeps a **228 × 32 mm** nominal 1.6 mm vertical main PCB, selected connector footprints/models and two optical daughterboards. [Current parts and implementation](hardware-repository-and-kicad.md).
 
@@ -126,7 +131,7 @@ DFM review and first-article inspection.
 - Internal height datum, overall width/depth, actual PSU-to-panel gap and native
   CAD revision/export; screenshots are not dimensional authority.
 - Receiver/module circuitry, final footprint qualification and full insertion/service volumes.
-- Six pairs use Phoenix 1732496 for A1; wire/tool access, PCB current design and amplifier channel roles remain open.
+- Six pairs must use conventional red/black finger-operated clips. The owner rejected A1 Phoenix 1732496; exact replacement, packaging, current rating and termination remain open. See [decision 0007](../../decisions/0007-use-conventional-speaker-clips.md). The owner permits 210 × 35 for A2, but frame CAD is unchanged and its upper fixing holes conflict with that enlargement.
 - Native tab/support geometry, final finish, JLCCNC DFM confirmation and
   first-article verification of the selected fastening system. Protective-earth
   hardware remains a separate design question.

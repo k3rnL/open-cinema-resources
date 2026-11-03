@@ -33,7 +33,7 @@ project knows and link back to decisions, work logs, and original evidence.
 ### Electronics
 
 - [Hardware repository and KiCad mechanical PCB](topics/hardware-repository-and-kicad.md)
-  — A1 selected connectors, vertical carrier, optical daughterboards and STEP exports.
+  — A2 red/black speaker clips beside a vertical input PCB; current rating and frame fit unresolved.
 
 - [Raspberry Pi 5](topics/raspberry-pi-5.md) — selected computer and supported
   appliance target.
@@ -74,8 +74,8 @@ No unclassified material.
 - eARC/ARC receiver selection, documented control/CEC behavior, eight-channel Pi
   capture, supported encoded formats and the LVDS harness are not validated.
 - WM8804 integration and KAB9 input/channel configuration remain unresolved.
-  Six speaker pairs and A1 terminal references are selected; roles and wiring remain open.
-- A1 has selected connector parts and two optical daughterboards on a vertical carrier.
+  Six speaker pairs require conventional red/black clips; the A1 industrial terminals were rejected. A2 evaluates KLS six-contact blocks; current rating, roles and wiring remain open.
+- A2 preserves audio-input parts/optical daughterboards on a shortened vertical PCB. The allowed taller opening intersects original upper frame holes; speaker tails, mounting and current rating remain unresolved.
   Mounting, plate cutouts/setback, tolerance and service access, circuitry, front panel
   and local-screen software remain open. Frame CAD reads 2 mm versus the 3 mm
   fabrication baseline; Ø4.5 frame holes differ from the nominal Ø3.8 baseline.

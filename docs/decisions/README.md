@@ -8,6 +8,9 @@ record with status `Supersedes` and link the earlier record rather than erasing 
 
 ## Records
 
+- [0007: Conventional red/black speaker clips](0007-use-conventional-speaker-clips.md) — accepted style correction; exact part pending.
+- [0006: Vertical carrier and optical daughterboards](0006-vertical-carrier-and-optical-daughterboards.md) — orientation active; speaker selection superseded by 0007.
+
 - [0005: Separate hardware repository and KiCad](0005-use-separate-hardware-repository-and-kicad.md)
   — accepted organization and mechanical-study scope; component selection deferred.
 

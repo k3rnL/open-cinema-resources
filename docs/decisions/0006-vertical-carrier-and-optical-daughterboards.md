@@ -1,6 +1,7 @@
 # 0006: Keep the vertical rear PCB and use optical daughterboards
 
 - Date: 2026-11-03
+- Later correction: [0007](0007-use-conventional-speaker-clips.md) rejects the Phoenix speaker terminals; the vertical PCB / optical daughterboard decision remains active.
 - Status: Owner-accepted orientation; A1 connector selection for mechanical integration
 - Owner: @k3rnL
 - Evolves: [0005](0005-use-separate-hardware-repository-and-kicad.md)

@@ -1,11 +1,13 @@
 ---
 title: Hardware repository and KiCad connector assembly
-summary: A1 vertical rear carrier with selected connectors and two optical daughterboards.
+summary: A2 red/black speaker-clip fit study beside a vertical input PCB; current rating and frame integration open.
 status: active
 updated: 2026-11-03
 tags: [hardware, repository, kicad, pcb, connectors, mechanical]
 aliases: [open-cinema-hardware, kikad, connector-board, connection-plate, rear-io, a0, a1, daughterboard, 1732496, fcr684205r, rcj-021, 10078837-001lf]
 sources:
+  - docs/worklog/2026-11-03-speaker-clip-correction.md
+  - docs/decisions/0007-use-conventional-speaker-clips.md
   - docs/decisions/0005-use-separate-hardware-repository-and-kicad.md
   - docs/decisions/0006-vertical-carrier-and-optical-daughterboards.md
   - docs/worklog/2026-11-03-rear-connector-selection.md
@@ -16,13 +18,17 @@ sources:
 
 [open-cinema-hardware](https://github.com/k3rnL/open-cinema-hardware) owns editable PCB sources and integration exports. Resources owns research, reference book and history. Both checkouts live in `Documents/Open Cinema`; the memory skill remains here. [Decision 0005](../../decisions/0005-use-separate-hardware-repository-and-kicad.md).
 
-## Current A1 study
+## Current correction
+
+The owner requires **red/black finger-operated speaker spring clips** and rejected A1's Phoenix terminals. [Decision 0007](../../decisions/0007-use-conventional-speaker-clips.md) supersedes that selection. A2 now evaluates two KLS L-KLS1-WP-6P-03B-B/R six-contact blocks with drawing-derived models. The owner allowed a taller 210 × 35 opening. The input PCB remains vertical but is now 99 × 32 mm beside panel-supported speaker blocks; separate amplifier wiring is proposed. Current rating, termination and supports are unresolved. The original frame is unchanged: the enlarged opening intersects its two upper fixing holes. Speaker tails also extend below the opening. [A2 record](../../worklog/2026-11-03-speaker-clip-correction.md).
+
+## Historical A1 study
 
 The owner chose a **vertical main PCB and small optical daughterboards**. Main PCB is 228 × 32 × 1.6 mm, with two clearance windows; two horizontal optical boards are each 16 × 24 × 1.6. KiCad 10.0.5 sources contain actual connector pads and models but no circuit nets, schematic or tracks. Logic/LVDS remain deferred. This is not fabrication-ready.
 
 | Qty | Interface | Reference |
 | --- | --- | --- |
-| 6 | Two-pole industrial speaker spring terminal | Phoenix Contact **1732496** |
+| 6 | Rejected industrial speaker terminal | Phoenix Contact **1732496** — replacement pending |
 | 2 | Optical receiver, each on a daughterboard | Cliff **FCR684205R / ORJ5** |
 | 1 | Vertical RCA for coax S/PDIF | Same Sky **RCJ-021** |
 | 1 | Vertical HDMI Type A | Amphenol FCI **10078837-001LF** |
@@ -39,12 +45,12 @@ Source: [A1 work log](../../worklog/2026-11-03-rear-connector-selection.md).
 
 - [Main KiCad project](https://github.com/k3rnL/open-cinema-hardware/tree/main/boards/rear-io)
 - [Optical daughterboard](https://github.com/k3rnL/open-cinema-hardware/tree/main/boards/optical-input)
-- [A1 STEP and drawing exports](https://github.com/k3rnL/open-cinema-hardware/tree/main/boards/rear-io/exports)
+- [A2 STEP and drawing exports](https://github.com/k3rnL/open-cinema-hardware/tree/main/boards/rear-io/exports)
 - [Mechanical coordinates and integration](https://github.com/k3rnL/open-cinema-hardware/blob/main/docs/rear-io-mechanical.md)
-- [A1 verification, exact PCB hashes and limits](https://github.com/k3rnL/open-cinema-hardware/blob/main/docs/verification-A1.md)
+- [A2 verification, exact PCB hashes and limits](https://github.com/k3rnL/open-cinema-hardware/blob/main/docs/verification-A2.md)
 - [Original evidence](https://github.com/k3rnL/open-cinema-hardware/tree/main/mechanical/reference)
 
-Both native boards pass current DRC; the full STEP imports as 88 solid-body instances. No full enclosure interference or electrical/thermal test is claimed. With no circuit nets, zero unconnected items is not proof of functional completeness.
+A2 main-board DRC returns zero violations and its STEP imports as 96 solid-body instances. The unchanged optical child retains its A1 verification. No full enclosure interference or electrical/thermal test is claimed. With no circuit nets, zero unconnected items is not proof of functional completeness.
 
 ## History
 

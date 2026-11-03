@@ -9,6 +9,9 @@ evidence, conclusions, and next steps. Separate observations from interpretation
 
 ## Sessions
 
+- [2026-11-03: Speaker clip correction and A2](2026-11-03-speaker-clip-correction.md)
+- [2026-11-03: A1 connector selection](2026-11-03-rear-connector-selection.md) — speaker choice subsequently rejected.
+
 - [2026-11-03: Hardware repo and KiCad rear I/O mechanical study](2026-11-03-kicad-rear-io-mechanical.md)
 
 - [2026-11-02: Initial resource import](2026-11-02-initial-resource-import.md)

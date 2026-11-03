@@ -18,7 +18,9 @@
 - [ ] Import the current enclosure CAD and mechanical constraints
 - [ ] Confirm exact component variants, power tree, wiring, and cooling design
 - [ ] Design the front panel and select its display, encoder, and power button
-- [x] Select A1 rear audio/speaker connectors and replace KiCad envelopes with part-specific footprints/models
+- [x] Build A1 part-specific audio-input footprints/models and optical daughterboards
+- [x] Replace A1 industrial terminals in the mechanical model with red/black clip candidates (A2)
+- [ ] Qualify speaker-clip current rating/termination, revise conflicting frame fixings and validate full panel fit
 - [ ] Complete back-panel mounting, plate cutouts, daughterboard support/interconnect and sample-fit qualification
 - [ ] Define the input front-end and delegated power/control electronics
 - [ ] Select/document an eARC/ARC receiver and validate multichannel Pi capture,
@@ -40,7 +42,7 @@
 ## Open questions
 
 - KiCad is selected for PCB work and Fusion is used for the enclosure. STEP is
-  the mechanical exchange format; A1 connectors are selected, full assembly fit remains open.
+  the mechanical exchange format; A1 audio-input parts remain selected, speaker replacement and full assembly fit remain open.
 - Which components have acceptable substitutes?
 - How many input boards are required, and which functions and interfaces belong
   on the input and power/control boards?
