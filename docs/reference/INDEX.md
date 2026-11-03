@@ -27,8 +27,8 @@ project knows and link back to decisions, work logs, and original evidence.
 - [Front-panel interface](topics/front-panel-interface.md) — candidate touch screen,
   encoder and power-button requirements, and unstarted local UI.
 - [Rear-panel interface](topics/rear-panel-interface.md) — owner-supplied layout,
-  connector needs, 80 mm height context, fastening candidates and provisional
-  above-PSU board placement.
+  connector needs, 80 mm height context, accepted JLCCNC fastening baseline and
+  provisional above-PSU board placement.
 
 ### Electronics
 
@@ -60,7 +60,9 @@ No unclassified material.
 ## Known gaps
 
 - Enclosure screenshots and orientation are recorded; native CAD, internal height
-  datum, full dimensions, final materials and service clearances remain missing.
+  datum, full dimensions and service clearances remain missing. The rear-panel
+  fastening material/hardware baseline is selected but not CAD- or
+  first-article-verified.
 - The UHP-500 is confirmed as 24 V, but its `R`/non-`R` suffix, the Raspberry Pi
   board revision, and supporting 5 V conversion are not yet confirmed.
 - The purchased Raspberry Pi fan has not been identified by model, mounting, or

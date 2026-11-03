@@ -13,3 +13,8 @@ layout discussion, with original filenames and checksums. Native CAD is still
 missing; use the [rear-panel reference](../../docs/reference/topics/rear-panel-interface.md)
 for requirements and open dimensions.
 
+The rear-panel joint now has an accepted design baseline: see
+[decision 0004](../../docs/decisions/0004-use-jlccnc-rear-panel-fastening.md) and
+the [JLCCNC fabrication guidance](../../manufacturing/rear-panel-fastening.md).
+It remains unreleased until applied to native CAD and checked on a first article.
+

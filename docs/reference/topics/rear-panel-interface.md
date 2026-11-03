@@ -1,15 +1,18 @@
 ---
 title: Rear-panel interface and enclosure layout
-summary: Confirmed rear connector needs and enclosure orientation, with provisional mounting and above-PSU input-board placement.
+summary: Rear layout and connector context, with an accepted JLCCNC-installed self-clinching fastening baseline and provisional above-PSU board placement.
 status: active
 updated: 2026-11-03
-tags: [mechanical, enclosure, rear-panel, connectors, thermal, electronics]
-aliases: [back-panel, rear-input-board, tongues, self-clinching-nuts, pem, s-m3-2zi]
+tags: [mechanical, enclosure, rear-panel, fasteners, connectors, thermal, electronics]
+aliases: [back-panel, rear-input-board, tongues, self-clinching-nuts, pem, jlccnc, s-m3-2, s-m3-2zi]
 sources:
   - docs/worklog/2026-11-03-rear-panel-and-audio-architecture.md
+  - docs/worklog/2026-11-03-jlccnc-rear-panel-fastening.md
   - hardware/mechanical/enclosure-layout/README.md
   - hardware/electronics/notes/rear-input-evidence.md
   - docs/decisions/0003-prefer-earc-and-lvds-input-architecture.md
+  - docs/decisions/0004-use-jlccnc-rear-panel-fastening.md
+  - manufacturing/rear-panel-fastening.md
 ---
 
 # Rear-panel interface and enclosure layout
@@ -28,10 +31,11 @@ the space above the PSU. Its position, dimensions and cutouts are not frozen.
   PSU for connectors**. Whether 80 mm is an outside or internal dimension is
   unresolved. No manufacturing tolerance was supplied. The gross band is not all
   available for PCB height: panels, mounting, bodies, wiring and clearances count.
-- A **2 or 3 mm bottom sheet** is under consideration to help spread PSU heat.
-  Final material/alloy, thickness and thermal contact are not selected.
-- The rear panel is envisaged as laser-cut metal sheet, fastened to the bent
-  mounting tabs/tongues. Its thickness and support geometry remain open.
+- The fastening baseline selects **3.0 mm aluminium 5052** for both the bottom
+  chassis/tongues and removable rear panel. This does not verify PSU thermal
+  spreading or thermal contact.
+- The rear panel remains a laser-cut sheet fastened to bent mounting tongues.
+  The native geometry and support arrangement are not yet in the repository.
 
 Sources: [session record](../../worklog/2026-11-03-rear-panel-and-audio-architecture.md),
 [original enclosure views](../../../hardware/mechanical/enclosure-layout/README.md).
@@ -76,26 +80,29 @@ output topology; do not assume common speaker-negative terminals.
 Sources: [working architecture decision](../../decisions/0003-prefer-earc-and-lvds-input-architecture.md),
 [manufacturer evidence](../../../hardware/electronics/notes/rear-input-evidence.md).
 
-## Fastening candidates retained from the discussion
+## Rear-panel fastening decision
 
-Self-clinching nuts are under consideration; they are not selected for fabrication.
-The manufacturer reference discussed was **PEM S-M3-2ZI**, an M3 x 0.5 zinc-plated
-steel nut for suitable steel/aluminium sheet. PEM specifies minimum sheet
-thickness 1.4 mm, mounting hole diameter **4.22 +0.08/-0 mm**, minimum hole-centre
-to edge distance **4.8 mm**, and sheet hardness at most HRB 80 / HB 150. The `2`
-is a shank code, not a statement that the sheet must be 2 mm thick.
+[Decision 0004](../../decisions/0004-use-jlccnc-rear-panel-fastening.md) selects
+JLCCNC supply and installation of **`S-M3-2` carbon-steel self-clinching nuts**,
+M3 x 0.5, in the 3 mm aluminium 5052 chassis tongues. The JLCCNC mounting-hole
+diameter is **4.25 mm**. Its 4.8 mm minimum hole-centre-to-edge distance is raised
+to a 6 mm design target, with 12 mm minimum and 15 mm preferred tongue width.
 
-Confirm the actual tab alloy/hardness, edge and bend distances, press access,
-installation process and panel loads with the fabricator. Four fixing points were
-the owner's initial idea; additional supports/fixings were discussed but not
-selected. [PEM specification](https://catalog.pemnet.com/item/nuts-types-s-ss-cls-clss-cla-sp/self-clinching-nuts-types-s-ss-cls-clss-sp-metric/s-m3-2zi).
+Install each nut from inside so the rear-facing tongue surface remains flat and
+flush against the panel. The 3 mm rear panel uses nominal 3.8 mm through holes,
+a 90-degree countersink fitted to the selected screw, and **M3 x 8 ISO 10642 or
+DIN 7991 countersunk screws**. M3 x 6 is not retained: it is too marginal across
+the nominal 3 mm panel plus 3 mm tongue stack.
 
-M3 button-head screws (ISO 7380-1) and countersunk screws (ISO 10642) were discussed.
-Screw length is **not selected**: calculate the complete panel/tab/nut stack and
-thread engagement, including washers or gaskets. The earlier M3 x 6 suggestion
-was not a verified fit. A flush countersunk head requires a matching countersink
-operation and suitable sheet thickness; a laser-cut hole alone does not provide
-it. Generic marketplace listings have not been qualified as equivalent parts.
+Use six fixings for a flat unsupported full-width panel. Four are acceptable only
+with equivalent support from a captured cover edge, a stiffening return or a
+representative stiffness test. See the
+[fabrication baseline](../../../manufacturing/rear-panel-fastening.md) for order
+callouts and first-article checks.
+
+This is an accepted but unverified design baseline. JLCCNC stock, bend and press
+access, countersink fit, screw protrusion and assembly tolerance require manual
+DFM review and first-article inspection.
 
 ## Open questions
 
@@ -103,7 +110,9 @@ it. Generic marketplace listings have not been qualified as equivalent parts.
   CAD revision/export; screenshots are not dimensional authority.
 - Receiver/module footprint, connector parts and full insertion/service volumes.
 - Exact speaker count, terminal current/wire ratings and amplifier configuration.
-- Final sheet material, thickness, finish, mounting tabs, fixings and earth bonds.
+- Native tab/support geometry, final finish, JLCCNC DFM confirmation and
+  first-article verification of the selected fastening system. Protective-earth
+  hardware remains a separate design question.
 - Applicability of the manufacturer's adjacent-heat-source guidance, thermal
   derating, closed-enclosure temperatures and EMI behavior under load.
 

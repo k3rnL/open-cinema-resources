@@ -11,6 +11,7 @@
 - [x] Select the 24 V UHP-500 output variant for the amplifier rail
 - [x] Obtain a basic Raspberry Pi cooling fan
 - [x] Archive enclosure layout screenshots and capture rear interface requirements
+- [x] Select the JLCCNC-installed rear-panel fastening baseline
 - [x] Record the working eARC/ARC and I2S-over-LVDS input architecture direction
 - [ ] Import the current enclosure CAD and mechanical constraints
 - [ ] Confirm exact component variants, power tree, wiring, and cooling design
