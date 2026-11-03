@@ -33,7 +33,7 @@ project knows and link back to decisions, work logs, and original evidence.
 ### Electronics
 
 - [Hardware repository and KiCad mechanical PCB](topics/hardware-repository-and-kicad.md)
-  — implementation checkout, rear connector fit study, STEP exports and unselected parts.
+  — A1 selected connectors, vertical carrier, optical daughterboards and STEP exports.
 
 - [Raspberry Pi 5](topics/raspberry-pi-5.md) — selected computer and supported
   appliance target.
@@ -74,11 +74,11 @@ No unclassified material.
 - eARC/ARC receiver selection, documented control/CEC behavior, eight-channel Pi
   capture, supported encoded formats and the LVDS harness are not validated.
 - WM8804 integration and KAB9 input/channel configuration remain unresolved.
-  Six speaker pairs are confirmed; roles and terminal parts remain open.
-- A0 rear PCB shape/placements are a mechanical study with connector envelopes.
-  Actual parts, final plate cutouts, circuitry, front panel and local-screen
-  software remain open. Frame holes (Ø4.5) differ from the nominal Ø3.8 fastening
-  baseline and require reconciliation.
+  Six speaker pairs and A1 terminal references are selected; roles and wiring remain open.
+- A1 has selected connector parts and two optical daughterboards on a vertical carrier.
+  Mounting, plate cutouts/setback, tolerance and service access, circuitry, front panel
+  and local-screen software remain open. Frame CAD reads 2 mm versus the 3 mm
+  fabrication baseline; Ø4.5 frame holes differ from the nominal Ø3.8 baseline.
 - Above-PSU board placement needs thermal, airflow, EMI and mains-separation
   validation, including resolution of manufacturer adjacent-heat-source guidance.
 - The hardware license has not yet been selected.

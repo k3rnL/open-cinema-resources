@@ -18,7 +18,8 @@
 - [ ] Import the current enclosure CAD and mechanical constraints
 - [ ] Confirm exact component variants, power tree, wiring, and cooling design
 - [ ] Design the front panel and select its display, encoder, and power button
-- [ ] Design the back panel and select its connectors and controls
+- [x] Select A1 rear audio/speaker connectors and replace KiCad envelopes with part-specific footprints/models
+- [ ] Complete back-panel mounting, plate cutouts, daughterboard support/interconnect and sample-fit qualification
 - [ ] Define the input front-end and delegated power/control electronics
 - [ ] Select/document an eARC/ARC receiver and validate multichannel Pi capture,
   supported encoded formats, source switching and the LVDS interconnect
@@ -39,15 +40,15 @@
 ## Open questions
 
 - KiCad is selected for PCB work and Fusion is used for the enclosure. STEP is
-  the mechanical exchange format; actual connectors and assembly fit remain open.
+  the mechanical exchange format; A1 connectors are selected, full assembly fit remains open.
 - Which components have acceptable substitutes?
 - How many input boards are required, and which functions and interfaces belong
   on the input and power/control boards?
 - Which exact eARC/ARC receiver, controller and audio formats can be supported
   end to end by the existing software? Does it absorb the WM8804's S/PDIF role?
 - What are the internal height datum, rear gap and connector service volumes?
-  Which six-pair speaker terminals fit? How should the current Ø4.5 frame holes
-  be reconciled with the nominal Ø3.8 fastening baseline?
+  How will A1 terminals and optical modules be supported and accessed? How should the current Ø4.5 frame holes
+  be reconciled with the nominal Ø3.8 fastening baseline, and 2 mm frame CAD with the 3 mm material baseline?
 - How does manufacturer adjacent-heat-source guidance apply to the proposed
   compact PSU/input-board/amplifier arrangement?
 - How should the local touch interface relate to the existing Open Cinema UI?

@@ -6,6 +6,8 @@ updated: 2026-11-03
 tags: [mechanical, enclosure, rear-panel, fasteners, connectors, thermal, electronics]
 aliases: [back-panel, rear-input-board, tongues, self-clinching-nuts, pem, jlccnc, s-m3-2, s-m3-2zi]
 sources:
+  - docs/worklog/2026-11-03-rear-connector-selection.md
+  - docs/decisions/0006-vertical-carrier-and-optical-daughterboards.md
   - docs/worklog/2026-11-03-kicad-rear-io-mechanical.md
   - docs/decisions/0005-use-separate-hardware-repository-and-kicad.md
   - docs/worklog/2026-11-03-rear-panel-and-audio-architecture.md
@@ -25,7 +27,7 @@ The PSU spans the rear of the enclosure; the Pi/electronics stack and amplifier
 are at the front. A compact input board high on the rear panel is proposed within
 the space above the PSU. The owner has drawn a frame for a separate connection
 plate and PCB; a first [KiCad mechanical study](hardware-repository-and-kicad.md)
-is now available. Exact parts, mounting depth and cutouts are not frozen.
+now has A1 selected connectors and optical daughterboards. Mounting depth, cutouts and final qualification remain open.
 
 ## Confirmed owner-supplied context
 
@@ -51,29 +53,24 @@ Sources: [session record](../../worklog/2026-11-03-rear-panel-and-audio-architec
 | --- | --- |
 | Mains cord inlet with power switch (described as 220 V) | 230 V AC nominal application; inlet, fuse, switch and wiring design still open |
 | Two optical inputs | Two TOSLINK/S/PDIF receive inputs |
-| One coaxial input | Coaxial S/PDIF input; exact connector not selected |
+| One coaxial input | Coaxial S/PDIF input; A1 uses Same Sky RCJ-021 |
 | One HDMI ARC input; later priority "most compatible" | eARC plus explicit legacy ARC support is the working architecture target |
 | Speaker spring clips | Owner confirmed six speaker pairs/twelve contacts on 2026-11-03 |
 
 The owner confirmed speaker pairs and audio inputs on the same connector strip
 for A0, evolving the earlier suggestion of separate speaker/input assemblies.
-The mains module remains separate. A0 does not freeze whether one PCB or several
-sub-boards ultimately support the strip. Speaker wiring must preserve the
+The mains module remains separate. A1 keeps a vertical main PCB and adds two small horizontal optical daughterboards, by owner decision. Speaker wiring must preserve the
 amplifier topology; do not assume common speaker-negative terminals.
 
 ## Current frame and mechanical PCB study
 
-The active Fusion sketch measures **210 × 25 mm, R5**, from z 39 to 64 mm,
-centred at 51.5 mm. The frame is 260 × 80 mm in that sketch. A0 proposes a
-**228 × 32 mm**, nominal 1.6 mm PCB and four Ø3.2 mounting holes outside the
-opening. Connectors are padless mechanical envelopes, not selected parts.
+The measured opening remains **210 × 25 mm, R5**, z39…64, in a 260 × 80 frame. A1 keeps a **228 × 32 mm** nominal 1.6 mm vertical main PCB, selected connector footprints/models and two optical daughterboards. [Current parts and implementation](hardware-repository-and-kicad.md).
 
-The frame's six circles currently measure **Ø4.5**, differing from the accepted
-nominal **Ø3.8** through-hole baseline below. The owner's sketch is unchanged.
-The PCB bottom is only 4 mm above the sketch's PSU-top line in projection;
-this does not validate clearance.
+Updated Sketch3 provides two **Ø3 reference points at x−110,z44/59**; the owner has not selected the mounting method. They are drawing graphics only; A0's four proposed PCB drills were removed. The optical module tabs have only 0.5 mm nominal clearance below the opening top.
 
-Source: [KiCad session and evidence](../../worklog/2026-11-03-kicad-rear-io-mechanical.md).
+Frame CAD currently reads **2 mm thick**, conflicting with the 3 mm fabrication baseline. Its six Ø4.5 holes also differ from the nominal Ø3.8 through-hole baseline. Both remain unresolved; the original frame was unchanged. PCB bottom remains 4 mm above the old sketch's PSU-top line in projection, which does not validate clearance.
+
+Source: [A1 connector session](../../worklog/2026-11-03-rear-connector-selection.md), [decision 0006](../../decisions/0006-vertical-carrier-and-optical-daughterboards.md).
 
 ## Proposed placement and constraints
 
@@ -81,7 +78,7 @@ Source: [KiCad session and evidence](../../worklog/2026-11-03-kicad-rear-io-mech
   mounts or dedicated brackets. Avoid using a broad horizontal PCB as a shelf
   covering the PSU's ventilation.
 - The discussed **30-35 mm PCB height** is an initial packaging target only. The
-  receiver/module and connectors may change it; no fit analysis has been done.
+  receiver electronics may change it; A1 checks nominal connector projection only.
 - From outside the rear, the proposed speaker group is toward the amplifier side
   on the left and audio inputs toward the Pi side on the right. Locate the mains
   assembly near the PSU's actual AC-terminal end; that end has not been verified
@@ -128,9 +125,8 @@ DFM review and first-article inspection.
 
 - Internal height datum, overall width/depth, actual PSU-to-panel gap and native
   CAD revision/export; screenshots are not dimensional authority.
-- Receiver/module footprint, connector parts and full insertion/service volumes.
-- Six speaker pairs are confirmed; terminal parts/current/wire ratings and
-  amplifier channel roles remain open.
+- Receiver/module circuitry, final footprint qualification and full insertion/service volumes.
+- Six pairs use Phoenix 1732496 for A1; wire/tool access, PCB current design and amplifier channel roles remain open.
 - Native tab/support geometry, final finish, JLCCNC DFM confirmation and
   first-article verification of the selected fastening system. Protective-earth
   hardware remains a separate design question.

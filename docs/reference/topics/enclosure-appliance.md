@@ -6,6 +6,8 @@ updated: 2026-11-03
 tags: [architecture, enclosure, mechanical, electronics, thermal]
 aliases: [case, chassis, appliance-enclosure]
 sources:
+  - docs/worklog/2026-11-03-rear-connector-selection.md
+  - docs/decisions/0006-vertical-carrier-and-optical-daughterboards.md
   - docs/worklog/2026-11-03-kicad-rear-io-mechanical.md
   - docs/decisions/0001-initial-enclosure-components.md
   - docs/decisions/0002-select-24v-main-supply.md
@@ -25,7 +27,7 @@ The physical enclosure effort has started. The initial major component set is
 selected. Owner-supplied enclosure views and rear interface requirements are now
 recorded. A rear input board and LVDS link are the working audio architecture;
 a measured rear-frame sketch and KiCad mechanical PCB study are available in
-hardware. Full assembly integration, connector parts, circuitry, power distribution,
+hardware with A1 selected connectors and optical daughterboards. Full assembly integration, circuitry, power distribution,
 cooling and safety implementation remain open.
 
 ## Confirmed facts
@@ -48,8 +50,7 @@ cooling and safety implementation remain open.
   The Waveshare 7.9inch DSI LCD is a candidate, not a selected part.
 - The back-panel interface requirements and enclosure orientation are captured in
   the [rear-panel topic](rear-panel-interface.md), with original screenshots.
-  The PSU spans the rear; the Pi and amplifier are at the front. Exact rear-panel
-  parts and manufacturing dimensions are not selected.
+  The PSU spans the rear; the Pi and amplifier are at the front. A1 connector references are selected for integration; final manufacturing dimensions remain open.
 - The appliance needs at least one input front-end board and a power/control board
   for delegated functions. The [digital-input working direction](digital-audio-input.md)
   targets eARC/ARC and multichannel I2S over LVDS; power/control electronics and
@@ -96,9 +97,7 @@ cooling and safety implementation remain open.
   the Raspberry Pi and the accepted software audio path?
 - Which front-panel display, encoder, and power button will be selected, and what
   cutouts, mounting, and service access do they require?
-- Which exact rear connector parts, cutouts, labels and mounting details implement
-  the captured requirements? Six speaker pairs are now confirmed; their roles
-  and terminal parts remain open.
+- Which cutouts, labels, support and mounting details qualify the A1 connector selection? Six speaker pairs are confirmed; channel roles remain open.
 - Can the above-PSU input-board location satisfy manufacturer guidance and actual
   thermal, EMI, mains-separation and maintenance requirements?
 - How many input boards are needed, which input functions belong on them, and

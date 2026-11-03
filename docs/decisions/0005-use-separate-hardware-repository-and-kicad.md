@@ -21,5 +21,7 @@ The A0 board size, hole pattern and connector envelopes are proposals, not a
 selection of commercial connectors or approval of final plate cutouts, mounting
 depth, circuitry or fabrication. Existing resource artifacts remain in place.
 
+Later evolution: [0006](0006-vertical-carrier-and-optical-daughterboards.md) keeps the vertical carrier, selects A1 connectors and uses optical daughterboards; it supersedes A0 envelopes and proposed PCB holes.
+
 Evidence: [session](../worklog/2026-11-03-kicad-rear-io-mechanical.md),
 [hardware repository](https://github.com/k3rnL/open-cinema-hardware).
