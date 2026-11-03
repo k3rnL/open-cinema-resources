@@ -2,6 +2,8 @@
 
 2026-11-03.
 
+**Historical A2:** subsequently rejected for downward pins near the PSU. See [A3 correction](2026-11-03-straight-speaker-terminals.md); the actual updated opening also supersedes the upper-hole conflict below.
+
 The owner rejected A1's industrial speaker terminals and supplied a [photo of conventional red/black clips](../../hardware/electronics/notes/speaker-clips-owner-reference.png). The owner then allowed increasing the opening from 210 × 25 to about 210 × 35 mm upward. [Decision 0007](../decisions/0007-use-conventional-speaker-clips.md).
 
 A2 uses two KLS **L-KLS1-WP-6P-03B-B/R** blocks as mechanical candidates: 52 × 30 front size each, six contacts each, twelve independent contacts total. They are panel-supported mechanical instances in KiCad with project-authored models derived from the manufacturer's V1 drawing. No fake main-PCB solder pads were added for the right-angle tails. Direct insulated wiring to the amplifier is proposed; support, strain relief and termination remain open.

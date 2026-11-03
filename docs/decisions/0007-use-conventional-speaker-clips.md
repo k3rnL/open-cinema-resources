@@ -3,6 +3,7 @@
 - Date: 2026-11-03
 - Status: Accepted style correction and taller-opening allowance; replacement mechanically evaluated, not electrically qualified
 - Owner: @k3rnL
+- Partially superseded by: [0008](0008-require-straight-speaker-terminals.md), which rejects A2 downward tails and records the actual 220 × 35 opening. The red/black clip style remains accepted.
 - Supersedes: speaker-terminal selection only in [0006](0006-vertical-carrier-and-optical-daughterboards.md)
 
 The owner rejected the Phoenix Contact 1732496 terminals chosen for A1 and supplied a [reference photograph](../../hardware/electronics/notes/speaker-clips-owner-reference.png). The required interface is conventional **red/black finger-operated speaker spring clips**, like the panel strips shown. Industrial screwdriver-operated spring terminals do not meet this requirement.

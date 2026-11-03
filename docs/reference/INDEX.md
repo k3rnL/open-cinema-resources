@@ -33,7 +33,7 @@ project knows and link back to decisions, work logs, and original evidence.
 ### Electronics
 
 - [Hardware repository and KiCad mechanical PCB](topics/hardware-repository-and-kicad.md)
-  — A2 red/black speaker clips beside a vertical input PCB; current rating and frame fit unresolved.
+  — A3 straight-pin red/black speaker clips on a vertical PCB; 220 × 35 opening, current rating and full fit unqualified.
 
 - [Raspberry Pi 5](topics/raspberry-pi-5.md) — selected computer and supported
   appliance target.
@@ -74,8 +74,8 @@ No unclassified material.
 - eARC/ARC receiver selection, documented control/CEC behavior, eight-channel Pi
   capture, supported encoded formats and the LVDS harness are not validated.
 - WM8804 integration and KAB9 input/channel configuration remain unresolved.
-  Six speaker pairs require conventional red/black clips; the A1 industrial terminals were rejected. A2 evaluates KLS six-contact blocks; current rating, roles and wiring remain open.
-- A2 preserves audio-input parts/optical daughterboards on a shortened vertical PCB. The allowed taller opening intersects original upper frame holes; speaker tails, mounting and current rating remain unresolved.
+  Six pairs require conventional red/black clips without downward pins. A1 industrial terminals and A2 downward tails are rejected. A3 evaluates Dragon City PT-603B; current rating, supply and wiring remain open.
+- A3 retains audio inputs/optical daughterboards on a 228 × 32 vertical PCB. The measured 220 × 35 opening at z34…69 resolves A2's assumed upper-hole conflict. Straight speaker pins point behind the board; actual PSU clearance and production footprint remain unverified.
   Mounting, plate cutouts/setback, tolerance and service access, circuitry, front panel
   and local-screen software remain open. Frame CAD reads 2 mm versus the 3 mm
   fabrication baseline; Ø4.5 frame holes differ from the nominal Ø3.8 baseline.
