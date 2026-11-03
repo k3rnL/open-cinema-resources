@@ -6,6 +6,7 @@ updated: 2026-11-03
 tags: [manufacturing, procurement, connectors, jlcpcb]
 aliases: [aliexpress, global-sourcing, pre-order, stock, bom, c7159430, c4992555, wp6-03, fe6930, spare-pairs]
 sources:
+  - docs/worklog/2026-11-03-a10-electrical-draft.md
   - docs/decisions/0011-horizontal-pcb-with-all-connectors.md
   - docs/worklog/2026-11-03-horizontal-rear-io-A8.md
   - docs/decisions/0010-select-cliff-fe6930-and-two-spare-pairs.md
@@ -35,3 +36,7 @@ This supersedes the PT-603B mechanical candidate with unresolved current rating/
 Do not equate distributor stock with confirmed JLC availability, or count a **Consign Parts**/virtual catalogue entry as stock. JLC sourcing is for subsequent PCBA, not loose-part delivery. A6/A7 proposed a separate JLC3DP/custom optical cradle; A8 no longer uses it. No sourcing requests, orders or reservations have been placed.
 
 Related: [hardware implementation](hardware-repository-and-kicad.md), [rear panel](rear-panel-interface.md).
+
+## A10 electrical draft update
+
+See the [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md). A separate KiCad schematic and rigid integration model now exist. CS8416K is the draft optical/coax choice, with documented source selection and LVDS circuitry. eARC remains unresolved; no order-ready BOM or manufacturing release exists. Prior WM8804 and connector records remain historical evidence.

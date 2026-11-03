@@ -28,7 +28,9 @@
 - [x] Audit connector sourcing and record permission to use outside suppliers
 - [ ] Owner to design backplate and L brackets; then verify plate cutouts, cable insertion, tolerances, loads and temperatures
 - [ ] Integrate the recommended DC11 mains inlet: resolve panel thickness, reserve its mounting/wiring volume, and design protection/earth bonding; [selection evidence](docs/worklog/2026-11-03-compact-mains-inlet.md)
-- [ ] Define the input front-end and delegated power/control electronics
+- [x] Draft and statically review optical/coax selection and LVDS electronics in separate A10; [scope and limitations](docs/worklog/2026-11-03-a10-electrical-draft.md)
+- [ ] Obtain full eARC design documentation, complete HDMI circuitry, protection, routing, harness/HAT and bench verification
+- [ ] Define delegated power/control electronics
 - [ ] Reserve rear-board control/status connections; later design the Pi connection HAT and implement GPIO-header source control; [decision 0013](docs/decisions/0013-pi-source-control-and-future-hat.md)
 - [ ] Qualify eARC/ARC extraction, lossless/Atmos payload transport, source selection and LVDS-to-Pi capture; [requirement and responsibility boundary 0012](docs/decisions/0012-require-lossless-audio-and-atmos.md)
 - [ ] Separately extend Pi audio processing for the required lossless/Atmos formats and validate 5.1→7.1 output mapping; no decoder/renderer is planned on the rear PCB

@@ -32,3 +32,5 @@ evidence, conclusions, and next steps. Separate observations from interpretation
 
 
 - [2026-11-03: Remove backplate and L brackets from PCB model](2026-11-03-remove-plate-and-brackets-A9.md)
+
+- [2026-11-03 — A10 electrical draft, two reviews and receiver-status memory](2026-11-03-a10-electrical-draft.md)

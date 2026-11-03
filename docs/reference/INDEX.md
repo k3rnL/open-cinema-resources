@@ -31,8 +31,10 @@ project knows and link back to decisions, work logs, and original evidence.
 
 ### Electronics
 
+- [Audio receiver control and status](topics/audio-receiver-control-status.md) — accepted lock/carrier-rate/format meanings, source switching and unchanged-payload boundary.
+
 - [Hardware repository and KiCad mechanical PCB](topics/hardware-repository-and-kicad.md)
-  — A9 exports the horizontal PCB and connectors only; owner designs plate/brackets; speaker qualification open.
+  — A10 adds a separate electrical draft and rigid export; HDMI remains unresolved and the board is unrouted. A9 remains the mechanical baseline.
 
 - [Raspberry Pi 5](topics/raspberry-pi-5.md) — selected computer and supported
   appliance target.
@@ -73,7 +75,7 @@ No unclassified material.
   verified thermal performance.
 - eARC/ARC receiver selection, documented control/CEC behavior, eight-channel Pi
   capture, supported encoded formats and the LVDS harness are not validated.
-- WM8804 integration and KAB9 channel configuration remain unresolved. USB is the
+- A10 proposes CS8416K for optical/coax reception; WM8804 history is retained. Full eARC documentation, routing/protection and KAB9 channel configuration remain unresolved. USB is the
   selected Pi-to-amplifier interface; its actual module/mapping still needs validation.
   Six working pairs now solder to one horizontal board along with the audio inputs. A8's KLS speaker candidate has unverified current rating/supply. Tails point upward; optical daughterboards/cradle are historical.
 - A9 keeps the PCB holes but removes the provisional plate and supports; the owner designs those parts. The owner enlarged the opening to 250 × 51 mm; A9 PCB geometry remains unchanged. Current assembled setback needs correction before rechecking clearance; tight plate/PCB gaps, cable mating, hardware, tolerances and production qualification remain open. Frame CAD reads2 mm versus the3 mm fabrication baseline; Ø4.5 frame holes differ from nominal Ø3.8.

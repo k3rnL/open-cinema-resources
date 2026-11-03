@@ -1,11 +1,12 @@
 ---
 title: Hardware repository and KiCad connector assembly
-summary: A9 delivers the horizontal PCB and connectors only; the owner designs the backplate and L brackets. Speaker qualification remains open.
+summary: A10 adds an unrouted optical/coax, selection and LVDS draft with a rigid model; eARC remains incomplete. A9 is the mechanical baseline.
 status: active
 updated: 2026-11-03
 tags: [hardware, repository, kicad, pcb, connectors, mechanical]
-aliases: [open-cinema-hardware, kikad, connector-board, connection-plate, rear-io, a0, a1, a2, a3, a7, a8, a9, horizontal, inverted, kls, fe6930, spare-pairs, daughterboard, pt-603b, straight-pins, surface-mount, fcr684205r, rcj-021, 10078837-001lf]
+aliases: [open-cinema-hardware, kikad, connector-board, connection-plate, rear-io, a0, a1, a2, a3, a7, a8, a9, a10, cs8416, horizontal, inverted, kls, fe6930, spare-pairs, daughterboard, pt-603b, straight-pins, surface-mount, fcr684205r, rcj-021, 10078837-001lf]
 sources:
+  - docs/worklog/2026-11-03-a10-electrical-draft.md
   - docs/worklog/2026-11-03-remove-plate-and-brackets-A9.md
   - docs/decisions/0011-horizontal-pcb-with-all-connectors.md
   - docs/worklog/2026-11-03-horizontal-rear-io-A8.md
@@ -25,7 +26,7 @@ sources:
 
 [open-cinema-hardware](https://github.com/k3rnL/open-cinema-hardware) owns editable PCB sources; resources owns memory. Both repositories live in `Documents/Open Cinema`.
 
-## Current A9 export / A8 PCB layout
+## A9 mechanical baseline / A8 PCB layout
 
 The owner requested a **horizontal PCB with all connectors soldered directly to it**, including conventional speaker clips. This supersedes the vertical carrier and optical daughterboards. Six working pairs remain required; two spares are allowed but are not required. [Decision 0011](../../decisions/0011-horizontal-pcb-with-all-connectors.md).
 
@@ -50,3 +51,7 @@ Sources: [A8 session with exact implementation revision](../../worklog/2026-11-0
 A7 used two7 A FE6930 blocks on a vertical board with supported optical daughterboards. Its exact source revision and verification remain in the [A7 log](../../worklog/2026-11-03-fe6930-speaker-connectors.md). The [A6 cradle](../../worklog/2026-11-03-rigid-fusion-and-optical-support.md), [A3 straight-pin correction](../../worklog/2026-11-03-straight-speaker-terminals.md), [A2 clip experiment](../../worklog/2026-11-03-speaker-clip-correction.md) and [A1 selection](../../worklog/2026-11-03-rear-connector-selection.md) remain historical evidence. Current orientation is governed by0011.
 
 Related: [rear panel](rear-panel-interface.md), [digital audio/LVDS](digital-audio-input.md).
+
+## A10 electrical draft update
+
+See the [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md). A separate KiCad schematic and rigid integration model now exist. CS8416K is the draft optical/coax choice, with documented source selection and LVDS circuitry. eARC remains unresolved; no order-ready BOM or manufacturing release exists. Prior WM8804 and connector records remain historical evidence.

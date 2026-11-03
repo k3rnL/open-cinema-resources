@@ -6,6 +6,7 @@ updated: 2026-11-03
 tags: [electronics, audio, inputs, earc, arc, spdif, i2s, lvds]
 aliases: [input-board, hdmi-audio-extraction, differential-i2s, rear-to-pi, ds90lv047a, ds90lv048a]
 sources:
+  - docs/worklog/2026-11-03-a10-electrical-draft.md
   - docs/decisions/0013-pi-source-control-and-future-hat.md
   - docs/decisions/0012-require-lossless-audio-and-atmos.md
   - docs/worklog/2026-11-03-enlarged-enclosure-and-input-architecture.md
@@ -54,6 +55,10 @@ the relevant interface functions, but is not a selected or validated part.
 [Decision 0013](../../decisions/0013-pi-source-control-and-future-hat.md) confirms Pi-controlled source selection through the GPIO header and a future custom connection HAT. Custom control software is deferred. The proposed HAT would incorporate the LVDS receiver adapter; exact bus, pins, circuitry and harness remain open. Reserve a control/status connection alongside the audio link, with readback and source-change handling to be defined from the selected receiver.
 
 The unchanged captured payload feeds pcm-auto-decoder on the Pi, followed by the Pi audio processing pipeline. Processed audio leaves the Pi over USB to the amplifier. Source selection/control is separate from audio payload transport.
+
+## A10 implementation draft
+
+The [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md) records the first separate electrical schematic: CS8416K optical/coax receiver, logic muxes, LVDS drivers and Pi control. **HDMI/eARC remains unwired and the PCB is unrouted.** The two static review passes do not qualify the full audio path. Canonical [lock/rate/format definitions](audio-receiver-control-status.md) are now saved.
 
 ## Candidate transport implementation
 
@@ -111,8 +116,7 @@ the input controller and Linux integration do.
   cannot be the common link for uncompressed eARC 5.1/7.1 PCM.
 - The [WM8804](wm8804.md) is an S/PDIF interface, not an eARC or Dolby/DTS decoder.
   Its single receiver input requires selection for multiple S/PDIF sources. A
-  future HDMI receiver may absorb some of that function; no replacement decision
-  has been made.
+  future HDMI receiver may absorb some of that function; A10 uses CS8416K as a draft alternative, not a released replacement.
 - Preserve encoded payloads unchanged before software decoding. PCM capture,
   IEC 61937 handling and higher-bit-rate compressed formats are separate
   validation cases. Do not advertise formats merely because the HDMI chip can
@@ -141,8 +145,7 @@ Sources: [manufacturer evidence register](../../../hardware/electronics/notes/re
 - [Manufacturer sources](../../../hardware/electronics/notes/rear-input-evidence.md)
 - The original architecture discussion produced no schematic, PCB, physical prototype, timing measurement or new capture test.
 - A later [KiCad mechanical PCB study](hardware-repository-and-kicad.md)
-  now provides A1 selected connectors, real pads and optical daughterboards. Logic/LVDS circuitry and
-  electrical validation remain deferred; it does not validate this architecture.
+  now provides A1 selected connectors, real pads and optical daughterboards. A10 later adds draft logic/LVDS circuitry; physical electrical validation remains deferred.
 
 ## Related
 
