@@ -8,6 +8,7 @@ record with status `Supersedes` and link the earlier record rather than erasing 
 
 ## Records
 
+- [0010: Select Cliff FE6930 and allow two spare pairs](0010-select-cliff-fe6930-and-two-spare-pairs.md) — accepted fit-model selection; production qualification pending.
 - [0009: Prefer JLCPCB, permit external suppliers](0009-prefer-jlcpcb-allow-external-parts.md) — accepted sourcing policy; no order placed.
 - [0008: Straight speaker terminals](0008-require-straight-speaker-terminals.md) — accepted pin-direction constraint.
 

@@ -33,7 +33,7 @@ project knows and link back to decisions, work logs, and original evidence.
 ### Electronics
 
 - [Hardware repository and KiCad mechanical PCB](topics/hardware-repository-and-kicad.md)
-  — A6 adds rigid Fusion files and a bolted optical cradle prototype; four alignment holes retained, speaker supply/current and full fit unqualified.
+  — A7 selects Cliff FE6930 with two spare pairs; rigid Fusion movement and four alignment holes verified, production fit open.
 
 - [Raspberry Pi 5](topics/raspberry-pi-5.md) — selected computer and supported
   appliance target.
@@ -52,7 +52,7 @@ project knows and link back to decisions, work logs, and original evidence.
 
 ### Manufacturing and assembly
 
-- [Component sourcing and JLCPCB](topics/component-sourcing.md) — JLCPCB preferred; Global Sourcing/pre-order and outside suppliers allowed; exact speaker qualification unresolved.
+- [Component sourcing and JLCPCB](topics/component-sourcing.md) — JLCPCB preferred; Global Sourcing/pre-order and outside suppliers allowed; FE6930 supplier identified; physical/production qualification open.
 
 ### Verification and testing
 
@@ -76,8 +76,8 @@ No unclassified material.
 - eARC/ARC receiver selection, documented control/CEC behavior, eight-channel Pi
   capture, supported encoded formats and the LVDS harness are not validated.
 - WM8804 integration and KAB9 input/channel configuration remain unresolved.
-  Six pairs require conventional red/black clips without downward pins. A1 industrial terminals and A2 downward tails are rejected. A3 evaluates Dragon City PT-603B; current rating, supply and wiring remain open.
-- A6 retains audio inputs/optical daughterboards on a 228 × 32 vertical PCB and adds a bolted cradle prototype; support fit/load/temperature and wiring remain unverified. The measured 220 × 35 opening at z34…69 resolves A2's assumed upper-hole conflict. Straight speaker pins point behind the board; actual PSU clearance and production footprint remain unverified.
+  Six working pairs plus two owner-approved spare pairs use conventional red/black Cliff FE6930 clips with straight pins. A7 supersedes PT-603B; sample/production qualification and wiring remain open.
+- A7 retains audio inputs/optical daughterboards on a 228 × 32 vertical PCB and retains a shifted bolted cradle prototype; support fit/load/temperature and wiring remain unverified. The measured 220 × 35 opening at z34…69 resolves A2's assumed upper-hole conflict. Straight speaker pins point behind the board; actual PSU clearance and production footprint remain unverified.
   Mounting, plate cutouts/setback, tolerance and service access, circuitry, front panel
   and local-screen software remain open. Frame CAD reads 2 mm versus the 3 mm
   fabrication baseline; Ø4.5 frame holes differ from the nominal Ø3.8 baseline.

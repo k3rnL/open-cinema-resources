@@ -21,7 +21,8 @@
 - [x] Build A1 part-specific audio-input footprints/models and optical daughterboards
 - [x] Replace A1 industrial terminals in the mechanical model with red/black clip candidates (A2)
 - [x] Replace rejected downward speaker tails with straight rear-facing pins in the A3 fit study; record measured 220 × 35 opening
-- [ ] Qualify PT-603B current rating, supply, sample geometry, termination and full panel fit
+- [x] Select 7 A Cliff FE6930 blocks, accept two spare pairs and verify the revised A7 nominal layout
+- [ ] Qualify FE6930 sample geometry, production slots, termination, attachment and full panel fit
 - [x] Add A6 rigid Fusion integration files and a bolted optical-cradle prototype
 - [x] Audit connector sourcing and record permission to use outside suppliers
 - [ ] Complete back-panel mounting, plate cutouts, optical-cradle fit/load/temperature qualification, daughterboard interconnect and sample-fit checks
@@ -45,7 +46,7 @@
 ## Open questions
 
 - KiCad is selected for PCB work and Fusion is used for the enclosure. STEP is
-  the mechanical exchange format; A1 audio-input parts remain selected, speaker replacement and full assembly fit remain open.
+  the mechanical exchange format; A1 audio-input parts remain selected, FE6930 speaker selection is accepted; full assembly fit remains open.
 - Which components have acceptable substitutes?
 - How many input boards are required, and which functions and interfaces belong
   on the input and power/control boards?

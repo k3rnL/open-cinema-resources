@@ -15,3 +15,5 @@ The 210 × 25 mm opening constrains conventional clip packaging. A wider single 
 See [research and implementation status](https://github.com/k3rnL/open-cinema-hardware/blob/main/docs/speaker-clips-correction.md). Candidate KLS L-KLS1-WP-6P-03B-B/R is compact but its operating current rating and termination remain unresolved. The taller opening intersects original top frame fixings; speaker tails extend below the opening. These require mechanical resolution before cutting or ordering. Do not confuse a candidate with a qualified part.
 
 Evidence: owner message and photograph supplied in this session. Original image manufacturer/model is unknown; it establishes requested style only.
+
+A7 follow-up: [decision 0010](0010-select-cliff-fe6930-and-two-spare-pairs.md) selects Cliff FE6930 and permits two spare pairs; the conventional-clip requirement remains active.
