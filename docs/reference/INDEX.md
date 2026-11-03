@@ -28,7 +28,7 @@ project knows and link back to decisions, work logs, and original evidence.
   encoder and power-button requirements, and unstarted local UI.
 - [Rear-panel interface](topics/rear-panel-interface.md) — owner-supplied layout,
   connector needs, 80 mm height context, accepted JLCCNC fastening baseline and
-  provisional above-PSU board placement.
+  provisional above-PSU board placement, and a compact switched mains-inlet recommendation awaiting integration.
 
 ### Electronics
 

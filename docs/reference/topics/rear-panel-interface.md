@@ -6,6 +6,7 @@ updated: 2026-11-03
 tags: [mechanical, enclosure, rear-panel, fasteners, connectors, thermal, electronics]
 aliases: [back-panel, rear-input-board, tongues, self-clinching-nuts, pem, jlccnc, s-m3-2, s-m3-2zi]
 sources:
+  - docs/worklog/2026-11-03-compact-mains-inlet.md
   - docs/worklog/2026-11-03-remove-plate-and-brackets-A9.md
   - docs/decisions/0011-horizontal-pcb-with-all-connectors.md
   - docs/worklog/2026-11-03-horizontal-rear-io-A8.md
@@ -56,7 +57,7 @@ Sources: [session record](../../worklog/2026-11-03-rear-panel-and-audio-architec
 
 | Owner request | Current interpretation/status |
 | --- | --- |
-| Mains cord inlet with power switch (described as 220 V) | 230 V AC nominal application; inlet, fuse, switch and wiring design still open |
+| Mains cord inlet with power switch (described as 220 V) | DC11 snap-in C14/two-pole module recommended; panel-thickness variant and placement/protection need finalization; see current mains note below |
 | Two optical inputs | Two TOSLINK/S/PDIF receive inputs |
 | One coaxial input | Coaxial S/PDIF input; A8 uses horizontal Same Sky RCJ-011 |
 | One HDMI ARC input; later priority "most compatible" | eARC plus explicit legacy ARC support is the working architecture target |
@@ -151,3 +152,7 @@ DFM review and first-article inspection.
 ## A9 model scope correction
 
 The owner will design the connection backplate and L brackets. The current PCB export contains only PCB and connectors, retaining its four PCB mounting holes. Earlier plate/support solids and their vertical alignment holes are historical. [A9 record](../../worklog/2026-11-03-remove-plate-and-brackets-A9.md).
+
+## Compact mains inlet recommendation
+
+The [mains selection record](../../worklog/2026-11-03-compact-mains-inlet.md) recommends SCHURTER DC11.0001.301 for the current 2 mm panel, with thickness-specific alternatives. This is a component recommendation, not a validated placement or owner-approved layout change. The read-only current model confirms the PSU reaches the rear frame below z35; the existing upper connector region needs a dedicated mains bay and a fresh fit/separation check. Mains remains separate from the audio PCB. Fuse selection, insulated wiring and protective-earth bonding remain open.

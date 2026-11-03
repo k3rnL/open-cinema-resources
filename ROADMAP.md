@@ -27,6 +27,7 @@
 - [x] Add A6 rigid Fusion integration files and a bolted optical-cradle prototype
 - [x] Audit connector sourcing and record permission to use outside suppliers
 - [ ] Owner to design backplate and L brackets; then verify plate cutouts, cable insertion, tolerances, loads and temperatures
+- [ ] Integrate the recommended DC11 mains inlet: resolve panel thickness, reserve its mounting/wiring volume, and design protection/earth bonding; [selection evidence](docs/worklog/2026-11-03-compact-mains-inlet.md)
 - [ ] Define the input front-end and delegated power/control electronics
 - [ ] Select/document an eARC/ARC receiver and validate multichannel Pi capture,
   supported encoded formats, source switching and the LVDS interconnect
