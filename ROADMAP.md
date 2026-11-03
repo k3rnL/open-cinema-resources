@@ -13,6 +13,8 @@
 - [x] Archive enclosure layout screenshots and capture rear interface requirements
 - [x] Select the JLCCNC-installed rear-panel fastening baseline
 - [x] Record the working eARC/ARC and I2S-over-LVDS input architecture direction
+- [x] Create a separate hardware repo and KiCad rear connector mechanical study,
+  with the measured rear-frame opening and STEP review exports
 - [ ] Import the current enclosure CAD and mechanical constraints
 - [ ] Confirm exact component variants, power tree, wiring, and cooling design
 - [ ] Design the front panel and select its display, encoder, and power button
@@ -36,15 +38,16 @@
 
 ## Open questions
 
-- Which CAD and electronics tools are authoritative?
-- Which exports are required for collaborators without the source tools?
+- KiCad is selected for PCB work and Fusion is used for the enclosure. STEP is
+  the mechanical exchange format; actual connectors and assembly fit remain open.
 - Which components have acceptable substitutes?
 - How many input boards are required, and which functions and interfaces belong
   on the input and power/control boards?
 - Which exact eARC/ARC receiver, controller and audio formats can be supported
   end to end by the existing software? Does it absorb the WM8804's S/PDIF role?
-- What are the internal height datum, rear gap, connector service volumes and
-  meaning of the requested six speaker connections?
+- What are the internal height datum, rear gap and connector service volumes?
+  Which six-pair speaker terminals fit? How should the current Ø4.5 frame holes
+  be reconciled with the nominal Ø3.8 fastening baseline?
 - How does manufacturer adjacent-heat-source guidance apply to the proposed
   compact PSU/input-board/amplifier arrangement?
 - How should the local touch interface relate to the existing Open Cinema UI?

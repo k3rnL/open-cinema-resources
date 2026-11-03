@@ -20,6 +20,11 @@ Use this guide when ingesting or relocating project information.
 
 ## Placement principles
 
+Since decision 0005, new editable PCB work and its mechanical integration exports
+belong in the sibling `open-cinema-hardware` repository. Keep memory and existing
+reference artifacts in resources; link to exact hardware files or commits.
+Do not relocate historical evidence merely to match the new split.
+
 - Keep an original artifact in one canonical location. Link to it elsewhere.
 - Prefer editable sources. Keep exports when they materially help review,
   interoperability, fabrication, or verification.

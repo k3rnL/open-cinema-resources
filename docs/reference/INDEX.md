@@ -32,6 +32,9 @@ project knows and link back to decisions, work logs, and original evidence.
 
 ### Electronics
 
+- [Hardware repository and KiCad mechanical PCB](topics/hardware-repository-and-kicad.md)
+  — implementation checkout, rear connector fit study, STEP exports and unselected parts.
+
 - [Raspberry Pi 5](topics/raspberry-pi-5.md) — selected computer and supported
   appliance target.
 - [WM8804 S/PDIF transceiver](topics/wm8804.md) — selected digital-audio interface
@@ -59,8 +62,9 @@ No unclassified material.
 
 ## Known gaps
 
-- Enclosure screenshots and orientation are recorded; native CAD, internal height
-  datum, full dimensions and service clearances remain missing. The rear-panel
+- Enclosure screenshots and orientation are recorded; a measured rear-frame sketch
+  snapshot and KiCad placement study are now in hardware. Full assembly CAD,
+  internal height datum and service clearances remain missing. The rear-panel
   fastening material/hardware baseline is selected but not CAD- or
   first-article-verified.
 - The UHP-500 is confirmed as 24 V, but its `R`/non-`R` suffix, the Raspberry Pi
@@ -69,10 +73,12 @@ No unclassified material.
   verified thermal performance.
 - eARC/ARC receiver selection, documented control/CEC behavior, eight-channel Pi
   capture, supported encoded formats and the LVDS harness are not validated.
-- WM8804 integration and KAB9 input/channel configuration remain unresolved; confirm
-  whether the requested six speaker connections mean six pairs.
-- Front/rear panel cutouts, connectors, auxiliary PCBs and local-screen software
-  remain undesigned despite the captured requirements and working architecture.
+- WM8804 integration and KAB9 input/channel configuration remain unresolved.
+  Six speaker pairs are confirmed; roles and terminal parts remain open.
+- A0 rear PCB shape/placements are a mechanical study with connector envelopes.
+  Actual parts, final plate cutouts, circuitry, front panel and local-screen
+  software remain open. Frame holes (Ø4.5) differ from the nominal Ø3.8 fastening
+  baseline and require reconciliation.
 - Above-PSU board placement needs thermal, airflow, EMI and mains-separation
   validation, including resolution of manufacturer adjacent-heat-source guidance.
 - The hardware license has not yet been selected.

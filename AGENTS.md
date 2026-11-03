@@ -3,6 +3,10 @@
 ## Purpose
 
 Maintain the public hardware resources and durable project memory for Open Cinema.
+New editable PCB implementation lives in the sibling `../open-cinema-hardware`
+checkout. Both repositories live in `Documents/Open Cinema`. Keep existing
+reference artifacts here and link implementation revisions rather than duplicating
+the hardware repository's sources.
 
 ## Working agreements
 

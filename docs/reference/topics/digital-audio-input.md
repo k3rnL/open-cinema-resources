@@ -6,6 +6,7 @@ updated: 2026-11-03
 tags: [electronics, audio, inputs, earc, arc, spdif, i2s, lvds]
 aliases: [input-board, hdmi-audio-extraction, differential-i2s, rear-to-pi, ds90lv047a, ds90lv048a]
 sources:
+  - docs/worklog/2026-11-03-kicad-rear-io-mechanical.md
   - docs/decisions/0003-prefer-earc-and-lvds-input-architecture.md
   - docs/worklog/2026-11-03-rear-panel-and-audio-architecture.md
   - hardware/electronics/notes/rear-input-evidence.md
@@ -124,6 +125,9 @@ Sources: [manufacturer evidence register](../../../hardware/electronics/notes/re
 - [Manufacturer sources](../../../hardware/electronics/notes/rear-input-evidence.md)
 - No schematic, PCB, physical prototype, timing measurement or new capture test
   was produced during this discussion.
+- A later [KiCad mechanical PCB study](hardware-repository-and-kicad.md) now
+  provides an outline and connector envelopes. Logic/LVDS circuitry and
+  electrical validation remain deferred; it does not validate this architecture.
 
 ## Related
 

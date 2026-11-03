@@ -8,6 +8,9 @@ record with status `Supersedes` and link the earlier record rather than erasing 
 
 ## Records
 
+- [0005: Separate hardware repository and KiCad](0005-use-separate-hardware-repository-and-kicad.md)
+  — accepted organization and mechanical-study scope; component selection deferred.
+
 - [0001: Initial enclosure main components](0001-initial-enclosure-components.md) — accepted.
 - [0002: Select the 24 V main supply](0002-select-24v-main-supply.md) — accepted.
 - [0003: Prefer eARC/ARC and LVDS input architecture](0003-prefer-earc-and-lvds-input-architecture.md)

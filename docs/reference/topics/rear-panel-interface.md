@@ -6,6 +6,8 @@ updated: 2026-11-03
 tags: [mechanical, enclosure, rear-panel, fasteners, connectors, thermal, electronics]
 aliases: [back-panel, rear-input-board, tongues, self-clinching-nuts, pem, jlccnc, s-m3-2, s-m3-2zi]
 sources:
+  - docs/worklog/2026-11-03-kicad-rear-io-mechanical.md
+  - docs/decisions/0005-use-separate-hardware-repository-and-kicad.md
   - docs/worklog/2026-11-03-rear-panel-and-audio-architecture.md
   - docs/worklog/2026-11-03-jlccnc-rear-panel-fastening.md
   - hardware/mechanical/enclosure-layout/README.md
@@ -21,7 +23,9 @@ sources:
 
 The PSU spans the rear of the enclosure; the Pi/electronics stack and amplifier
 are at the front. A compact input board high on the rear panel is proposed within
-the space above the PSU. Its position, dimensions and cutouts are not frozen.
+the space above the PSU. The owner has drawn a frame for a separate connection
+plate and PCB; a first [KiCad mechanical study](hardware-repository-and-kicad.md)
+is now available. Exact parts, mounting depth and cutouts are not frozen.
 
 ## Confirmed owner-supplied context
 
@@ -35,7 +39,8 @@ the space above the PSU. Its position, dimensions and cutouts are not frozen.
   chassis/tongues and removable rear panel. This does not verify PSU thermal
   spreading or thermal contact.
 - The rear panel remains a laser-cut sheet fastened to bent mounting tongues.
-  The native geometry and support arrangement are not yet in the repository.
+  A read-only `Rear Panel v4 / Sketch2` geometry snapshot is now archived in
+  hardware; the full enclosure assembly and support verification remain missing.
 
 Sources: [session record](../../worklog/2026-11-03-rear-panel-and-audio-architecture.md),
 [original enclosure views](../../../hardware/mechanical/enclosure-layout/README.md).
@@ -48,12 +53,27 @@ Sources: [session record](../../worklog/2026-11-03-rear-panel-and-audio-architec
 | Two optical inputs | Two TOSLINK/S/PDIF receive inputs |
 | One coaxial input | Coaxial S/PDIF input; exact connector not selected |
 | One HDMI ARC input; later priority "most compatible" | eARC plus explicit legacy ARC support is the working architecture target |
-| "spring clips for speaker, 6" | Provisionally interpreted as six speaker pairs/twelve contacts; owner confirmation still needed |
+| Speaker spring clips | Owner confirmed six speaker pairs/twelve contacts on 2026-11-03 |
 
-The mains module, low-voltage input PCB and speaker terminals should be separate
-assemblies in the proposed layout. This is not a request to put mains circuitry on
-the digital-audio PCB. Speaker wiring must preserve the selected amplifier's
-output topology; do not assume common speaker-negative terminals.
+The owner confirmed speaker pairs and audio inputs on the same connector strip
+for A0, evolving the earlier suggestion of separate speaker/input assemblies.
+The mains module remains separate. A0 does not freeze whether one PCB or several
+sub-boards ultimately support the strip. Speaker wiring must preserve the
+amplifier topology; do not assume common speaker-negative terminals.
+
+## Current frame and mechanical PCB study
+
+The active Fusion sketch measures **210 × 25 mm, R5**, from z 39 to 64 mm,
+centred at 51.5 mm. The frame is 260 × 80 mm in that sketch. A0 proposes a
+**228 × 32 mm**, nominal 1.6 mm PCB and four Ø3.2 mounting holes outside the
+opening. Connectors are padless mechanical envelopes, not selected parts.
+
+The frame's six circles currently measure **Ø4.5**, differing from the accepted
+nominal **Ø3.8** through-hole baseline below. The owner's sketch is unchanged.
+The PCB bottom is only 4 mm above the sketch's PSU-top line in projection;
+this does not validate clearance.
+
+Source: [KiCad session and evidence](../../worklog/2026-11-03-kicad-rear-io-mechanical.md).
 
 ## Proposed placement and constraints
 
@@ -109,7 +129,8 @@ DFM review and first-article inspection.
 - Internal height datum, overall width/depth, actual PSU-to-panel gap and native
   CAD revision/export; screenshots are not dimensional authority.
 - Receiver/module footprint, connector parts and full insertion/service volumes.
-- Exact speaker count, terminal current/wire ratings and amplifier configuration.
+- Six speaker pairs are confirmed; terminal parts/current/wire ratings and
+  amplifier channel roles remain open.
 - Native tab/support geometry, final finish, JLCCNC DFM confirmation and
   first-article verification of the selected fastening system. Protective-earth
   hardware remains a separate design question.

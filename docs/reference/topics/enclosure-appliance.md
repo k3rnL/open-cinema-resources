@@ -6,6 +6,7 @@ updated: 2026-11-03
 tags: [architecture, enclosure, mechanical, electronics, thermal]
 aliases: [case, chassis, appliance-enclosure]
 sources:
+  - docs/worklog/2026-11-03-kicad-rear-io-mechanical.md
   - docs/decisions/0001-initial-enclosure-components.md
   - docs/decisions/0002-select-24v-main-supply.md
   - docs/worklog/2026-11-02-initial-resource-import.md
@@ -23,8 +24,9 @@ sources:
 The physical enclosure effort has started. The initial major component set is
 selected. Owner-supplied enclosure views and rear interface requirements are now
 recorded. A rear input board and LVDS link are the working audio architecture;
-native CAD, detailed panels/PCBs, power distribution, cooling and safety
-implementation remain open.
+a measured rear-frame sketch and KiCad mechanical PCB study are available in
+hardware. Full assembly integration, connector parts, circuitry, power distribution,
+cooling and safety implementation remain open.
 
 ## Confirmed facts
 
@@ -95,7 +97,8 @@ implementation remain open.
 - Which front-panel display, encoder, and power button will be selected, and what
   cutouts, mounting, and service access do they require?
 - Which exact rear connector parts, cutouts, labels and mounting details implement
-  the captured requirements? Does "6" mean six speaker pairs?
+  the captured requirements? Six speaker pairs are now confirmed; their roles
+  and terminal parts remain open.
 - Can the above-PSU input-board location satisfy manufacturer guidance and actual
   thermal, EMI, mains-separation and maintenance requirements?
 - How many input boards are needed, which input functions belong on them, and
@@ -113,3 +116,4 @@ implementation remain open.
 - [Auxiliary control electronics](auxiliary-control-electronics.md)
 - [Rear-panel interface](rear-panel-interface.md)
 - [Digital audio input and LVDS transport](digital-audio-input.md)
+- [Hardware repository and KiCad study](hardware-repository-and-kicad.md)

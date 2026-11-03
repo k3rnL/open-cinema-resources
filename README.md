@@ -2,10 +2,11 @@
 
 Public hardware resources for the Open Cinema project.
 
-This repository is the shared source of truth for mechanical design, electronics,
-firmware, bills of materials, manufacturing guidance, and verification evidence.
-It also keeps a durable project memory so decisions and iterations remain easy to
-understand and revisit.
+This repository holds reference resources, bills of materials, manufacturing
+guidance, evidence and the durable project memory. New editable PCB implementation
+lives in [open-cinema-hardware](https://github.com/k3rnL/open-cinema-hardware).
+Both checkouts live beside each other in `Documents/Open Cinema`; existing
+resource artifacts stay here and are linked from hardware.
 
 ## Repository map
 
@@ -38,7 +39,9 @@ Templates are provided in both memory folders.
 
 ## Status
 
-Repository foundation created. Hardware resources have not yet been imported.
+Main-component resources, software context, enclosure requirements and decisions
+are recorded. A KiCad rear I/O mechanical study and STEP exports are available in
+hardware; exact connectors, circuitry and enclosure fit remain open.
 
 ## License
 
