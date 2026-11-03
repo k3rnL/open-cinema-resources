@@ -9,6 +9,8 @@ evidence, conclusions, and next steps. Separate observations from interpretation
 
 ## Sessions
 
+- [2026-11-03: Enlarged enclosure and input-board architecture discussion](2026-11-03-enlarged-enclosure-and-input-architecture.md).
+
 - [2026-11-03: Compact switched mains inlet recommendation](2026-11-03-compact-mains-inlet.md) — exact part and dimensions; placement still open.
 
 - [2026-11-03: A8 horizontal PCB with all connectors](2026-11-03-horizontal-rear-io-A8.md)

@@ -6,6 +6,7 @@ updated: 2026-11-03
 tags: [electronics, audio, inputs, earc, arc, spdif, i2s, lvds]
 aliases: [input-board, hdmi-audio-extraction, differential-i2s, rear-to-pi, ds90lv047a, ds90lv048a]
 sources:
+  - docs/worklog/2026-11-03-enlarged-enclosure-and-input-architecture.md
   - docs/worklog/2026-11-03-rear-connector-selection.md
   - docs/decisions/0006-vertical-carrier-and-optical-daughterboards.md
   - docs/worklog/2026-11-03-kicad-rear-io-mechanical.md
@@ -136,3 +137,7 @@ Sources: [manufacturer evidence register](../../../hardware/electronics/notes/re
 - [Auxiliary power/control electronics](auxiliary-control-electronics.md)
 - [Raspberry Pi 5](raspberry-pi-5.md)
 - [MEAN WELL UHP-500](mean-well-uhp-500.md)
+
+## Enlarged-enclosure discussion
+
+The [2026-11-03 review](../../worklog/2026-11-03-enlarged-enclosure-and-input-architecture.md) proposes evaluating a single four-layer rear front end before adding a mezzanine. Stacking is acceptable to the owner in principle; no split or receiver is selected. Complete receiver documentation, TV/format requirements, clock/capture behavior and standby control precede layout. Current mechanical geometry is 250 × 51 at the window; see the rear-panel topic.

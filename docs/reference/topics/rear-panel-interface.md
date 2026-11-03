@@ -6,6 +6,7 @@ updated: 2026-11-03
 tags: [mechanical, enclosure, rear-panel, fasteners, connectors, thermal, electronics]
 aliases: [back-panel, rear-input-board, tongues, self-clinching-nuts, pem, jlccnc, s-m3-2, s-m3-2zi]
 sources:
+  - docs/worklog/2026-11-03-enlarged-enclosure-and-input-architecture.md
   - docs/worklog/2026-11-03-compact-mains-inlet.md
   - docs/worklog/2026-11-03-remove-plate-and-brackets-A9.md
   - docs/decisions/0011-horizontal-pcb-with-all-connectors.md
@@ -33,7 +34,7 @@ sources:
 
 The PSU spans the rear; the Pi/electronics and amplifier are at the front. The owner now requires one horizontal PCB with every connector directly soldered, including speaker clips. A8 is a fit experiment with component side downward and solder tails upward. See [current hardware context](hardware-repository-and-kicad.md) and [decision0011](../../decisions/0011-horizontal-pcb-with-all-connectors.md).
 
-The opening remains220 ×35 R5, z34…69. Four Ø3 vertical alignment holes remain at x±115,z44/59, now on provisional plate/support parts. A8 has no modeled collision with the current frame/PSU, but speaker current qualification, plate gap, cable access, brackets, tolerances and thermal behavior remain open. The actual PSU top measured in Home Cinema v7 is35 mm. [A8 evidence](../../worklog/2026-11-03-horizontal-rear-io-A8.md).
+The owner has enlarged the enclosure. Current live CAD shows a **250 × 51 mm opening**, X±125, Z18…69, in a 290 × 80 mm rear frame. The PSU-to-inner-rear-wall gap is about 32.7 mm. A9's PCB is unchanged and its current assembled setback needs correction before assessing airflow. Its older 220 × 35 fit result does not validate this new placement. See the [new geometry and architecture discussion](../../worklog/2026-11-03-enlarged-enclosure-and-input-architecture.md). The owner still designs the backplate and brackets.
 
 ## Confirmed owner-supplied context
 

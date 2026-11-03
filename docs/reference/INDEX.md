@@ -27,8 +27,7 @@ project knows and link back to decisions, work logs, and original evidence.
 - [Front-panel interface](topics/front-panel-interface.md) — candidate touch screen,
   encoder and power-button requirements, and unstarted local UI.
 - [Rear-panel interface](topics/rear-panel-interface.md) — owner-supplied layout,
-  connector needs, 80 mm height context, accepted JLCCNC fastening baseline and
-  provisional above-PSU board placement, and a compact switched mains-inlet recommendation awaiting integration.
+  connector needs, enlarged 250 × 51 mm opening, current rear clearance, fastening baseline and compact mains-inlet recommendation.
 
 ### Electronics
 
@@ -77,7 +76,7 @@ No unclassified material.
   capture, supported encoded formats and the LVDS harness are not validated.
 - WM8804 integration and KAB9 input/channel configuration remain unresolved.
   Six working pairs now solder to one horizontal board along with the audio inputs. A8's KLS speaker candidate has unverified current rating/supply. Tails point upward; optical daughterboards/cradle are historical.
-- A9 keeps the PCB holes but removes the provisional plate and supports; the owner designs those parts. The opening remains 220 × 35 mm. Nominal frame/PSU interference checks pass; tight plate/PCB gaps, cable mating, hardware, tolerances and production qualification remain open. Frame CAD reads2 mm versus the3 mm fabrication baseline; Ø4.5 frame holes differ from nominal Ø3.8.
+- A9 keeps the PCB holes but removes the provisional plate and supports; the owner designs those parts. The owner enlarged the opening to 250 × 51 mm; A9 PCB geometry remains unchanged. Current assembled setback needs correction before rechecking clearance; tight plate/PCB gaps, cable mating, hardware, tolerances and production qualification remain open. Frame CAD reads2 mm versus the3 mm fabrication baseline; Ø4.5 frame holes differ from nominal Ø3.8.
 - Above-PSU board placement needs thermal, airflow, EMI and mains-separation
   validation, including resolution of manufacturer adjacent-heat-source guidance.
 - The hardware license has not yet been selected.
