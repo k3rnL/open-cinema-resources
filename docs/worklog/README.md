@@ -9,6 +9,8 @@ evidence, conclusions, and next steps. Separate observations from interpretation
 
 ## Sessions
 
+- [2026-11-03: A8 horizontal PCB with all connectors](2026-11-03-horizontal-rear-io-A8.md)
+
 - [2026-11-03: A7 FE6930 connectors and two spare pairs](2026-11-03-fe6930-speaker-connectors.md)
 - [2026-11-03: A6 rigid Fusion integration, optical support and sourcing](2026-11-03-rigid-fusion-and-optical-support.md)
 - [2026-11-03: Four alignment holes, A4/A5](2026-11-03-restore-alignment-holes.md)

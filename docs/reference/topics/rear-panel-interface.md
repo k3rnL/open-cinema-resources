@@ -6,6 +6,8 @@ updated: 2026-11-03
 tags: [mechanical, enclosure, rear-panel, fasteners, connectors, thermal, electronics]
 aliases: [back-panel, rear-input-board, tongues, self-clinching-nuts, pem, jlccnc, s-m3-2, s-m3-2zi]
 sources:
+  - docs/decisions/0011-horizontal-pcb-with-all-connectors.md
+  - docs/worklog/2026-11-03-horizontal-rear-io-A8.md
   - docs/worklog/2026-11-03-restore-alignment-holes.md
   - docs/decisions/0008-require-straight-speaker-terminals.md
   - docs/worklog/2026-11-03-straight-speaker-terminals.md
@@ -27,11 +29,9 @@ sources:
 
 ## Summary
 
-The PSU spans the rear of the enclosure; the Pi/electronics stack and amplifier
-are at the front. A compact input board high on the rear panel is proposed within
-the space above the PSU. The owner has drawn a frame for a separate connection
-plate and PCB; a first [KiCad mechanical study](hardware-repository-and-kicad.md)
-now has an A3 straight-pin red/black speaker-clip fit study in the measured 220 × 35 opening, with optical daughterboards. Mounting depth, cutouts and final qualification remain open.
+The PSU spans the rear; the Pi/electronics and amplifier are at the front. The owner now requires one horizontal PCB with every connector directly soldered, including speaker clips. A8 is a fit experiment with component side downward and solder tails upward. See [current hardware context](hardware-repository-and-kicad.md) and [decision0011](../../decisions/0011-horizontal-pcb-with-all-connectors.md).
+
+The opening remains220 ×35 R5, z34…69. Four Ø3 vertical alignment holes remain at x±115,z44/59, now on provisional plate/support parts. A8 has no modeled collision with the current frame/PSU, but speaker current qualification, plate gap, cable access, brackets, tolerances and thermal behavior remain open. The actual PSU top measured in Home Cinema v7 is35 mm. [A8 evidence](../../worklog/2026-11-03-horizontal-rear-io-A8.md).
 
 ## Confirmed owner-supplied context
 
@@ -57,16 +57,16 @@ Sources: [session record](../../worklog/2026-11-03-rear-panel-and-audio-architec
 | --- | --- |
 | Mains cord inlet with power switch (described as 220 V) | 230 V AC nominal application; inlet, fuse, switch and wiring design still open |
 | Two optical inputs | Two TOSLINK/S/PDIF receive inputs |
-| One coaxial input | Coaxial S/PDIF input; A1 uses Same Sky RCJ-021 |
+| One coaxial input | Coaxial S/PDIF input; A8 uses horizontal Same Sky RCJ-011 |
 | One HDMI ARC input; later priority "most compatible" | eARC plus explicit legacy ARC support is the working architecture target |
 | Speaker spring clips | Owner confirmed six speaker pairs/twelve contacts on 2026-11-03 |
 
 The owner confirmed speaker pairs and audio inputs on the same connector strip
 for A0, evolving the earlier suggestion of separate speaker/input assemblies.
-The mains module remains separate. A1 keeps a vertical main PCB and adds two small horizontal optical daughterboards, by owner decision. Speaker wiring must preserve the
+The mains module remains separate. A8 places all connectors directly on one horizontal PCB. Speaker wiring must preserve the
 amplifier topology; do not assume common speaker-negative terminals.
 
-## Current A5 alignment update
+## Historical A3–A5 alignment update
 
 The owner rejected downward speaker pins near the PSU and supplied the **220 × 35 R5** opening. Read-only measurement gives x−110…110,z34…69. A3 evaluates two Dragon City PT-603B six-contact blocks with straight pins through a **228 × 32 × 1.6 vertical PCB**; current rating, supply, final drills and support are unqualified. The owner's surface-mount suggestion is a possible means, not a finalized technology constraint. [Decision 0008](../../decisions/0008-require-straight-speaker-terminals.md).
 
@@ -84,15 +84,10 @@ Frame CAD currently reads **2 mm thick**, conflicting with the 3 mm fabrication 
 
 Source: [A1 connector session](../../worklog/2026-11-03-rear-connector-selection.md), [decision 0006](../../decisions/0006-vertical-carrier-and-optical-daughterboards.md).
 
-## Proposed placement and constraints
+## Placement constraints
 
-- Place a narrow vertical input PCB high on the rear panel, supported by panel
-  mounts or dedicated brackets. Avoid using a broad horizontal PCB as a shelf
-  covering the PSU's ventilation.
-- The discussed **30-35 mm PCB height** is an initial packaging target only. The
-  receiver electronics may change it; A1 checks nominal connector projection only.
-- From outside the rear, the proposed speaker group is toward the amplifier side
-  on the left and audio inputs toward the Pi side on the right. Locate the mains
+- Current A8 uses a narrow horizontal board, component side down. Check its effect on PSU ventilation; the former vertical-board recommendation is superseded.
+- From outside the rear, the A8 preview has speakers on the right and audio inputs on the left; port order remains a fit-study choice. Locate the mains
   assembly near the PSU's actual AC-terminal end; that end has not been verified
   from the supplied images. Final port order is undecided.
 - Preserve space for connector bodies, solder joints, insulated terminals,
@@ -138,7 +133,7 @@ DFM review and first-article inspection.
 - Internal height datum, overall width/depth, actual PSU-to-panel gap and native
   CAD revision/export; screenshots are not dimensional authority.
 - Receiver/module circuitry, final footprint qualification and full insertion/service volumes.
-- Six pairs use conventional red/black finger-operated clips. A3 evaluates PT-603B straight terminals; current rating, supply, production footprint and mounting remain unqualified. A1 industrial terminals and A2 downward tails are rejected. See [decision 0008](../../decisions/0008-require-straight-speaker-terminals.md).
+- Six pairs use conventional red/black clips directly soldered to the horizontal board. A8 KLS candidate current rating, supply and physical qualification remain open. Pins point upward in the proposed installation. See [decision0011](../../decisions/0011-horizontal-pcb-with-all-connectors.md).
 - Native tab/support geometry, final finish, JLCCNC DFM confirmation and
   first-article verification of the selected fastening system. Protective-earth
   hardware remains a separate design question.

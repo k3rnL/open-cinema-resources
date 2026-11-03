@@ -1,5 +1,8 @@
 # 0008: Avoid downward speaker terminals; use the 220 mm opening
 
+> Later direction: [0011](0011-horizontal-pcb-with-all-connectors.md) supersedes the vertical/straight-pin implementation with a horizontal board carrying all connectors directly. The conventional-clip style, six working pairs, current requirement and alignment-hole requirements remain. Text below is historical.
+
+
 - Date: 2026-11-03
 - Status: Accepted owner geometry/terminal-direction constraint; PT-603B is an unqualified mechanical candidate
 - Owner: @k3rnL

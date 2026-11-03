@@ -1,5 +1,8 @@
 # 0010 — Select Cliff FE6930 and allow two spare pairs
 
+> Later direction: [0011](0011-horizontal-pcb-with-all-connectors.md) supersedes the vertical/straight-pin implementation with a horizontal board carrying all connectors directly. The conventional-clip style, six working pairs, current requirement and alignment-hole requirements remain. Text below is historical.
+
+
 - Date: 2026-11-03
 - Status: Accepted for the mechanical fit model; production qualification pending
 - Source: owner answer “Allow two spare pairs” to the proposed two-block FE6930 layout

@@ -8,12 +8,14 @@ record with status `Supersedes` and link the earlier record rather than erasing 
 
 ## Records
 
+- [0011: Horizontal PCB with all connectors soldered](0011-horizontal-pcb-with-all-connectors.md) — current owner direction; fit/candidate qualification remains open.
+
 - [0010: Select Cliff FE6930 and allow two spare pairs](0010-select-cliff-fe6930-and-two-spare-pairs.md) — accepted fit-model selection; production qualification pending.
 - [0009: Prefer JLCPCB, permit external suppliers](0009-prefer-jlcpcb-allow-external-parts.md) — accepted sourcing policy; no order placed.
-- [0008: Straight speaker terminals](0008-require-straight-speaker-terminals.md) — accepted pin-direction constraint.
+- [0008: Straight speaker terminals](0008-require-straight-speaker-terminals.md) — historical implementation; no downward pins near PSU remains relevant.
 
 - [0007: Conventional red/black speaker clips](0007-use-conventional-speaker-clips.md) — accepted style correction; exact part pending.
-- [0006: Vertical carrier and optical daughterboards](0006-vertical-carrier-and-optical-daughterboards.md) — orientation active; speaker selection superseded by 0007.
+- [0006: Vertical carrier and optical daughterboards](0006-vertical-carrier-and-optical-daughterboards.md) — historical orientation, superseded by0011.
 
 - [0005: Separate hardware repository and KiCad](0005-use-separate-hardware-repository-and-kicad.md)
   — accepted organization and mechanical-study scope; component selection deferred.

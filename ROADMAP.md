@@ -22,10 +22,11 @@
 - [x] Replace A1 industrial terminals in the mechanical model with red/black clip candidates (A2)
 - [x] Replace rejected downward speaker tails with straight rear-facing pins in the A3 fit study; record measured 220 × 35 opening
 - [x] Select 7 A Cliff FE6930 blocks, accept two spare pairs and verify the revised A7 nominal layout
-- [ ] Qualify FE6930 sample geometry, production slots, termination, attachment and full panel fit
+- [x] Build A8 horizontal fit study with all connectors directly soldered and upward tails
+- [ ] Qualify a horizontal conventional speaker block: current rating, exact supply, samples, lands and mounting
 - [x] Add A6 rigid Fusion integration files and a bolted optical-cradle prototype
 - [x] Audit connector sourcing and record permission to use outside suppliers
-- [ ] Complete back-panel mounting, plate cutouts, optical-cradle fit/load/temperature qualification, daughterboard interconnect and sample-fit checks
+- [ ] Complete A8 back-panel supports, plate cutouts, cable insertion, tolerance, load and temperature qualification
 - [ ] Define the input front-end and delegated power/control electronics
 - [ ] Select/document an eARC/ARC receiver and validate multichannel Pi capture,
   supported encoded formats, source switching and the LVDS interconnect
@@ -46,14 +47,14 @@
 ## Open questions
 
 - KiCad is selected for PCB work and Fusion is used for the enclosure. STEP is
-  the mechanical exchange format; A1 audio-input parts remain selected, FE6930 speaker selection is accepted; full assembly fit remains open.
+  the mechanical exchange format; A8 uses horizontal input parts and an unqualified KLS speaker candidate; nominal frame/PSU fit passes, production qualification remains open.
 - Which components have acceptable substitutes?
 - How many input boards are required, and which functions and interfaces belong
   on the input and power/control boards?
 - Which exact eARC/ARC receiver, controller and audio formats can be supported
   end to end by the existing software? Does it absorb the WM8804's S/PDIF role?
 - What are the internal height datum, rear gap and connector service volumes?
-  How will the speaker blocks be supported and accessed, and does the A6 optical cradle pass fit/load/temperature checks? How should the current Ø4.5 frame holes
+  How will the A8 supports and recessed RCA perform in sample-fit/load/temperature checks? How should the current Ø4.5 frame holes
   be reconciled with the nominal Ø3.8 fastening baseline, and 2 mm frame CAD with the 3 mm material baseline?
 - How does manufacturer adjacent-heat-source guidance apply to the proposed
   compact PSU/input-board/amplifier arrangement?

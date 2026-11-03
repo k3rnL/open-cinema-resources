@@ -1,5 +1,8 @@
 # 0006: Keep the vertical rear PCB and use optical daughterboards
 
+> Later direction: [0011](0011-horizontal-pcb-with-all-connectors.md) supersedes the vertical/straight-pin implementation with a horizontal board carrying all connectors directly. The conventional-clip style, six working pairs, current requirement and alignment-hole requirements remain. Text below is historical.
+
+
 - Date: 2026-11-03
 - Later correction: [0007](0007-use-conventional-speaker-clips.md) rejects the Phoenix speaker terminals; the vertical PCB / optical daughterboard decision remains active.
 - Status: Owner-accepted orientation; A1 connector selection for mechanical integration
