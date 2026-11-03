@@ -43,7 +43,7 @@ project knows and link back to decisions, work logs, and original evidence.
 - [MEAN WELL UHP-500](topics/mean-well-uhp-500.md) — selected power-supply family;
   24 V output selected and redundancy suffix still open.
 - [Digital audio input and LVDS transport](topics/digital-audio-input.md) — eARC/ARC
-  working direction, mandatory lossless/Atmos transport, extraction hardware and Pi processing boundary.
+  working direction, unaltered lossless/Atmos transport, Pi-controlled source selection and future HAT.
 - [Auxiliary control electronics](topics/auxiliary-control-electronics.md) —
   delegated power, shutdown, IR and housekeeping functions; controller and firmware
   still undefined.
@@ -73,7 +73,8 @@ No unclassified material.
   verified thermal performance.
 - eARC/ARC receiver selection, documented control/CEC behavior, eight-channel Pi
   capture, supported encoded formats and the LVDS harness are not validated.
-- WM8804 integration and KAB9 input/channel configuration remain unresolved.
+- WM8804 integration and KAB9 channel configuration remain unresolved. USB is the
+  selected Pi-to-amplifier interface; its actual module/mapping still needs validation.
   Six working pairs now solder to one horizontal board along with the audio inputs. A8's KLS speaker candidate has unverified current rating/supply. Tails point upward; optical daughterboards/cradle are historical.
 - A9 keeps the PCB holes but removes the provisional plate and supports; the owner designs those parts. The owner enlarged the opening to 250 × 51 mm; A9 PCB geometry remains unchanged. Current assembled setback needs correction before rechecking clearance; tight plate/PCB gaps, cable mating, hardware, tolerances and production qualification remain open. Frame CAD reads2 mm versus the3 mm fabrication baseline; Ø4.5 frame holes differ from nominal Ø3.8.
 - Above-PSU board placement needs thermal, airflow, EMI and mains-separation

@@ -2,10 +2,11 @@
 title: WONDOM KAB9 eight-channel amplifier
 summary: Selected configurable eight-channel Class-D output board, part AA-KA32473.
 status: active
-updated: 2026-11-02
+updated: 2026-11-03
 tags: [electronics, amplifier, audio-output, power, thermal]
 aliases: [kab9, aa-ka32473, sure-electronics-kab9]
 sources:
+  - docs/decisions/0013-pi-source-control-and-future-hat.md
   - hardware/electronics/datasheets/wondom-kab9-aa-ka32473.pdf
   - https://store.sure-electronics.com/product/AA-KA32473
 ---
@@ -35,6 +36,10 @@ can be configured independently for BTL stereo or PBTL mono operation.
 - The official WONDOM listing currently marks AA-KA32473 out of stock; procurement
   status should be rechecked when ordering.
 
+## Selected input path
+
+The owner confirmed USB audio from the Raspberry Pi to the amplifier, after Pi-side decoding and processing. The alternative external differential-input path is no longer an open architecture choice. Validate the actual USB codec module, channel mapping and amplifier configuration for 5.1 initially and optional 7.1. See [decision 0013](../../decisions/0013-pi-source-control-and-future-hat.md).
+
 ## Constraints
 
 - Provide a DC supply, wiring, connectors, fusing, and conductor sizing suitable
@@ -50,8 +55,8 @@ can be configured independently for BTL stereo or PBTL mono operation.
 
 ## Open questions
 
-- Is the USB codec daughter board part of the final design, or will Open Cinema use
-  the KAB9 differential header from another audio interface?
+- Confirm the actual USB codec module revision, supported USB modes and working
+  capture-to-playback integration with the Pi.
 - What exact channel-to-speaker mapping and BTL/PBTL configuration is required?
 - What continuous programme power and cooling target should the enclosure support?
 - Which mating connectors and cable kit are selected?

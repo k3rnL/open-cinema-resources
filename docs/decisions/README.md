@@ -8,6 +8,8 @@ record with status `Supersedes` and link the earlier record rather than erasing 
 
 ## Records
 
+- [0013: Pi source control and future HAT](0013-pi-source-control-and-future-hat.md) — Pi selects the source, receives unaltered audio and outputs over USB; control software/HAT design deferred.
+
 - [0012: Lossless/Atmos extraction with processing on the Pi](0012-require-lossless-audio-and-atmos.md) — accepted requirements and allocation; transport implementation open.
 
 - [0011: Horizontal PCB with all connectors soldered](0011-horizontal-pcb-with-all-connectors.md) — current owner direction; fit/candidate qualification remains open.

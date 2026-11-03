@@ -6,6 +6,7 @@ updated: 2026-11-03
 tags: [compute, raspberry-pi, enclosure, thermal, power]
 aliases: [rpi5, pi-5, raspberry-pi-5-model-b]
 sources:
+  - docs/decisions/0013-pi-source-control-and-future-hat.md
   - https://www.raspberrypi.com/products/raspberry-pi-5/
   - https://pip.raspberrypi.com/categories/892-raspberry-pi-5
   - https://datasheets.raspberrypi.com/rpi5/raspberry-pi-5-product-brief.pdf
@@ -38,6 +39,10 @@ software production boundary is the 8 GB Model B fixture on Debian 13 Trixie.
 - Relevant interfaces include two USB 3.0 ports, two USB 2.0 ports, Gigabit
   Ethernet, Wi-Fi, Bluetooth 5/BLE, PCIe 2.0 x1, the 40-pin header, and a dedicated
   four-pin fan connector.
+
+## Interface direction
+
+The owner plans a custom HAT to simplify connections and will use Pi GPIO-header signals plus later custom software to control rear-board source selection. Integrating the LVDS receiver adapter into that HAT is proposed; its mechanical design, pin allocation and control bus are not selected. Processed audio goes from the Pi to the amplifier over USB. See [decision 0013](../../decisions/0013-pi-source-control-and-future-hat.md).
 
 ## Constraints
 

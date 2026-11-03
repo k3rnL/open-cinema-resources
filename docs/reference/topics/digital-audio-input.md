@@ -6,6 +6,7 @@ updated: 2026-11-03
 tags: [electronics, audio, inputs, earc, arc, spdif, i2s, lvds]
 aliases: [input-board, hdmi-audio-extraction, differential-i2s, rear-to-pi, ds90lv047a, ds90lv048a]
 sources:
+  - docs/decisions/0013-pi-source-control-and-future-hat.md
   - docs/decisions/0012-require-lossless-audio-and-atmos.md
   - docs/worklog/2026-11-03-enlarged-enclosure-and-input-architecture.md
   - docs/worklog/2026-11-03-rear-connector-selection.md
@@ -47,6 +48,12 @@ Assume one selected physical input at a time. The HDMI receiver/controller,
 source-selection circuit, rails, control protocol and complete firmware are open.
 Input extraction is not Dolby/DTS decoding. A receiver such as EP92H1 illustrates
 the relevant interface functions, but is not a selected or validated part.
+
+## Pi control and future HAT
+
+[Decision 0013](../../decisions/0013-pi-source-control-and-future-hat.md) confirms Pi-controlled source selection through the GPIO header and a future custom connection HAT. Custom control software is deferred. The proposed HAT would incorporate the LVDS receiver adapter; exact bus, pins, circuitry and harness remain open. Reserve a control/status connection alongside the audio link, with readback and source-change handling to be defined from the selected receiver.
+
+The unchanged captured payload feeds pcm-auto-decoder on the Pi, followed by the Pi audio processing pipeline. Processed audio leaves the Pi over USB to the amplifier. Source selection/control is separate from audio payload transport.
 
 ## Candidate transport implementation
 

@@ -38,3 +38,7 @@ Evidence:
 - [HDMI LA eARC overview](https://www.hdmi.org/spec2sub/enhancedaudioreturnchannel): multichannel PCM and lossless/Atmos transport capabilities.
 - [Explore EP92H1](https://www.epmi.com.tw/hdmi-arc-earc/ep92h1/): example receiver supporting eARC/ARC, eight-channel LPCM, IEC61937 and HBR outputs. This is a capability example, not a qualified part; full output/register documentation and procurement remain to be checked.
 - [Dolby Atmos soundbar architecture](https://professional.dolby.com/siteassets/tv/home/dolby-atmos/dolby-atmos-for-sound-bar-applications.pdf): distinct DD+, TrueHD and MAT decoding followed by rendering; those functions are allocated to the Pi in this project.
+
+## Later interface clarification
+
+[Decision 0013](0013-pi-source-control-and-future-hat.md) confirms pcm-auto-decoder as the Pi-side adaptive decoder, Pi-controlled source selection through the GPIO header, a future connection HAT and processed USB audio output to the amplifier.
