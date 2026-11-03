@@ -66,11 +66,11 @@ for A0, evolving the earlier suggestion of separate speaker/input assemblies.
 The mains module remains separate. A1 keeps a vertical main PCB and adds two small horizontal optical daughterboards, by owner decision. Speaker wiring must preserve the
 amplifier topology; do not assume common speaker-negative terminals.
 
-## Current A4 alignment update
+## Current A5 alignment update
 
 The owner rejected downward speaker pins near the PSU and supplied the **220 × 35 R5** opening. Read-only measurement gives x−110…110,z34…69. A3 evaluates two Dragon City PT-603B six-contact blocks with straight pins through a **228 × 32 × 1.6 vertical PCB**; current rating, supply, final drills and support are unqualified. The owner's surface-mount suggestion is a possible means, not a finalized technology constraint. [Decision 0008](../../decisions/0008-require-straight-speaker-terminals.md).
 
-At the owner's request, A4 now includes **two real Ø3 alignment holes at x−115,z44/59**, carried by R4 left PCB tabs. These appear in both STEP exports; mounting hardware remains undecided. [A4 correction](../../worklog/2026-11-03-restore-alignment-holes.md). The upper actual Ø4.5 holes at x±40,z75 clear the opening by 3.75 mm in projection. A2's upward-enlargement conflict is superseded. Speaker pins point behind the PCB, not below the body. The PCB bottom remains 4 mm above the old PSU-top line in projection; actual depth, solder insulation, plate setback and full enclosure fit remain open. [A3 evidence/session](../../worklog/2026-11-03-straight-speaker-terminals.md).
+At the owner's request, A5 includes **four real Ø3 alignment holes at x±115,z44/59**, two per side, carried by matching R4 PCB tabs. These appear in both STEP exports; mounting hardware remains undecided. [A4/A5 correction](../../worklog/2026-11-03-restore-alignment-holes.md). The upper actual Ø4.5 holes at x±40,z75 clear the opening by 3.75 mm in projection. A2's upward-enlargement conflict is superseded. Speaker pins point behind the PCB, not below the body. The PCB bottom remains 4 mm above the old PSU-top line in projection; actual depth, solder insulation, plate setback and full enclosure fit remain open. [A3 evidence/session](../../worklog/2026-11-03-straight-speaker-terminals.md).
 
 [A2's KLS downward-tail arrangement](../../worklog/2026-11-03-speaker-clip-correction.md) is retained as rejected history.
 
