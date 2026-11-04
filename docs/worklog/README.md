@@ -9,6 +9,8 @@ evidence, conclusions, and next steps. Separate observations from interpretation
 
 ## Sessions
 
+- [2026-11-04: A11 ARC schematic, sourcing constraints, two reviews and rigid model](2026-11-04-a11-arc-electrical-study.md).
+
 - [2026-11-04: ARC first-version decision and requirements](2026-11-04-arc-first-version.md).
 
 - [2026-11-03: Enlarged enclosure and input-board architecture discussion](2026-11-03-enlarged-enclosure-and-input-architecture.md).

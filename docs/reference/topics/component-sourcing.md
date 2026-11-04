@@ -1,11 +1,12 @@
 ---
 title: Component sourcing and JLCPCB
-summary: JLCPCB is preferred; Global Sourcing/pre-order and outside suppliers are allowed; A8 horizontal speaker qualification remains open.
+summary: A11 has exact chip catalogue references, but ADV7511 purchase eligibility, DD+ validation and horizontal speaker qualification remain open.
 status: active
 updated: 2026-11-04
 tags: [manufacturing, procurement, connectors, jlcpcb]
-aliases: [aliexpress, global-sourcing, pre-order, stock, bom, c7159430, c4992555, wp6-03, fe6930, spare-pairs]
+aliases: [aliexpress, global-sourcing, pre-order, stock, bom, c7159430, c4992555, wp6-03, fe6930, spare-pairs, adv7511, c179459, tlv75518, tps2553, bas116]
 sources:
+  - docs/worklog/2026-11-04-a11-arc-electrical-study.md
   - docs/decisions/0014-use-arc-for-first-version.md
   - docs/worklog/2026-11-03-a10-electrical-draft.md
   - docs/decisions/0011-horizontal-pcb-with-all-connectors.md
@@ -40,4 +41,8 @@ Related: [hardware implementation](hardware-repository-and-kicad.md), [rear pane
 
 ## A10 electrical draft update
 
-See the [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md). A separate KiCad schematic and rigid integration model now exist. CS8416K is the draft optical/coax choice, with documented source selection and LVDS circuitry. HDMI remains unwired in A10. [Decision 0014](../../decisions/0014-use-arc-for-first-version.md) now targets ARC first and defers eARC; no ARC implementation, order-ready BOM or manufacturing release exists. Prior WM8804 and connector records remain historical evidence.
+See the [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md). A separate KiCad schematic and rigid integration model now exist. CS8416K is the draft optical/coax choice, with documented source selection and LVDS circuitry. HDMI remains unwired in A10. [Decision 0014](../../decisions/0014-use-arc-for-first-version.md) now targets ARC first and defers eARC; at that scope-record stage no ARC implementation existed. A11 below adds a candidate; no order-ready BOM or manufacturing release exists. Prior WM8804 and connector records remain historical evidence.
+
+## Current A11 sourcing
+
+The [A11 work log](../../worklog/2026-11-04-a11-arc-electrical-study.md) pins the detailed sourcing table. ADV7511KSTZ has JLC C179459, but ADI explicitly requires HDMI-adopter status to purchase; the listing does not confirm eligibility or accepted supply. Exact regulator, LVDS, protection, oscillator and inductor candidates are recorded. Some need pre-order/Global Sourcing or external procurement; no complete order-ready BOM exists. KLS current rating/supply remains open. Stock is a dated observation, not a durable promise. No order, reservation or supplier contact was made.

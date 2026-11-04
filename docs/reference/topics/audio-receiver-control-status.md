@@ -1,11 +1,12 @@
 ---
 title: Audio receiver control and status
-summary: Meaning of lock, carrier rate and transport format; Pi source switching and unchanged payload boundary.
+summary: Lock, carrier rate and transport format definitions; A11 I2C source selection and unchanged payload boundary.
 status: active
 updated: 2026-11-04
 tags: [audio, control, status, clock, capture, spdif, earc]
-aliases: [signal-lock, rate, format, carrier-rate, word-packing, pcm-auto-decoder]
+aliases: [signal-lock, rate, format, carrier-rate, word-packing, pcm-auto-decoder, adv-int, hdmi-5v-en, j20, a11]
 sources:
+  - docs/worklog/2026-11-04-a11-arc-electrical-study.md
   - docs/decisions/0014-use-arc-for-first-version.md
   - docs/decisions/0013-pi-source-control-and-future-hat.md
   - docs/worklog/2026-11-03-a10-electrical-draft.md
@@ -30,3 +31,7 @@ Extracting framing and repacking words is allowed only with an explicit, tested 
 The [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md) links a drafted CS8416K receiver/mux/LVDS schematic. Its CS8416K control interface is 100 kHz I2C, with reset/interrupt/error/selection connections. OMCK is unused, so its clock-ratio register cannot establish rate; clock measurement/validation at the Pi/HAT remains required. [Decision 0014](../../decisions/0014-use-arc-for-first-version.md) now targets ARC first. ARC/CEC status, DD+ carrier packing and bit preservation still need validation; eARC status and HBR/MAT packing are deferred.
 
 These definitions are accepted project knowledge. A10 component and connector choices are draft implementation proposals, not a claim that the end-to-end stream has been captured or tested.
+
+## A11 interface update
+
+The [A11 work log](../../worklog/2026-11-04-a11-arc-electrical-study.md) records CS8416 selection of all four inputs. A11 removes the external muxes. J20 pin7 changes to ADV_INT and pin8 to HDMI_5V_EN; the remainder and full J22 assignment are in the pinned hardware interface contract. Do not use A10 GPIO semantics on A11. Stop capture and disable the link before selecting; re-lock, read supported status, restart capture and decoder, then unmute output. These are requirements; firmware and capture validation are not complete.

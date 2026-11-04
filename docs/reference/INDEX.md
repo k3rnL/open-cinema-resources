@@ -35,12 +35,11 @@ project knows and link back to decisions, work logs, and original evidence.
 - [Audio receiver control and status](topics/audio-receiver-control-status.md) — accepted lock/carrier-rate/format meanings, source switching and unchanged-payload boundary.
 
 - [Hardware repository and KiCad mechanical PCB](topics/hardware-repository-and-kicad.md)
-  — A10 adds a separate electrical draft and rigid export; HDMI remains unresolved and the board is unrouted. A9 remains the mechanical baseline.
+  — A11 adds an ARC candidate schematic and rigid export; two static checks pass but routing, procurement and live operation remain unqualified. A9 remains the mechanical baseline.
 
 - [Raspberry Pi 5](topics/raspberry-pi-5.md) — selected computer and supported
   appliance target.
-- [WM8804 S/PDIF transceiver](topics/wm8804.md) — selected digital-audio interface
-  and lifecycle constraints.
+- [WM8804 S/PDIF transceiver](topics/wm8804.md) — original digital-audio choice and lifecycle constraints; CS8416 is the A11 draft alternative.
 - [WONDOM KAB9](topics/wondom-kab9.md) — selected configurable eight-channel
   amplifier.
 - [MEAN WELL UHP-500](topics/mean-well-uhp-500.md) — selected power-supply family;
@@ -55,6 +54,8 @@ project knows and link back to decisions, work logs, and original evidence.
 - [Component sourcing and JLCPCB](topics/component-sourcing.md) — JLCPCB preferred; Global Sourcing/pre-order and outside suppliers allowed; horizontal speaker candidate current rating and supply unresolved.
 
 ### Verification and testing
+
+- [A11 ARC electrical study](../worklog/2026-11-04-a11-arc-electrical-study.md) — schematic/PCB static reviews, rigid-model exports and explicitly untested functions.
 
 ### Operations and maintenance
 
@@ -73,8 +74,8 @@ No unclassified material.
   board revision, and supporting 5 V conversion are not yet confirmed.
 - The purchased Raspberry Pi fan has not been identified by model, mounting, or
   verified thermal performance.
-- ARC receiver/controller selection, CEC negotiation, DD+ Atmos payload preservation, Pi capture and the LVDS harness are not validated. eARC/HBR/MAT is deferred and no longer a first-version gate.
-- A10 proposes CS8416K for optical/coax reception; WM8804 history is retained. ARC circuitry/CEC, routing/protection and KAB9 channel configuration remain unresolved. USB is the
+- A11 ADV7511 procurement eligibility, ARC/CEC operation, DD+ Atmos payload preservation, Pi capture and the LVDS harness are not validated. eARC/HBR/MAT is deferred and no longer a first-version gate.
+- A11 drafts ADV7511 ARC into CS8416 four-input selection, with three active LVDS pairs; WM8804/A10 history is retained. CEC firmware, routing/protection and KAB9 channel configuration remain unresolved. USB is the
   selected Pi-to-amplifier interface; its actual module/mapping still needs validation.
   Six working pairs now solder to one horizontal board along with the audio inputs. A8's KLS speaker candidate has unverified current rating/supply. Tails point upward; optical daughterboards/cradle are historical.
 - A9 keeps the PCB holes but removes the provisional plate and supports; the owner designs those parts. The owner enlarged the opening to 250 × 51 mm; A9 PCB geometry remains unchanged. Current assembled setback needs correction before rechecking clearance; tight plate/PCB gaps, cable mating, hardware, tolerances and production qualification remain open. Frame CAD reads2 mm versus the3 mm fabrication baseline; Ø4.5 frame holes differ from nominal Ø3.8.

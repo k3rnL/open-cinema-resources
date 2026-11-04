@@ -1,11 +1,12 @@
 ---
 title: Digital audio input and LVDS transport
-summary: ARC-first HDMI plus optical/coax inputs, unchanged payload over LVDS to the Pi, and eARC deferred.
+summary: A11 drafts ADV7511 ARC into CS8416 source selection and a three-pair LVDS link; DD+ capture and procurement remain unqualified.
 status: active
 updated: 2026-11-04
 tags: [electronics, audio, inputs, earc, arc, spdif, i2s, lvds]
-aliases: [input-board, hdmi-audio-extraction, differential-i2s, rear-to-pi, ds90lv047a, ds90lv048a]
+aliases: [input-board, hdmi-audio-extraction, differential-i2s, rear-to-pi, ds90lv047a, ds90lv048a, a11, adv7511, c179459]
 sources:
+  - docs/worklog/2026-11-04-a11-arc-electrical-study.md
   - docs/decisions/0014-use-arc-for-first-version.md
   - docs/worklog/2026-11-03-a10-electrical-draft.md
   - docs/decisions/0013-pi-source-control-and-future-hat.md
@@ -45,9 +46,7 @@ canonical in the [rear-panel topic](rear-panel-interface.md).
 | Adapter beside Pi | LVDS receivers and short logic-level I2S connection to the 40-pin header |
 | Raspberry Pi | Capture, supported compressed-audio decoding, routing, volume, EQ and other DSP |
 
-Assume one selected physical input at a time. The HDMI receiver/controller,
-source-selection circuit, rails, control protocol and complete firmware are open.
-Input extraction is not Dolby/DTS decoding. A10 uses CS8416K for optical/coax. PCM9211 is a documented candidate for ARC/selector evaluation; no ARC chip/module/controller is selected. See the [research boundary](../../worklog/2026-11-04-arc-first-version.md).
+One selected input at a time. **Current A11:** ADV7511KSTZ is the ARC test candidate; CS8416K-CZZR selects optical1/2/coax/ARC internally, and one DS90LV047 drives three LVDS pairs. No external mux or stacked receiver board is used. These are prototype implementation choices, not qualified purchasing or format guarantees. See the [A11 evidence](../../worklog/2026-11-04-a11-arc-electrical-study.md). PCM9211 research and the original unimplemented ARC scope remain [historical](../../worklog/2026-11-04-arc-first-version.md).
 
 ## Pi control and future HAT
 
@@ -55,7 +54,7 @@ Input extraction is not Dolby/DTS decoding. A10 uses CS8416K for optical/coax. P
 
 The unchanged captured payload feeds pcm-auto-decoder on the Pi, followed by the Pi audio processing pipeline. Processed audio leaves the Pi over USB to the amplifier. Source selection/control is separate from audio payload transport.
 
-## A10 implementation draft
+## Historical A10 implementation draft
 
 The [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md) records the first separate electrical schematic: CS8416K optical/coax receiver, logic muxes, LVDS drivers and Pi control. **HDMI remains unwired and the PCB is unrouted.** A10 predates the ARC-only decision and has not been electrically revised for ARC. The two static review passes do not qualify the full audio path. Canonical [lock/rate/format definitions](audio-receiver-control-status.md) are now saved.
 
@@ -67,9 +66,9 @@ not compress, resample or serialize all channels into one pair. The cited Analog
 Devices serialized example is evidence of the broader technique, not this exact
 circuit. See the [manufacturer evidence](../../../hardware/electronics/notes/rear-input-evidence.md).
 
-**ARC first version:** one data lane plus BCLK and LRCLK, over three LVDS pairs. A two-slot carrier may contain encoded multichannel audio.
+**ARC A11:** one data lane plus BCLK and LRCLK, over three LVDS pairs; one DS90LV047 transmitter and one future DS90LV048 HAT receiver. A two-slot carrier may contain encoded multichannel audio.
 
-**Existing A10 / possible future eARC provision:** the six-pair connection below remains in the draft. DATA1–3 are unused for the proposed ARC path; no harness reduction or drop-in eARC upgrade is approved. For future eight-channel PCM, the candidate Pi 5 connection is:
+**Historical A10 / possible future eARC provision:** the following six-pair proposal is not the populated A11 link. DATA1–3 are NC in A11; eARC is not a drop-in upgrade. For future eight-channel PCM, the candidate Pi 5 connection is:
 
 | I2S signal | Differential pairs | BCM GPIO at the Pi |
 | --- | --- | --- |
@@ -85,8 +84,8 @@ plus a ground reference. Power and control are additional connections. These are
 GPIO numbers, not physical header-pin numbers; allocation against other project
 functions is not checked.
 
-- Candidate driver: **2 x TI DS90LV047A** on the rear board.
-- Candidate receiver: **2 x TI DS90LV048A** on the Pi adapter.
+- Historical six-pair driver quantity: **2 x TI DS90LV047A**; A11 uses one.
+- Historical six-pair receiver quantity: **2 x TI DS90LV048A**; ARC HAT needs one.
 - Each IC has four signal paths, so two provide eight paths, six used here.
 - Candidate harness: nominal **100 ohm differential impedance**, preferably
   shielded, with suitable connectors and defined pair assignments. Two short
@@ -129,8 +128,8 @@ Sources: [manufacturer evidence register](../../../hardware/electronics/notes/re
 
 - Which obtainable ARC front end/controller has adequate documentation, CEC behavior and verified stereo/encoded-surround output, including DD+ Atmos?
 - Which carrier rates and format capabilities can be advertised after the accepted ARC targets pass capture/interoperability tests?
-- Where are clocks and all data lanes switched together, and how are mute,
-  re-lock, source changes and startup/shutdown handled?
+- How is the CS8416 internal source change coordinated with mute, capture stop,
+  re-lock and restart, including ARC CEC startup/shutdown?
 - Does the chosen capture path preserve required compressed payloads without
   resampling or other modification before decoding?
 - What are the exact cable length, skew budget, connector, ground/shield strategy,
@@ -155,4 +154,8 @@ Sources: [manufacturer evidence register](../../../hardware/electronics/notes/re
 
 ## Enlarged-enclosure discussion
 
-The [2026-11-03 review](../../worklog/2026-11-03-enlarged-enclosure-and-input-architecture.md) proposes evaluating a single four-layer rear front end before adding a mezzanine. Stacking is acceptable to the owner in principle; no split or receiver is selected. Complete receiver documentation, TV/format requirements, clock/capture behavior and standby control precede layout. Current mechanical geometry is 250 × 51 at the window; see the rear-panel topic.
+The [2026-11-03 review](../../worklog/2026-11-03-enlarged-enclosure-and-input-architecture.md) proposes evaluating a single four-layer rear front end before adding a mezzanine. Stacking is acceptable to the owner in principle. A11 subsequently drafts a single-board ARC candidate; no mezzanine is needed for the nominal placement. Complete receiver documentation, TV/format requirements, clock/capture behavior and standby control precede layout. Current mechanical geometry is 250 × 51 at the window; see the rear-panel topic.
+
+## A11 implementation evidence and remaining gates
+
+The [A11 work log](../../worklog/2026-11-04-a11-arc-electrical-study.md) records public-source research, the complete candidate support circuit and two static reviews. This supports proceeding with a one-board prototype study, not a claim that ARC works. ADI purchase eligibility, DD+ carrier/JOC preservation and ARC-only startup without a video clock remain unresolved. Pi CEC/source-control firmware, HAT/driver capture, routing, grounding and powered EMI/thermal tests are still required. All accepted formats remain targets until measured.

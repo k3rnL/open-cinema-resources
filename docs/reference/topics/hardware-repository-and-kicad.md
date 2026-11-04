@@ -1,11 +1,12 @@
 ---
 title: Hardware repository and KiCad connector assembly
-summary: A10 is an unrouted optical/coax and LVDS draft; the next HDMI implementation targets ARC. A9 is the mechanical baseline.
+summary: A11 adds an ARC candidate schematic and rigid model; unrouted and not functionally qualified. A9 remains the mechanical baseline.
 status: active
 updated: 2026-11-04
 tags: [hardware, repository, kicad, pcb, connectors, mechanical]
-aliases: [open-cinema-hardware, kikad, connector-board, connection-plate, rear-io, a0, a1, a2, a3, a7, a8, a9, a10, cs8416, horizontal, inverted, kls, fe6930, spare-pairs, daughterboard, pt-603b, straight-pins, surface-mount, fcr684205r, rcj-021, 10078837-001lf]
+aliases: [open-cinema-hardware, kikad, connector-board, connection-plate, rear-io, a0, a1, a2, a3, a7, a8, a9, a10, cs8416, horizontal, inverted, kls, fe6930, spare-pairs, daughterboard, pt-603b, straight-pins, surface-mount, fcr684205r, rcj-021, 10078837-001lf, a11, adv7511, arc-prototype]
 sources:
+  - docs/worklog/2026-11-04-a11-arc-electrical-study.md
   - docs/decisions/0014-use-arc-for-first-version.md
   - docs/worklog/2026-11-03-a10-electrical-draft.md
   - docs/worklog/2026-11-03-remove-plate-and-brackets-A9.md
@@ -35,7 +36,7 @@ The A8 fit experiment places the component side downward at z67 mm, with solder 
 
 **The KLS L-KLS1-WP-6P-03B-B/R blocks are mechanical candidates only.** Operating-current rating and exact retail supply remain unverified. They must not inherit the FE6930's 7 A rating; the prior 3 A alternative remains rejected for 4 ohm/mixed loads. This is not an order-ready BOM. [Sourcing](component-sourcing.md).
 
-The owner designs the backplate and L brackets. A9 removes those three solids and retains all four horizontal Ø3 PCB holes at x±110 mm, inward depths 12/30 mm. Previous vertical plate holes remain owner-side mechanical references; the PCB model does not contain them. The opening remains 220 × 35 R5. [Owner request and A9 evidence](../../worklog/2026-11-03-remove-plate-and-brackets-A9.md).
+The owner designs the backplate and L brackets. A9 removes those three solids and retains all four horizontal Ø3 PCB holes at x±110 mm, inward depths 12/30 mm. Previous vertical plate holes remain owner-side mechanical references; the PCB model does not contain them. The A9 snapshot used a 220 × 35 R5 opening; the latest owner opening is 250 × 51 mm. [Owner request and A9 evidence](../../worklog/2026-11-03-remove-plate-and-brackets-A9.md).
 
 ## Integration and evidence
 
@@ -55,4 +56,10 @@ Related: [rear panel](rear-panel-interface.md), [digital audio/LVDS](digital-aud
 
 ## A10 electrical draft update
 
-See the [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md). A separate KiCad schematic and rigid integration model now exist. CS8416K is the draft optical/coax choice, with documented source selection and LVDS circuitry. HDMI remains unwired in A10. [Decision 0014](../../decisions/0014-use-arc-for-first-version.md) now targets ARC first and defers eARC; no ARC implementation, order-ready BOM or manufacturing release exists. Prior WM8804 and connector records remain historical evidence.
+See the [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md). A separate KiCad schematic and rigid integration model now exist. CS8416K is the draft optical/coax choice, with documented source selection and LVDS circuitry. HDMI remains unwired in A10. [Decision 0014](../../decisions/0014-use-arc-for-first-version.md) now targets ARC first and defers eARC; at that scope-record stage no ARC implementation existed. A11 below adds a candidate; no order-ready BOM or manufacturing release exists. Prior WM8804 and connector records remain historical evidence.
+
+## Current A11 electrical study
+
+[A11 work log](../../worklog/2026-11-04-a11-arc-electrical-study.md) records the separate ARC candidate circuit, supporting power/protection and three-pair LVDS link. It retains the A9 outline/connectors/holes. Nominal placement fits one board; routing and the enlarged enclosure are not qualified. Two static passes: 0 ERC and geometry-DRC violations, 318 unrouted connections. Rigid STEP/F3D reimports match: one component, 161 solids. The open linked Fusion component had unsaved edits and was not overwritten. No production release or order-ready BOM exists.
+
+ADV7511 purchase eligibility and DD+ carrier support remain open alongside live CEC/capture tests. Canonical circuit and procurement details are linked from that log. A10 and A9 descriptions above are historical revision evidence, not the current implementation status.
