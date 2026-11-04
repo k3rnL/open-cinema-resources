@@ -1,11 +1,12 @@
 ---
 title: Component sourcing and JLCPCB
-summary: A11 has exact chip catalogue references, but ADV7511 purchase eligibility, DD+ validation and horizontal speaker qualification remain open.
+summary: A12 has exact chip/passive/prototype-header references and a review BOM; ADV7511 eligibility and horizontal speaker qualification remain open.
 status: active
 updated: 2026-11-04
 tags: [manufacturing, procurement, connectors, jlcpcb]
-aliases: [aliexpress, global-sourcing, pre-order, stock, bom, c7159430, c4992555, wp6-03, fe6930, spare-pairs, adv7511, c179459, tlv75518, tps2553, bas116]
+aliases: [a12, routed-pcb, manufacturing-review, aliexpress, global-sourcing, pre-order, stock, bom, c7159430, c4992555, wp6-03, fe6930, spare-pairs, adv7511, c179459, tlv75518, tps2553, bas116]
 sources:
+  - docs/worklog/2026-11-04-a12-routing-and-manufacturing-review.md
   - docs/worklog/2026-11-04-a11-arc-electrical-study.md
   - docs/decisions/0014-use-arc-for-first-version.md
   - docs/worklog/2026-11-03-a10-electrical-draft.md
@@ -21,7 +22,7 @@ sources:
 
 The owner prefers JLCPCB, accepts its pre-order/Global Sourcing service, and allows AliExpress or other websites when parts are hard to source. This is procurement policy, not authorization to purchase. [Decision0009](../../decisions/0009-prefer-jlcpcb-allow-external-parts.md).
 
-## Current A8 horizontal study
+## Retained horizontal connector candidates from A8
 
 The owner now requires every connector soldered to one horizontal PCB. KLS L-KLS1-WP-6P-03B-B/R is a drawing-backed mechanical candidate, **not electrically qualified or source-confirmed**. Its published drawing lacks an operating-current rating. FE6930 straight tags do not directly suit the new board orientation; the7 A rating cannot be transferred to KLS.
 
@@ -43,6 +44,12 @@ Related: [hardware implementation](hardware-repository-and-kicad.md), [rear pane
 
 See the [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md). A separate KiCad schematic and rigid integration model now exist. CS8416K is the draft optical/coax choice, with documented source selection and LVDS circuitry. HDMI remains unwired in A10. [Decision 0014](../../decisions/0014-use-arc-for-first-version.md) now targets ARC first and defers eARC; at that scope-record stage no ARC implementation existed. A11 below adds a candidate; no order-ready BOM or manufacturing release exists. Prior WM8804 and connector records remain historical evidence.
 
-## Current A11 sourcing
+## Historical A11 sourcing
 
 The [A11 work log](../../worklog/2026-11-04-a11-arc-electrical-study.md) pins the detailed sourcing table. ADV7511KSTZ has JLC C179459, but ADI explicitly requires HDMI-adopter status to purchase; the listing does not confirm eligibility or accepted supply. Exact regulator, LVDS, protection, oscillator and inductor candidates are recorded. Some need pre-order/Global Sourcing or external procurement; no complete order-ready BOM exists. KLS current rating/supply remains open. Stock is a dated observation, not a durable promise. No order, reservation or supplier contact was made.
+
+## Current A12 sourcing and manufacturing review
+
+[The A12 record](../../worklog/2026-11-04-a12-routing-and-manufacturing-review.md) links the complete reference BOM and SMT placement review files. Remaining passive references are selected, D2 is TI TPD1E10B06DYAR, and J20/J22/J21-J24 are Samtec TSW-106-07-G-D / TSW-110-07-G-D / TSW-102-07-G-S. Generic header CAD remains an envelope; mating harness/retention is not qualified. Catalogue IDs are left blank when unconfirmed rather than guessed.
+
+No complete purchasing approval is claimed: ADV7511 eligible supply, KLS operating-current rating/actual supply, supplier substitutions and JLC assembly acceptance remain unresolved. Review Gerbers and a named stackup now exist, with manufacturing explicitly on hold. No procurement requests, reservations or orders were made.

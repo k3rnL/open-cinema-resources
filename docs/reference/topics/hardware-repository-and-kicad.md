@@ -1,11 +1,12 @@
 ---
 title: Hardware repository and KiCad connector assembly
-summary: A11 adds an ARC candidate schematic and rigid model; unrouted and not functionally qualified. A9 remains the mechanical baseline.
+summary: A12 is routed with zero ERC/DRC/unrouted items and rigid exports; manufacturing qualification remains open. A9 is the mechanical baseline.
 status: active
 updated: 2026-11-04
 tags: [hardware, repository, kicad, pcb, connectors, mechanical]
-aliases: [open-cinema-hardware, kikad, connector-board, connection-plate, rear-io, a0, a1, a2, a3, a7, a8, a9, a10, cs8416, horizontal, inverted, kls, fe6930, spare-pairs, daughterboard, pt-603b, straight-pins, surface-mount, fcr684205r, rcj-021, 10078837-001lf, a11, adv7511, arc-prototype]
+aliases: [a12, routed-pcb, manufacturing-review, open-cinema-hardware, kikad, connector-board, connection-plate, rear-io, a0, a1, a2, a3, a7, a8, a9, a10, cs8416, horizontal, inverted, kls, fe6930, spare-pairs, daughterboard, pt-603b, straight-pins, surface-mount, fcr684205r, rcj-021, 10078837-001lf, a11, adv7511, arc-prototype]
 sources:
+  - docs/worklog/2026-11-04-a12-routing-and-manufacturing-review.md
   - docs/worklog/2026-11-04-a11-arc-electrical-study.md
   - docs/decisions/0014-use-arc-for-first-version.md
   - docs/worklog/2026-11-03-a10-electrical-draft.md
@@ -58,8 +59,14 @@ Related: [rear panel](rear-panel-interface.md), [digital audio/LVDS](digital-aud
 
 See the [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md). A separate KiCad schematic and rigid integration model now exist. CS8416K is the draft optical/coax choice, with documented source selection and LVDS circuitry. HDMI remains unwired in A10. [Decision 0014](../../decisions/0014-use-arc-for-first-version.md) now targets ARC first and defers eARC; at that scope-record stage no ARC implementation existed. A11 below adds a candidate; no order-ready BOM or manufacturing release exists. Prior WM8804 and connector records remain historical evidence.
 
-## Current A11 electrical study
+## Historical A11 electrical study
 
 [A11 work log](../../worklog/2026-11-04-a11-arc-electrical-study.md) records the separate ARC candidate circuit, supporting power/protection and three-pair LVDS link. It retains the A9 outline/connectors/holes. Nominal placement fits one board; routing and the enlarged enclosure are not qualified. Two static passes: 0 ERC and geometry-DRC violations, 318 unrouted connections. Rigid STEP/F3D reimports match: one component, 161 solids. The open linked Fusion component had unsaved edits and was not overwritten. No production release or order-ready BOM exists.
 
 ADV7511 purchase eligibility and DD+ carrier support remain open alongside live CEC/capture tests. Canonical circuit and procurement details are linked from that log. A10 and A9 descriptions above are historical revision evidence, not the current implementation status.
+
+## Current A12 routed prototype
+
+[The A12 log](../../worklog/2026-11-04-a12-routing-and-manufacturing-review.md) pins sources, tests and exports. Routing is complete: 0 ERC, 0 DRC and 0 unrouted items; 98 footprints, 423 electrical pad keys, 92 model links. A12 retains A9 mechanical geometry, adds coax ESD and completes passive/header references. Its rigid STEP/F3D each contain one component/162 solids and match on reimport. Gerbers/drills/BOM/CPL are available for review.
+
+Manufacturing is **not released**: ARC/DD+ operation, procurement eligibility, KLS current rating, Pi capture, actual impedance and physical qualification remain open. Owner CAD and the original manual project were preserved. The saved A12 board, rather than the A11 generator, is the routing authority.

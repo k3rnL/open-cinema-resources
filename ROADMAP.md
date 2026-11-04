@@ -31,9 +31,11 @@
 - [ ] Integrate the recommended DC11 mains inlet: resolve panel thickness, reserve its mounting/wiring volume, and design protection/earth bonding; [selection evidence](docs/worklog/2026-11-03-compact-mains-inlet.md)
 - [x] Draft and statically review optical/coax selection and LVDS electronics in separate A10; [scope and limitations](docs/worklog/2026-11-03-a10-electrical-draft.md)
 - [x] Draft A11 ADV7511 ARC support circuit into CS8416 selection and three-pair LVDS; two static reviews and rigid exports; [evidence](docs/worklog/2026-11-04-a11-arc-electrical-study.md)
-- [ ] Resolve ADV7511 procurement eligibility and ARC-only/DD+ operation; implement CEC, finish routing/protection and qualify the HAT/capture path
+- [x] Route A12, add coax ESD, pass ERC/DRC with no unrouted items, and export a manufacturing-review package; [evidence](docs/worklog/2026-11-04-a12-routing-and-manufacturing-review.md)
+- [ ] Resolve ADV7511 procurement eligibility and ARC-only/DD+ operation; implement CEC and qualify physical protection plus HAT/capture
 - [ ] Define delegated power/control electronics
-- [ ] Reserve rear-board control/status connections; later design the Pi connection HAT and implement GPIO-header source control; [decision 0013](docs/decisions/0013-pi-source-control-and-future-hat.md)
+- [x] Reserve rear-board control/status connections in A11/A12
+- [ ] Design the Pi connection HAT and implement GPIO-header source control; [decision 0013](docs/decisions/0013-pi-source-control-and-future-hat.md)
 - [ ] Qualify ARC PCM/AC-3/DTS/DD+ extraction, including DD+ Atmos metadata, source selection and LVDS-to-Pi capture; [current scope 0014](docs/decisions/0014-use-arc-for-first-version.md)
 - [ ] Separately validate Pi processing for ARC formats, DD+ Atmos behavior and 5.1→7.1 output mapping; no decoder/renderer is planned on the rear PCB
 - [ ] Future upgrade: documented eARC reception, HBR/MAT/TrueHD/DTS-HD transport and corresponding Pi software; deferred from the ARC prototype
@@ -47,9 +49,9 @@
 ## Next milestone: reproducible prototype
 
 - [ ] Freeze a named prototype revision
-- [ ] Publish assembly and manufacturing guidance
+- [x] Publish A12 draft assembly/manufacturing-review guidance; formal release remains pending
 - [ ] Link the prototype revision to a complete BOM
-- [ ] Publish verification results and known limitations
+- [x] Publish A12 static verification results and known limitations; powered qualification remains pending
 
 ## Open questions
 
@@ -58,7 +60,7 @@
 - Which components have acceptable substitutes?
 - How many input boards are required, and which functions and interfaces belong
   on the input and power/control boards?
-- Can the A11 ADV7511 candidate be obtained through an eligible route and preserve DD+ carrier/JOC payload during ARC-only operation? If not, a different documented front end or module is required before fabrication.
+- Can the A12 ADV7511 candidate be obtained through an eligible route and preserve DD+ carrier/JOC payload during ARC-only operation? If not, a different documented front end or module is required before fabrication.
 - What are the internal height datum, rear gap and connector service volumes?
   How will the A8 supports and recessed RCA perform in sample-fit/load/temperature checks? How should the current Ø4.5 frame holes
   be reconciled with the nominal Ø3.8 fastening baseline, and 2 mm frame CAD with the 3 mm material baseline?

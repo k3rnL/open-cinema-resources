@@ -1,5 +1,7 @@
 # Work log
 
+- [2026-11-04: A12 routed PCB and manufacturing review](2026-11-04-a12-routing-and-manufacturing-review.md) — routing complete; functional and procurement qualification remain open.
+
 Use one file per meaningful session or experiment, named
 `YYYY-MM-DD-short-topic.md`. The work log is append-friendly evidence, not a
 polished narrative.

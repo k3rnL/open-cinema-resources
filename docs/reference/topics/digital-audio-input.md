@@ -1,11 +1,12 @@
 ---
 title: Digital audio input and LVDS transport
-summary: A11 drafts ADV7511 ARC into CS8416 source selection and a three-pair LVDS link; DD+ capture and procurement remain unqualified.
+summary: A12 routes ADV7511 ARC into CS8416 selection and three-pair LVDS; DD+ capture, HAT and procurement remain unqualified.
 status: active
 updated: 2026-11-04
 tags: [electronics, audio, inputs, earc, arc, spdif, i2s, lvds]
-aliases: [input-board, hdmi-audio-extraction, differential-i2s, rear-to-pi, ds90lv047a, ds90lv048a, a11, adv7511, c179459]
+aliases: [a12, routed-pcb, manufacturing-review, input-board, hdmi-audio-extraction, differential-i2s, rear-to-pi, ds90lv047a, ds90lv048a, a11, adv7511, c179459]
 sources:
+  - docs/worklog/2026-11-04-a12-routing-and-manufacturing-review.md
   - docs/worklog/2026-11-04-a11-arc-electrical-study.md
   - docs/decisions/0014-use-arc-for-first-version.md
   - docs/worklog/2026-11-03-a10-electrical-draft.md
@@ -46,7 +47,7 @@ canonical in the [rear-panel topic](rear-panel-interface.md).
 | Adapter beside Pi | LVDS receivers and short logic-level I2S connection to the 40-pin header |
 | Raspberry Pi | Capture, supported compressed-audio decoding, routing, volume, EQ and other DSP |
 
-One selected input at a time. **Current A11:** ADV7511KSTZ is the ARC test candidate; CS8416K-CZZR selects optical1/2/coax/ARC internally, and one DS90LV047 drives three LVDS pairs. No external mux or stacked receiver board is used. These are prototype implementation choices, not qualified purchasing or format guarantees. See the [A11 evidence](../../worklog/2026-11-04-a11-arc-electrical-study.md). PCM9211 research and the original unimplemented ARC scope remain [historical](../../worklog/2026-11-04-arc-first-version.md).
+One selected input at a time. **Current A12 (A11 circuit topology):** ADV7511KSTZ is the ARC test candidate; CS8416K-CZZR selects optical1/2/coax/ARC internally, and one DS90LV047 drives three LVDS pairs. No external mux or stacked receiver board is used. These are prototype implementation choices, not qualified purchasing or format guarantees. See the [A11 evidence](../../worklog/2026-11-04-a11-arc-electrical-study.md). PCM9211 research and the original unimplemented ARC scope remain [historical](../../worklog/2026-11-04-arc-first-version.md).
 
 ## Pi control and future HAT
 
@@ -66,7 +67,7 @@ not compress, resample or serialize all channels into one pair. The cited Analog
 Devices serialized example is evidence of the broader technique, not this exact
 circuit. See the [manufacturer evidence](../../../hardware/electronics/notes/rear-input-evidence.md).
 
-**ARC A11:** one data lane plus BCLK and LRCLK, over three LVDS pairs; one DS90LV047 transmitter and one future DS90LV048 HAT receiver. A two-slot carrier may contain encoded multichannel audio.
+**ARC A11/A12:** one data lane plus BCLK and LRCLK, over three LVDS pairs; one DS90LV047 transmitter and one future DS90LV048 HAT receiver. A two-slot carrier may contain encoded multichannel audio.
 
 **Historical A10 / possible future eARC provision:** the following six-pair proposal is not the populated A11 link. DATA1–3 are NC in A11; eARC is not a drop-in upgrade. For future eight-channel PCM, the candidate Pi 5 connection is:
 
@@ -159,3 +160,7 @@ The [2026-11-03 review](../../worklog/2026-11-03-enlarged-enclosure-and-input-ar
 ## A11 implementation evidence and remaining gates
 
 The [A11 work log](../../worklog/2026-11-04-a11-arc-electrical-study.md) records public-source research, the complete candidate support circuit and two static reviews. This supports proceeding with a one-board prototype study, not a claim that ARC works. ADI purchase eligibility, DD+ carrier/JOC preservation and ARC-only startup without a video clock remain unresolved. Pi CEC/source-control firmware, HAT/driver capture, routing, grounding and powered EMI/thermal tests are still required. All accepted formats remain targets until measured.
+
+## A12 routing evidence
+
+[The A12 session](../../worklog/2026-11-04-a12-routing-and-manufacturing-review.md) records a fully routed four-layer implementation with no ERC/DRC/unrouted items, coax ESD and a manufacturing-review package. The transport, custom control pinout, Pi responsibility and pending format/capture tests remain as above. Calculated LVDS geometry and measured copper lengths do not establish bit-perfect operation or TV compatibility. The future HAT must still provide receivers, far-end terminations and validated capture timing.
