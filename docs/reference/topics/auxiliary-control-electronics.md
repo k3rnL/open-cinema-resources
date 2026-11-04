@@ -2,10 +2,11 @@
 title: Auxiliary control electronics
 summary: Delegated power, shutdown, IR and housekeeping functions, with the input-audio architecture tracked separately.
 status: active
-updated: 2026-11-03
+updated: 2026-11-04
 tags: [electronics, control, inputs, power, infrared]
 aliases: [logic-board, input-board, power-control-board, housekeeping-controller]
 sources:
+  - docs/decisions/0014-use-arc-for-first-version.md
   - docs/worklog/2026-11-02-enclosure-requirements-update.md
   - docs/worklog/2026-11-03-rear-panel-and-audio-architecture.md
   - docs/decisions/0003-prefer-earc-and-lvds-input-architecture.md
@@ -17,8 +18,7 @@ sources:
 
 The appliance requires at least one input board between external inputs and the
 Raspberry Pi, plus a power/control board for delegated low-level functions. The
-[digital input architecture](digital-audio-input.md) now has a working eARC/ARC
-and LVDS direction. The power/controller components, host protocol, schematic and
+[digital input architecture](digital-audio-input.md) now targets ARC and LVDS first, with eARC deferred under decision 0014. The power/controller components, host protocol, schematic and
 firmware remain unselected.
 
 ## Confirmed facts

@@ -1,11 +1,12 @@
 ---
 title: Digital audio input and LVDS transport
-summary: Working eARC/ARC and optical/coax input architecture, with multichannel I2S over LVDS to the Raspberry Pi.
+summary: ARC-first HDMI plus optical/coax inputs, unchanged payload over LVDS to the Pi, and eARC deferred.
 status: active
-updated: 2026-11-03
+updated: 2026-11-04
 tags: [electronics, audio, inputs, earc, arc, spdif, i2s, lvds]
 aliases: [input-board, hdmi-audio-extraction, differential-i2s, rear-to-pi, ds90lv047a, ds90lv048a]
 sources:
+  - docs/decisions/0014-use-arc-for-first-version.md
   - docs/worklog/2026-11-03-a10-electrical-draft.md
   - docs/decisions/0013-pi-source-control-and-future-hat.md
   - docs/decisions/0012-require-lossless-audio-and-atmos.md
@@ -25,30 +26,28 @@ sources:
 The working direction is a rear input board feeding a small adapter beside the
 Raspberry Pi through an LVDS cable link. All audio decoding, Atmos processing
 and DSP stay on the Pi, as explicitly reaffirmed by the owner.
-eARC plus explicit legacy ARC support is the compatibility target. This is an
-architecture to validate, not a completed circuit or demonstrated capture path.
+**Standard ARC is the first-version HDMI target** under [decision 0014](../../decisions/0014-use-arc-for-first-version.md). eARC is deferred. This is an architecture to validate, not a demonstrated capture path.
 
 ## First-version compatibility requirement
 
-The owner requires broad TV compatibility and lossless TrueHD/DTS-HD plus Atmos in the initial version, with 5.1 initially and an option for 7.1. [Decision 0012](../../decisions/0012-require-lossless-audio-and-atmos.md) confirms the responsibility boundary: the rear board extracts/selects/transports audio; all audio processing runs on the Pi. Preserve PCM and encoded payloads, including the necessary HBR/MAT transport cases, with documented packing and clocks. The current decoder gap is separate Pi software work, not a reason to add a hardware decoder or renderer.
+Target stereo PCM, AC-3, conventional DTS and DD+, including unchanged DD+ Atmos/JOC metadata. TV passthrough and receiver/capture implementation must be validated. TrueHD, DTS-HD MA, MAT and multichannel PCM over HDMI are deferred with eARC. [Decision 0014](../../decisions/0014-use-arc-for-first-version.md) supersedes the initial lossless requirement in 0012 while retaining 5.1 output with an option for 7.1, unchanged payload and all processing on the Pi. Direct files/network audio are not restricted by ARC.
 
 ## Project direction
 
 [Decision 0003](../../decisions/0003-prefer-earc-and-lvds-input-architecture.md)
-records the rationale and scope. Physical input requirements and placement are
+records the original rationale; [decision 0014](../../decisions/0014-use-arc-for-first-version.md) now defines HDMI scope. Physical input requirements and placement are
 canonical in the [rear-panel topic](rear-panel-interface.md).
 
 | Location | Proposed responsibility |
 | --- | --- |
-| Rear input board | Optical and coaxial reception/conditioning; HDMI eARC/ARC reception and negotiation; input selection; audio clock/data output and LVDS drivers |
+| Rear input board | Optical and coaxial reception/conditioning; HDMI ARC reception and CEC negotiation; input selection; audio clock/data output and LVDS drivers |
 | Internal harness | Audio and its clocks over differential pairs; ground reference, power and control connections also required |
 | Adapter beside Pi | LVDS receivers and short logic-level I2S connection to the 40-pin header |
 | Raspberry Pi | Capture, supported compressed-audio decoding, routing, volume, EQ and other DSP |
 
 Assume one selected physical input at a time. The HDMI receiver/controller,
 source-selection circuit, rails, control protocol and complete firmware are open.
-Input extraction is not Dolby/DTS decoding. A receiver such as EP92H1 illustrates
-the relevant interface functions, but is not a selected or validated part.
+Input extraction is not Dolby/DTS decoding. A10 uses CS8416K for optical/coax. PCM9211 is a documented candidate for ARC/selector evaluation; no ARC chip/module/controller is selected. See the [research boundary](../../worklog/2026-11-04-arc-first-version.md).
 
 ## Pi control and future HAT
 
@@ -58,7 +57,7 @@ The unchanged captured payload feeds pcm-auto-decoder on the Pi, followed by the
 
 ## A10 implementation draft
 
-The [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md) records the first separate electrical schematic: CS8416K optical/coax receiver, logic muxes, LVDS drivers and Pi control. **HDMI/eARC remains unwired and the PCB is unrouted.** The two static review passes do not qualify the full audio path. Canonical [lock/rate/format definitions](audio-receiver-control-status.md) are now saved.
+The [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md) records the first separate electrical schematic: CS8416K optical/coax receiver, logic muxes, LVDS drivers and Pi control. **HDMI remains unwired and the PCB is unrouted.** A10 predates the ARC-only decision and has not been electrically revised for ARC. The two static review passes do not qualify the full audio path. Canonical [lock/rate/format definitions](audio-receiver-control-status.md) are now saved.
 
 ## Candidate transport implementation
 
@@ -68,7 +67,9 @@ not compress, resample or serialize all channels into one pair. The cited Analog
 Devices serialized example is evidence of the broader technique, not this exact
 circuit. See the [manufacturer evidence](../../../hardware/electronics/notes/rear-input-evidence.md).
 
-For up to eight-channel PCM, the candidate Pi 5 connection is:
+**ARC first version:** one data lane plus BCLK and LRCLK, over three LVDS pairs. A two-slot carrier may contain encoded multichannel audio.
+
+**Existing A10 / possible future eARC provision:** the six-pair connection below remains in the draft. DATA1–3 are unused for the proposed ARC path; no harness reduction or drop-in eARC upgrade is approved. For future eight-channel PCM, the candidate Pi 5 connection is:
 
 | I2S signal | Differential pairs | BCM GPIO at the Pi |
 | --- | --- | --- |
@@ -118,8 +119,7 @@ the input controller and Linux integration do.
   Its single receiver input requires selection for multiple S/PDIF sources. A
   future HDMI receiver may absorb some of that function; A10 uses CS8416K as a draft alternative, not a released replacement.
 - Preserve encoded payloads unchanged before software decoding. PCM capture,
-  IEC 61937 handling and higher-bit-rate compressed formats are separate
-  validation cases. Do not advertise formats merely because the HDMI chip can
+  IEC 61937 handling and DD+ Atmos are separate first-version validation cases; HBR/MAT is deferred with eARC. Do not advertise formats merely because the HDMI chip can
   transport them.
 
 Sources: [manufacturer evidence register](../../../hardware/electronics/notes/rear-input-evidence.md),
@@ -127,9 +127,8 @@ Sources: [manufacturer evidence register](../../../hardware/electronics/notes/re
 
 ## Open questions
 
-- Which obtainable eARC/ARC receiver has adequate documentation, control firmware,
-  CEC/fallback behavior and Pi-compatible multichannel output?
-- Which source formats and sample rates should actually be advertised and tested?
+- Which obtainable ARC front end/controller has adequate documentation, CEC behavior and verified stereo/encoded-surround output, including DD+ Atmos?
+- Which carrier rates and format capabilities can be advertised after the accepted ARC targets pass capture/interoperability tests?
 - Where are clocks and all data lanes switched together, and how are mute,
   re-lock, source changes and startup/shutdown handled?
 - Does the chosen capture path preserve required compressed payloads without

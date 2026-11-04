@@ -1,5 +1,7 @@
 # 0012 — Require lossless/Atmos transport; keep processing on the Raspberry Pi
 
+> **2026-11-04 scope update:** [Decision 0014](0014-use-arc-for-first-version.md) supersedes the initial eARC/lossless HDMI requirement with standard ARC, including DD+ Atmos transport. Pi processing and the LVDS direction remain. The original decision below is retained as history.
+
 - Date: 2026-11-03
 - Status: Owner-accepted requirements and processing allocation; extraction hardware and interoperability unvalidated
 - Source: owner requested broad TV compatibility, lossless formats and Atmos initially, then specified 5.1 with an option for 7.1 and clarified that all audio processing belongs on the Raspberry Pi.

@@ -12,7 +12,8 @@
 - [x] Obtain a basic Raspberry Pi cooling fan
 - [x] Archive enclosure layout screenshots and capture rear interface requirements
 - [x] Select the JLCCNC-installed rear-panel fastening baseline
-- [x] Record the working eARC/ARC and I2S-over-LVDS input architecture direction
+- [x] Record the original eARC/ARC and I2S-over-LVDS architecture direction
+- [x] Adopt ARC first, retain DD+ Atmos transport and defer eARC/lossless HDMI; [decision 0014](docs/decisions/0014-use-arc-for-first-version.md)
 - [x] Create a separate hardware repo and KiCad rear connector mechanical study,
   with the measured rear-frame opening and STEP review exports
 - [ ] Import the current enclosure CAD and mechanical constraints
@@ -29,11 +30,12 @@
 - [ ] Owner to design backplate and L brackets; then verify plate cutouts, cable insertion, tolerances, loads and temperatures
 - [ ] Integrate the recommended DC11 mains inlet: resolve panel thickness, reserve its mounting/wiring volume, and design protection/earth bonding; [selection evidence](docs/worklog/2026-11-03-compact-mains-inlet.md)
 - [x] Draft and statically review optical/coax selection and LVDS electronics in separate A10; [scope and limitations](docs/worklog/2026-11-03-a10-electrical-draft.md)
-- [ ] Obtain full eARC design documentation, complete HDMI circuitry, protection, routing, harness/HAT and bench verification
+- [ ] Qualify a documented ARC receiver/controller; complete HDMI/CEC circuitry, protection, routing, harness/HAT and bench verification
 - [ ] Define delegated power/control electronics
 - [ ] Reserve rear-board control/status connections; later design the Pi connection HAT and implement GPIO-header source control; [decision 0013](docs/decisions/0013-pi-source-control-and-future-hat.md)
-- [ ] Qualify eARC/ARC extraction, lossless/Atmos payload transport, source selection and LVDS-to-Pi capture; [requirement and responsibility boundary 0012](docs/decisions/0012-require-lossless-audio-and-atmos.md)
-- [ ] Separately extend Pi audio processing for the required lossless/Atmos formats and validate 5.1→7.1 output mapping; no decoder/renderer is planned on the rear PCB
+- [ ] Qualify ARC PCM/AC-3/DTS/DD+ extraction, including DD+ Atmos metadata, source selection and LVDS-to-Pi capture; [current scope 0014](docs/decisions/0014-use-arc-for-first-version.md)
+- [ ] Separately validate Pi processing for ARC formats, DD+ Atmos behavior and 5.1→7.1 output mapping; no decoder/renderer is planned on the rear PCB
+- [ ] Future upgrade: documented eARC reception, HBR/MAT/TrueHD/DTS-HD transport and corresponding Pi software; deferred from the ARC prototype
 - [ ] Resolve above-PSU placement against manufacturer thermal guidance, airflow,
   mains separation and loaded-enclosure temperature/interference measurements
 - [ ] Design and implement the local touch-screen software
@@ -55,8 +57,7 @@
 - Which components have acceptable substitutes?
 - How many input boards are required, and which functions and interfaces belong
   on the input and power/control boards?
-- Which exact eARC/ARC receiver, controller and audio formats can be supported
-  end to end by the existing software? Does it absorb the WM8804's S/PDIF role?
+- Which ARC receiver/controller and CEC implementation preserve the accepted formats? Can an ARC-capable receiver/selector replace draft CS8416K while retaining optical/coax inputs?
 - What are the internal height datum, rear gap and connector service volumes?
   How will the A8 supports and recessed RCA perform in sample-fit/load/temperature checks? How should the current Ø4.5 frame holes
   be reconciled with the nominal Ø3.8 fastening baseline, and 2 mm frame CAD with the 3 mm material baseline?

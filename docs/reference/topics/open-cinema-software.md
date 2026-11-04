@@ -2,10 +2,11 @@
 title: Open Cinema software system
 summary: Control plane that turns versioned desired audio graphs into a reconciled PipeWire/WirePlumber appliance runtime.
 status: active
-updated: 2026-11-03
+updated: 2026-11-04
 tags: [architecture, software, audio, raspberry-pi]
 aliases: [open-cinema, control-plane, audio-orchestrator]
 sources:
+  - docs/decisions/0014-use-arc-for-first-version.md
   - docs/decisions/0012-require-lossless-audio-and-atmos.md
   - https://github.com/k3rnL/open-cinema
   - https://github.com/k3rnL/open-cinema/commit/e52008996dd35fe645e2bd682e9c1d2a5277a0f1
@@ -85,6 +86,8 @@ reconciles the result with the native Linux audio runtime.
 - [WM8804 S/PDIF transceiver](wm8804.md)
 - [WONDOM KAB9 amplifier](wondom-kab9.md)
 
-## New lossless/Atmos requirement
+## ARC-first input scope and software boundary
 
-The owner now requires lossless formats and Atmos initially. The existing software acceptance does not cover that path. Read-only inspection of pinned pcm-auto-decoder v0.2.2 confirms its limited IEC61937 type handling and absence of an integrated Atmos renderer. See [requirement and source evidence](../../decisions/0012-require-lossless-audio-and-atmos.md). This does not invalidate the previously accepted S/PDIF fixture; it identifies additional Pi software work. The owner explicitly keeps all decoding, Atmos processing and DSP on the Raspberry Pi; the current hardware task covers extraction, selection and transport only.
+[Decision 0014](../../decisions/0014-use-arc-for-first-version.md), 2026-11-04, defers lossless HDMI/eARC input and retains DD+ Atmos payload transport. All decoding/rendering/DSP remains on the Pi. This does not restrict direct file/network inputs.
+
+Historically, decision 0012 required lossless formats and Atmos initially. The existing software acceptance does not cover that path. Read-only inspection of pinned pcm-auto-decoder v0.2.2 confirms its limited IEC61937 type handling and absence of an integrated Atmos renderer. See [requirement and source evidence](../../decisions/0012-require-lossless-audio-and-atmos.md). This does not invalidate the previously accepted S/PDIF fixture; it identifies additional Pi software work. The owner explicitly keeps all decoding, Atmos processing and DSP on the Raspberry Pi; the current hardware task covers extraction, selection and transport only.

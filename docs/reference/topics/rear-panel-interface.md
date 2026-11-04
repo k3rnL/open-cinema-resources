@@ -2,10 +2,11 @@
 title: Rear-panel interface and enclosure layout
 summary: Rear layout and connector context, with an accepted JLCCNC-installed self-clinching fastening baseline and provisional above-PSU board placement.
 status: active
-updated: 2026-11-03
+updated: 2026-11-04
 tags: [mechanical, enclosure, rear-panel, fasteners, connectors, thermal, electronics]
 aliases: [back-panel, rear-input-board, tongues, self-clinching-nuts, pem, jlccnc, s-m3-2, s-m3-2zi]
 sources:
+  - docs/decisions/0014-use-arc-for-first-version.md
   - docs/worklog/2026-11-03-enlarged-enclosure-and-input-architecture.md
   - docs/worklog/2026-11-03-compact-mains-inlet.md
   - docs/worklog/2026-11-03-remove-plate-and-brackets-A9.md
@@ -61,7 +62,7 @@ Sources: [session record](../../worklog/2026-11-03-rear-panel-and-audio-architec
 | Mains cord inlet with power switch (described as 220 V) | DC11 snap-in C14/two-pole module recommended; panel-thickness variant and placement/protection need finalization; see current mains note below |
 | Two optical inputs | Two TOSLINK/S/PDIF receive inputs |
 | One coaxial input | Coaxial S/PDIF input; A8 uses horizontal Same Sky RCJ-011 |
-| One HDMI ARC input; later priority "most compatible" | eARC plus explicit legacy ARC support is the working architecture target |
+| One HDMI ARC input | Standard ARC first under [decision 0014](../../decisions/0014-use-arc-for-first-version.md); DD+ Atmos transport targeted, eARC deferred |
 | Speaker spring clips | Owner confirmed six speaker pairs/twelve contacts on 2026-11-03 |
 
 The owner confirmed speaker pairs and audio inputs on the same connector strip

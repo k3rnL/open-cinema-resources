@@ -9,6 +9,8 @@ evidence, conclusions, and next steps. Separate observations from interpretation
 
 ## Sessions
 
+- [2026-11-04: ARC first-version decision and requirements](2026-11-04-arc-first-version.md).
+
 - [2026-11-03: Enlarged enclosure and input-board architecture discussion](2026-11-03-enlarged-enclosure-and-input-architecture.md).
 
 - [2026-11-03: Compact switched mains inlet recommendation](2026-11-03-compact-mains-inlet.md) — exact part and dimensions; placement still open.

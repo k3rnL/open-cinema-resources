@@ -2,10 +2,11 @@
 title: Audio receiver control and status
 summary: Meaning of lock, carrier rate and transport format; Pi source switching and unchanged payload boundary.
 status: active
-updated: 2026-11-03
+updated: 2026-11-04
 tags: [audio, control, status, clock, capture, spdif, earc]
 aliases: [signal-lock, rate, format, carrier-rate, word-packing, pcm-auto-decoder]
 sources:
+  - docs/decisions/0014-use-arc-for-first-version.md
   - docs/decisions/0013-pi-source-control-and-future-hat.md
   - docs/worklog/2026-11-03-a10-electrical-draft.md
 ---
@@ -22,10 +23,10 @@ The owner explicitly asked to preserve these definitions before starting hardwar
 
 The Pi commands the source, waits for stable reception, reads supported status, configures/restarts capture where necessary, then sends the unchanged payload to pcm-auto-decoder. Coordinate output muting and decoder boundaries during source changes or errors; ordinary logic clock muxes must not be switched during active capture. Never silently resample, truncate, apply de-emphasis or substitute samples on the valid encoded-payload path.
 
-Extracting framing and repacking words is allowed only with an explicit, tested mapping that preserves the payload bits. Metadata belongs in status/control; it is not inserted into the audio data. Processed output goes from Pi to amplifier over USB. The future HAT and Pi GPIO allocation remain separate work.
+Extracting framing and repacking words is allowed only with an explicit, tested mapping that preserves the payload bits. Receiver status (lock, carrier rate, channel-status readback and errors) travels separately. Codec metadata, including DD+ Atmos/JOC, remains inside the unchanged encoded payload; do not strip it or move it to a side channel. Processed output goes from Pi to amplifier over USB. The future HAT and Pi GPIO allocation remain separate work.
 
 ## Current evidence and limits
 
-The [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md) links a drafted CS8416K receiver/mux/LVDS schematic. Its CS8416K control interface is 100 kHz I2C, with reset/interrupt/error/selection connections. OMCK is unused, so its clock-ratio register cannot establish rate; clock measurement/validation at the Pi/HAT remains required. eARC status fields and raw HBR/MAT packing cannot be finalized until the actual receiver documentation is available.
+The [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md) links a drafted CS8416K receiver/mux/LVDS schematic. Its CS8416K control interface is 100 kHz I2C, with reset/interrupt/error/selection connections. OMCK is unused, so its clock-ratio register cannot establish rate; clock measurement/validation at the Pi/HAT remains required. [Decision 0014](../../decisions/0014-use-arc-for-first-version.md) now targets ARC first. ARC/CEC status, DD+ carrier packing and bit preservation still need validation; eARC status and HBR/MAT packing are deferred.
 
 These definitions are accepted project knowledge. A10 component and connector choices are draft implementation proposals, not a claim that the end-to-end stream has been captured or tested.

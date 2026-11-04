@@ -1,5 +1,7 @@
 # Decision: Prefer eARC/ARC reception and an LVDS audio link
 
+> **2026-11-04 scope update:** [Decision 0014](0014-use-arc-for-first-version.md) supersedes the initial eARC/lossless HDMI requirement with standard ARC, including DD+ Atmos transport. Pi processing and the LVDS direction remain. The original decision below is retained as history.
+
 - Status: Accepted as a working architecture direction; implementation unvalidated
 - Date: 2026-11-03
 - Owner: `@k3rnL`

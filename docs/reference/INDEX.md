@@ -1,6 +1,6 @@
 # Open Cinema reference book
 
-Last reviewed: 2026-11-03
+Last reviewed: 2026-11-04
 
 This is the fast map of durable project knowledge. Topic pages summarize what the
 project knows and link back to decisions, work logs, and original evidence.
@@ -8,6 +8,7 @@ project knows and link back to decisions, work logs, and original evidence.
 ## Start here
 
 - [Project roadmap](../../ROADMAP.md)
+- [Current HDMI decision: ARC first, eARC deferred](../decisions/0014-use-arc-for-first-version.md)
 - [Decision records](../decisions/README.md)
 - [Work logs](../worklog/README.md)
 - [Reference topic template](0000-template.md)
@@ -44,8 +45,7 @@ project knows and link back to decisions, work logs, and original evidence.
   amplifier.
 - [MEAN WELL UHP-500](topics/mean-well-uhp-500.md) — selected power-supply family;
   24 V output selected and redundancy suffix still open.
-- [Digital audio input and LVDS transport](topics/digital-audio-input.md) — eARC/ARC
-  working direction, unaltered lossless/Atmos transport, Pi-controlled source selection and future HAT.
+- [Digital audio input and LVDS transport](topics/digital-audio-input.md) — ARC first, unchanged stereo/encoded surround including DD+ Atmos, eARC deferred; Pi-controlled selection and future HAT.
 - [Auxiliary control electronics](topics/auxiliary-control-electronics.md) —
   delegated power, shutdown, IR and housekeeping functions; controller and firmware
   still undefined.
@@ -73,9 +73,8 @@ No unclassified material.
   board revision, and supporting 5 V conversion are not yet confirmed.
 - The purchased Raspberry Pi fan has not been identified by model, mounting, or
   verified thermal performance.
-- eARC/ARC receiver selection, documented control/CEC behavior, eight-channel Pi
-  capture, supported encoded formats and the LVDS harness are not validated.
-- A10 proposes CS8416K for optical/coax reception; WM8804 history is retained. Full eARC documentation, routing/protection and KAB9 channel configuration remain unresolved. USB is the
+- ARC receiver/controller selection, CEC negotiation, DD+ Atmos payload preservation, Pi capture and the LVDS harness are not validated. eARC/HBR/MAT is deferred and no longer a first-version gate.
+- A10 proposes CS8416K for optical/coax reception; WM8804 history is retained. ARC circuitry/CEC, routing/protection and KAB9 channel configuration remain unresolved. USB is the
   selected Pi-to-amplifier interface; its actual module/mapping still needs validation.
   Six working pairs now solder to one horizontal board along with the audio inputs. A8's KLS speaker candidate has unverified current rating/supply. Tails point upward; optical daughterboards/cradle are historical.
 - A9 keeps the PCB holes but removes the provisional plate and supports; the owner designs those parts. The owner enlarged the opening to 250 × 51 mm; A9 PCB geometry remains unchanged. Current assembled setback needs correction before rechecking clearance; tight plate/PCB gaps, cable mating, hardware, tolerances and production qualification remain open. Frame CAD reads2 mm versus the3 mm fabrication baseline; Ø4.5 frame holes differ from nominal Ø3.8.

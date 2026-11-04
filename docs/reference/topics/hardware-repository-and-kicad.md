@@ -1,11 +1,12 @@
 ---
 title: Hardware repository and KiCad connector assembly
-summary: A10 adds an unrouted optical/coax, selection and LVDS draft with a rigid model; eARC remains incomplete. A9 is the mechanical baseline.
+summary: A10 is an unrouted optical/coax and LVDS draft; the next HDMI implementation targets ARC. A9 is the mechanical baseline.
 status: active
-updated: 2026-11-03
+updated: 2026-11-04
 tags: [hardware, repository, kicad, pcb, connectors, mechanical]
 aliases: [open-cinema-hardware, kikad, connector-board, connection-plate, rear-io, a0, a1, a2, a3, a7, a8, a9, a10, cs8416, horizontal, inverted, kls, fe6930, spare-pairs, daughterboard, pt-603b, straight-pins, surface-mount, fcr684205r, rcj-021, 10078837-001lf]
 sources:
+  - docs/decisions/0014-use-arc-for-first-version.md
   - docs/worklog/2026-11-03-a10-electrical-draft.md
   - docs/worklog/2026-11-03-remove-plate-and-brackets-A9.md
   - docs/decisions/0011-horizontal-pcb-with-all-connectors.md
@@ -54,4 +55,4 @@ Related: [rear panel](rear-panel-interface.md), [digital audio/LVDS](digital-aud
 
 ## A10 electrical draft update
 
-See the [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md). A separate KiCad schematic and rigid integration model now exist. CS8416K is the draft optical/coax choice, with documented source selection and LVDS circuitry. eARC remains unresolved; no order-ready BOM or manufacturing release exists. Prior WM8804 and connector records remain historical evidence.
+See the [A10 work log](../../worklog/2026-11-03-a10-electrical-draft.md). A separate KiCad schematic and rigid integration model now exist. CS8416K is the draft optical/coax choice, with documented source selection and LVDS circuitry. HDMI remains unwired in A10. [Decision 0014](../../decisions/0014-use-arc-for-first-version.md) now targets ARC first and defers eARC; no ARC implementation, order-ready BOM or manufacturing release exists. Prior WM8804 and connector records remain historical evidence.

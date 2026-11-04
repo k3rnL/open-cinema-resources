@@ -8,9 +8,11 @@ record with status `Supersedes` and link the earlier record rather than erasing 
 
 ## Records
 
+- [0014: ARC for the first version](0014-use-arc-for-first-version.md) — current HDMI scope; DD+ Atmos retained, eARC/lossless return audio deferred; partially supersedes 0003/0012.
+
 - [0013: Pi source control and future HAT](0013-pi-source-control-and-future-hat.md) — Pi selects the source, receives unaltered audio and outputs over USB; control software/HAT design deferred.
 
-- [0012: Lossless/Atmos extraction with processing on the Pi](0012-require-lossless-audio-and-atmos.md) — accepted requirements and allocation; transport implementation open.
+- [0012: Lossless/Atmos extraction with processing on the Pi](0012-require-lossless-audio-and-atmos.md) — initial lossless requirement superseded by 0014; Pi processing allocation retained.
 
 - [0011: Horizontal PCB with all connectors soldered](0011-horizontal-pcb-with-all-connectors.md) — current owner direction; fit/candidate qualification remains open.
 
@@ -27,7 +29,7 @@ record with status `Supersedes` and link the earlier record rather than erasing 
 - [0001: Initial enclosure main components](0001-initial-enclosure-components.md) — accepted.
 - [0002: Select the 24 V main supply](0002-select-24v-main-supply.md) — accepted.
 - [0003: Prefer eARC/ARC and LVDS input architecture](0003-prefer-earc-and-lvds-input-architecture.md)
-  — accepted working direction; components, placement and implementation unvalidated.
+  — HDMI scope superseded by 0014; rear extraction and LVDS direction retained.
 - [0004: Use JLCCNC-installed self-clinching nuts for the rear panel](0004-use-jlccnc-rear-panel-fastening.md)
   — accepted for the next mechanical revision; fabrication unverified.
 

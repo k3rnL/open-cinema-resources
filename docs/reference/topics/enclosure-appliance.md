@@ -2,10 +2,11 @@
 title: Enclosure and appliance system
 summary: Current system-level enclosure context, selected major components, and unresolved integration constraints.
 status: active
-updated: 2026-11-03
+updated: 2026-11-04
 tags: [architecture, enclosure, mechanical, electronics, thermal]
 aliases: [case, chassis, appliance-enclosure]
 sources:
+  - docs/decisions/0014-use-arc-for-first-version.md
   - docs/worklog/2026-11-03-rear-connector-selection.md
   - docs/decisions/0006-vertical-carrier-and-optical-daughterboards.md
   - docs/worklog/2026-11-03-kicad-rear-io-mechanical.md
@@ -53,7 +54,7 @@ cooling and safety implementation remain open.
   The PSU spans the rear; the Pi and amplifier are at the front. A1 connector references are selected for integration; final manufacturing dimensions remain open.
 - The appliance needs at least one input front-end board and a power/control board
   for delegated functions. The [digital-input working direction](digital-audio-input.md)
-  targets eARC/ARC and multichannel I2S over LVDS; power/control electronics and
+  targets ARC first with I2S over LVDS and eARC deferred; power/control electronics and
   detailed implementations remain open.
 
 ## Constraints
