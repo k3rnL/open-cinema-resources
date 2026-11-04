@@ -1,11 +1,12 @@
 ---
 title: Component sourcing and JLCPCB
-summary: A12 has exact chip/passive/prototype-header references and a review BOM; ADV7511 eligibility and horizontal speaker qualification remain open.
+summary: Owner accepts ADV7511 via LCSC; A12 speaker clips await confirmation and current qualification, and Fusion fit review is pending.
 status: active
 updated: 2026-11-04
 tags: [manufacturing, procurement, connectors, jlcpcb]
 aliases: [a12, routed-pcb, manufacturing-review, aliexpress, global-sourcing, pre-order, stock, bom, c7159430, c4992555, wp6-03, fe6930, spare-pairs, adv7511, c179459, tlv75518, tps2553, bas116]
 sources:
+  - docs/decisions/0015-retain-adv7511-lcsc-source.md
   - docs/worklog/2026-11-04-a12-routing-and-manufacturing-review.md
   - docs/worklog/2026-11-04-a11-arc-electrical-study.md
   - docs/decisions/0014-use-arc-for-first-version.md
@@ -52,4 +53,4 @@ The [A11 work log](../../worklog/2026-11-04-a11-arc-electrical-study.md) pins th
 
 [The A12 record](../../worklog/2026-11-04-a12-routing-and-manufacturing-review.md) links the complete reference BOM and SMT placement review files. Remaining passive references are selected, D2 is TI TPD1E10B06DYAR, and J20/J22/J21-J24 are Samtec TSW-106-07-G-D / TSW-110-07-G-D / TSW-102-07-G-S. Generic header CAD remains an envelope; mating harness/retention is not qualified. Catalogue IDs are left blank when unconfirmed rather than guessed.
 
-No complete purchasing approval is claimed: ADV7511 eligible supply, KLS operating-current rating/actual supply, supplier substitutions and JLC assembly acceptance remain unresolved. Review Gerbers and a named stackup now exist, with manufacturing explicitly on hold. No procurement requests, reservations or orders were made.
+The owner now accepts **ADV7511KSTZ via LCSC**, reporting availability there; retain the chip. This is an accepted sourcing choice, not independently verified stock, purchasing eligibility or a completed order. ARC-only/DD+ operation still needs validation. The owner requested the two **L-KLS1-WP-6P-03B-B/R** speaker-block references before confirming them and will check the A12 model in Fusion. Speaker current rating/actual supply, mechanical approval, supplier substitutions and JLC assembly acceptance remain open. See [decision 0015](../../decisions/0015-retain-adv7511-lcsc-source.md). Manufacturing-review files remain on hold; no procurement requests, reservations or orders were made.

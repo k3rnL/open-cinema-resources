@@ -51,7 +51,7 @@ project knows and link back to decisions, work logs, and original evidence.
 
 ### Manufacturing and assembly
 
-- [Component sourcing and JLCPCB](topics/component-sourcing.md) — JLCPCB preferred; Global Sourcing/pre-order and outside suppliers allowed; horizontal speaker candidate current rating and supply unresolved.
+- [Component sourcing and JLCPCB](topics/component-sourcing.md) — JLCPCB preferred; owner accepts ADV7511 via LCSC; speaker references/current qualification and owner Fusion review remain pending.
 
 ### Verification and testing
 
@@ -75,7 +75,7 @@ No unclassified material.
   board revision, and supporting 5 V conversion are not yet confirmed.
 - The purchased Raspberry Pi fan has not been identified by model, mounting, or
   verified thermal performance.
-- A12 ADV7511 procurement eligibility, ARC/CEC operation, DD+ Atmos payload preservation, Pi capture and the LVDS harness are not validated. eARC/HBR/MAT is deferred and no longer a first-version gate.
+- The owner accepts A12 ADV7511 sourcing via LCSC ([0015](../decisions/0015-retain-adv7511-lcsc-source.md)); supplier acceptance is not independently verified. ARC/CEC operation, DD+ Atmos payload preservation, Pi capture and the LVDS harness are not validated. eARC/HBR/MAT is deferred and no longer a first-version gate.
 - A12 routes ADV7511 ARC into CS8416 four-input selection, with three active LVDS pairs; WM8804/A10 history is retained. CEC firmware, physical protection testing and KAB9 channel configuration remain unresolved. USB is the
   selected Pi-to-amplifier interface; its actual module/mapping still needs validation.
   Six working pairs now solder to one horizontal board along with the audio inputs. A8's KLS speaker candidate has unverified current rating/supply. Tails point upward; optical daughterboards/cradle are historical.

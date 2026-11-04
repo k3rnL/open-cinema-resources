@@ -8,6 +8,8 @@ record with status `Supersedes` and link the earlier record rather than erasing 
 
 ## Records
 
+- [0015: Retain ADV7511 with owner-accepted LCSC sourcing](0015-retain-adv7511-lcsc-source.md) — chip accepted; speaker references and owner Fusion review pending.
+
 - [0014: ARC for the first version](0014-use-arc-for-first-version.md) — current HDMI scope; DD+ Atmos retained, eARC/lossless return audio deferred; partially supersedes 0003/0012.
 
 - [0013: Pi source control and future HAT](0013-pi-source-control-and-future-hat.md) — Pi selects the source, receives unaltered audio and outputs over USB; control software/HAT design deferred.

@@ -32,7 +32,9 @@
 - [x] Draft and statically review optical/coax selection and LVDS electronics in separate A10; [scope and limitations](docs/worklog/2026-11-03-a10-electrical-draft.md)
 - [x] Draft A11 ADV7511 ARC support circuit into CS8416 selection and three-pair LVDS; two static reviews and rigid exports; [evidence](docs/worklog/2026-11-04-a11-arc-electrical-study.md)
 - [x] Route A12, add coax ESD, pass ERC/DRC with no unrouted items, and export a manufacturing-review package; [evidence](docs/worklog/2026-11-04-a12-routing-and-manufacturing-review.md)
-- [ ] Resolve ADV7511 procurement eligibility and ARC-only/DD+ operation; implement CEC and qualify physical protection plus HAT/capture
+- [x] Retain ADV7511KSTZ with owner-accepted LCSC sourcing; availability owner-reported, no order placed; [decision 0015](docs/decisions/0015-retain-adv7511-lcsc-source.md)
+- [ ] Owner to confirm A12 mechanical fit in Fusion and review KLS speaker references
+- [ ] Validate ADV7511 ARC-only/DD+ operation; implement CEC and qualify physical protection plus HAT/capture
 - [ ] Define delegated power/control electronics
 - [x] Reserve rear-board control/status connections in A11/A12
 - [ ] Design the Pi connection HAT and implement GPIO-header source control; [decision 0013](docs/decisions/0013-pi-source-control-and-future-hat.md)
@@ -60,7 +62,7 @@
 - Which components have acceptable substitutes?
 - How many input boards are required, and which functions and interfaces belong
   on the input and power/control boards?
-- Can the A12 ADV7511 candidate be obtained through an eligible route and preserve DD+ carrier/JOC payload during ARC-only operation? If not, a different documented front end or module is required before fabrication.
+- Can the accepted A12 ADV7511 preserve DD+ carrier/JOC payload during ARC-only operation? The owner accepts LCSC sourcing; a different front end is needed only if functional validation requires it. Actual supplier acceptance and ordering remain unperformed.
 - What are the internal height datum, rear gap and connector service volumes?
   How will the A8 supports and recessed RCA perform in sample-fit/load/temperature checks? How should the current Ø4.5 frame holes
   be reconciled with the nominal Ø3.8 fastening baseline, and 2 mm frame CAD with the 3 mm material baseline?
