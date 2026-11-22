@@ -1,11 +1,12 @@
 ---
 title: Component sourcing and JLCPCB
-summary: Owner accepts ADV7511 via LCSC; A12 speaker clips await confirmation and current qualification, and Fusion fit review is pending.
+summary: Two Cliff FE6930 blocks mount to the removable rear plate. The amplifier feeds six independent speaker pairs directly. Two more pairs are available. The horizontal A13 input PCB measures 115 × 39.8 × 1.6 mm.
 status: active
-updated: 2026-11-04
+updated: 2026-11-22
 tags: [manufacturing, procurement, connectors, jlcpcb]
-aliases: [a12, routed-pcb, manufacturing-review, aliexpress, global-sourcing, pre-order, stock, bom, c7159430, c4992555, wp6-03, fe6930, spare-pairs, adv7511, c179459, tlv75518, tps2553, bas116]
+aliases: [a13, panel-mounted-speakers, a12, routed-pcb, manufacturing-review, aliexpress, global-sourcing, pre-order, stock, bom, c7159430, c4992555, wp6-03, fe6930, spare-pairs, adv7511, c179459, tlv75518, tps2553, bas116]
 sources:
+  - docs/decisions/0016-panel-mounted-cliff-speaker-blocks.md
   - docs/decisions/0015-retain-adv7511-lcsc-source.md
   - docs/worklog/2026-11-04-a12-routing-and-manufacturing-review.md
   - docs/worklog/2026-11-04-a11-arc-electrical-study.md
@@ -21,11 +22,13 @@ sources:
 
 # Component sourcing and JLCPCB
 
+Two Cliff FE6930 blocks mount to the removable rear plate. The amplifier feeds six independent speaker pairs directly. Two more pairs are available. The horizontal A13 input PCB measures 115 × 39.8 × 1.6 mm. [Decision 0016](../../decisions/0016-panel-mounted-cliff-speaker-blocks.md)
+
 The owner prefers JLCPCB, accepts its pre-order/Global Sourcing service, and allows AliExpress or other websites when parts are hard to source. This is procurement policy, not authorization to purchase. [Decision0009](../../decisions/0009-prefer-jlcpcb-allow-external-parts.md).
 
-## Retained horizontal connector candidates from A8
+## Historical A8 horizontal connector candidates
 
-The owner now requires every connector soldered to one horizontal PCB. KLS L-KLS1-WP-6P-03B-B/R is a drawing-backed mechanical candidate, **not electrically qualified or source-confirmed**. Its published drawing lacks an operating-current rating. FE6930 straight tags do not directly suit the new board orientation; the7 A rating cannot be transferred to KLS.
+In A8 the owner requested every connector on one horizontal PCB. KLS L-KLS1-WP-6P-03B-B/R is a drawing-backed mechanical candidate, **not electrically qualified or source-confirmed**. Its published drawing lacks an operating-current rating. FE6930 straight tags do not directly suit the new board orientation; the7 A rating cannot be transferred to KLS.
 
 RCJ-011 replaces RCJ-021; JLC C4992678 showed21 units at lookup. Horizontal HDMI10029449-001RLF has JLC listing C428493, but purchasable stock was not established. FCR684205R retains its external-source route. Exact dated links and evidence are in the [A8 work log](../../worklog/2026-11-03-horizontal-rear-io-A8.md) and its pinned hardware record. No sourcing requests, orders or reservations were made.
 
@@ -53,4 +56,4 @@ The [A11 work log](../../worklog/2026-11-04-a11-arc-electrical-study.md) pins th
 
 [The A12 record](../../worklog/2026-11-04-a12-routing-and-manufacturing-review.md) links the complete reference BOM and SMT placement review files. Remaining passive references are selected, D2 is TI TPD1E10B06DYAR, and J20/J22/J21-J24 are Samtec TSW-106-07-G-D / TSW-110-07-G-D / TSW-102-07-G-S. Generic header CAD remains an envelope; mating harness/retention is not qualified. Catalogue IDs are left blank when unconfirmed rather than guessed.
 
-The owner now accepts **ADV7511KSTZ via LCSC**, reporting availability there; retain the chip. This is an accepted sourcing choice, not independently verified stock, purchasing eligibility or a completed order. ARC-only/DD+ operation still needs validation. The owner requested the two **L-KLS1-WP-6P-03B-B/R** speaker-block references before confirming them and will check the A12 model in Fusion. Speaker current rating/actual supply, mechanical approval, supplier substitutions and JLC assembly acceptance remain open. See [decision 0015](../../decisions/0015-retain-adv7511-lcsc-source.md). Manufacturing-review files remain on hold; no procurement requests, reservations or orders were made.
+The owner now accepts **ADV7511KSTZ via LCSC**, reporting availability there; retain the chip. This is an accepted sourcing choice, not independently verified stock, purchasing eligibility or a completed order. ARC-only/DD+ operation still needs validation. At A12 the owner requested the provisional speaker references for review. Decision 0016 subsequently selected the Cliff FE6930 for panel mounting. Sample fit, supplier substitutions and JLC assembly acceptance remain open. See [decision 0015](../../decisions/0015-retain-adv7511-lcsc-source.md). Manufacturing-review files remain on hold; no procurement requests, reservations or orders were made.

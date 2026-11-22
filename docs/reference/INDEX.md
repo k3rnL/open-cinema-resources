@@ -1,11 +1,13 @@
 # Open Cinema reference book
 
-Last reviewed: 2026-11-04
+Last reviewed: 2026-11-22
 
 This is the fast map of durable project knowledge. Topic pages summarize what the
 project knows and link back to decisions, work logs, and original evidence.
 
 ## Start here
+
+- [Current rear panel and compact A13 PCB](../decisions/0016-panel-mounted-cliff-speaker-blocks.md)
 
 - [Project roadmap](../../ROADMAP.md)
 - [Current HDMI decision: ARC first, eARC deferred](../decisions/0014-use-arc-for-first-version.md)
@@ -35,7 +37,7 @@ project knows and link back to decisions, work logs, and original evidence.
 - [Audio receiver control and status](topics/audio-receiver-control-status.md) — accepted lock/carrier-rate/format meanings, source switching and unchanged-payload boundary.
 
 - [Hardware repository and KiCad mechanical PCB](topics/hardware-repository-and-kicad.md)
-  — A12 routing passes ERC/DRC with no unrouted items and provides rigid models/manufacturing review files; procurement and live operation remain unqualified. A9 is the mechanical baseline.
+  — A12 routing passes ERC/DRC with no unrouted items and provides rigid models/manufacturing review files; procurement and live operation remain unqualified. A13 is the current enclosure model.
 
 - [Raspberry Pi 5](topics/raspberry-pi-5.md) — selected computer and supported
   appliance target.
@@ -51,7 +53,7 @@ project knows and link back to decisions, work logs, and original evidence.
 
 ### Manufacturing and assembly
 
-- [Component sourcing and JLCPCB](topics/component-sourcing.md) — JLCPCB preferred; owner accepts ADV7511 via LCSC; speaker references/current qualification and owner Fusion review remain pending.
+- [Component sourcing and JLCPCB](topics/component-sourcing.md) — JLCPCB preferred; owner accepts ADV7511 via LCSC; two Cliff FE6930 blocks selected. Sample and enclosure fit await review.
 
 ### Verification and testing
 
@@ -78,7 +80,7 @@ No unclassified material.
 - The owner accepts A12 ADV7511 sourcing via LCSC ([0015](../decisions/0015-retain-adv7511-lcsc-source.md)); supplier acceptance is not independently verified. ARC/CEC operation, DD+ Atmos payload preservation, Pi capture and the LVDS harness are not validated. eARC/HBR/MAT is deferred and no longer a first-version gate.
 - A12 routes ADV7511 ARC into CS8416 four-input selection, with three active LVDS pairs; WM8804/A10 history is retained. CEC firmware, physical protection testing and KAB9 channel configuration remain unresolved. USB is the
   selected Pi-to-amplifier interface; its actual module/mapping still needs validation.
-  Six working pairs now solder to one horizontal board along with the audio inputs. A8's KLS speaker candidate has unverified current rating/supply. Tails point upward; optical daughterboards/cradle are historical.
+  Six working pairs connect the amplifier to two panel-mounted Cliff FE6930 blocks. The compact A13 board carries the audio inputs.
 - A9 keeps the PCB holes but removes the provisional plate and supports; the owner designs those parts. The owner enlarged the opening to 250 × 51 mm; A9 PCB geometry remains unchanged. Current assembled setback needs correction before rechecking clearance; tight plate/PCB gaps, cable mating, hardware, tolerances and production qualification remain open. Frame CAD reads2 mm versus the3 mm fabrication baseline; Ø4.5 frame holes differ from nominal Ø3.8.
 - Above-PSU board placement needs thermal, airflow, EMI and mains-separation
   validation, including resolution of manufacturer adjacent-heat-source guidance.

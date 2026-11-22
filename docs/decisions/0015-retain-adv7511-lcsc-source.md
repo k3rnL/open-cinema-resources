@@ -18,3 +18,7 @@ The owner requested the speaker-clip references before confirming them. A12 SP1 
 The owner will inspect the A12 model in Fusion to confirm mechanics. No mechanical approval has been received. Use [A12 rigid F3D](https://github.com/k3rnL/open-cinema-hardware/blob/7ab8b660ab667bbf1e1aee3b9737be17c1d84e11/boards/rear-io-A12/exports/rear-io-A12-rigid.f3d); earlier Fusion cloud links may still contain older geometry.
 
 No PCB, model, manufacturing release or order is changed by this decision.
+
+## Later speaker decision
+
+On 2026-11-22 the owner selected two panel-mounted Cliff blocks and a smaller input PCB. [Decision 0016](0016-panel-mounted-cliff-speaker-blocks.md)

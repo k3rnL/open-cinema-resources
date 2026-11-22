@@ -1,11 +1,12 @@
 ---
 title: Hardware repository and KiCad connector assembly
-summary: A12 is routed with zero ERC/DRC/unrouted items and rigid exports; manufacturing qualification remains open. A9 is the mechanical baseline.
+summary: Two Cliff FE6930 blocks mount to the removable rear plate. The amplifier feeds six independent speaker pairs directly. Two more pairs are available. The horizontal A13 input PCB measures 115 × 39.8 × 1.6 mm.
 status: active
-updated: 2026-11-04
+updated: 2026-11-22
 tags: [hardware, repository, kicad, pcb, connectors, mechanical]
-aliases: [a12, routed-pcb, manufacturing-review, open-cinema-hardware, kikad, connector-board, connection-plate, rear-io, a0, a1, a2, a3, a7, a8, a9, a10, cs8416, horizontal, inverted, kls, fe6930, spare-pairs, daughterboard, pt-603b, straight-pins, surface-mount, fcr684205r, rcj-021, 10078837-001lf, a11, adv7511, arc-prototype]
+aliases: [a13, panel-mounted-speakers, a12, routed-pcb, manufacturing-review, open-cinema-hardware, kikad, connector-board, connection-plate, rear-io, a0, a1, a2, a3, a7, a8, a9, a10, cs8416, horizontal, inverted, kls, fe6930, spare-pairs, daughterboard, pt-603b, straight-pins, surface-mount, fcr684205r, rcj-021, 10078837-001lf, a11, adv7511, arc-prototype]
 sources:
+  - docs/decisions/0016-panel-mounted-cliff-speaker-blocks.md
   - docs/worklog/2026-11-04-a12-routing-and-manufacturing-review.md
   - docs/worklog/2026-11-04-a11-arc-electrical-study.md
   - docs/decisions/0014-use-arc-for-first-version.md
@@ -26,6 +27,8 @@ sources:
 ---
 
 # Hardware repository and KiCad connector assembly
+
+Two Cliff FE6930 blocks mount to the removable rear plate. The amplifier feeds six independent speaker pairs directly. Two more pairs are available. The horizontal A13 input PCB measures 115 × 39.8 × 1.6 mm. [Decision 0016](../../decisions/0016-panel-mounted-cliff-speaker-blocks.md)
 
 [open-cinema-hardware](https://github.com/k3rnL/open-cinema-hardware) owns editable PCB sources; resources owns memory. Both repositories live in `Documents/Open Cinema`.
 

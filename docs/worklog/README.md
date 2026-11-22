@@ -11,6 +11,8 @@ evidence, conclusions, and next steps. Separate observations from interpretation
 
 ## Sessions
 
+- [2026-11-22 — Compact A13 board and panel-mounted speaker blocks](2026-11-22-a13-compact-rear-io.md)
+
 - [2026-11-04: A11 ARC schematic, sourcing constraints, two reviews and rigid model](2026-11-04-a11-arc-electrical-study.md).
 
 - [2026-11-04: ARC first-version decision and requirements](2026-11-04-arc-first-version.md).

@@ -22,3 +22,7 @@ Nominal geometry, rigid Fusion movement and KiCad checks pass in the scope recor
 ## A9 scope clarification
 
 The owner subsequently took responsibility for the backplate and L brackets and requested their removal from the model. The horizontal/direct-solder decision remains; the proposed A8 support solids are superseded. [A9 record](../worklog/2026-11-03-remove-plate-and-brackets-A9.md).
+
+## Later speaker decision
+
+On 2026-11-22 the owner selected two panel-mounted Cliff blocks and a smaller input PCB. [Decision 0016](0016-panel-mounted-cliff-speaker-blocks.md)

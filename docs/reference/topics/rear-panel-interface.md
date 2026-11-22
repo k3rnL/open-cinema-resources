@@ -1,11 +1,12 @@
 ---
 title: Rear-panel interface and enclosure layout
-summary: Rear layout and connector context, with an accepted JLCCNC-installed self-clinching fastening baseline and provisional above-PSU board placement.
+summary: Two Cliff FE6930 blocks mount to the removable rear plate. The amplifier feeds six independent speaker pairs directly. Two more pairs are available. The horizontal A13 input PCB measures 115 × 39.8 × 1.6 mm.
 status: active
-updated: 2026-11-04
+updated: 2026-11-22
 tags: [mechanical, enclosure, rear-panel, fasteners, connectors, thermal, electronics]
-aliases: [back-panel, rear-input-board, tongues, self-clinching-nuts, pem, jlccnc, s-m3-2, s-m3-2zi]
+aliases: [a13, panel-mounted-speakers, back-panel, rear-input-board, tongues, self-clinching-nuts, pem, jlccnc, s-m3-2, s-m3-2zi]
 sources:
+  - docs/decisions/0016-panel-mounted-cliff-speaker-blocks.md
   - docs/decisions/0014-use-arc-for-first-version.md
   - docs/worklog/2026-11-03-enlarged-enclosure-and-input-architecture.md
   - docs/worklog/2026-11-03-compact-mains-inlet.md
@@ -31,9 +32,11 @@ sources:
 
 # Rear-panel interface and enclosure layout
 
+Two Cliff FE6930 blocks mount to the removable rear plate. The amplifier feeds six independent speaker pairs directly. Two more pairs are available. The horizontal A13 input PCB measures 115 × 39.8 × 1.6 mm. [Decision 0016](../../decisions/0016-panel-mounted-cliff-speaker-blocks.md)
+
 ## Summary
 
-The PSU spans the rear; the Pi/electronics and amplifier are at the front. The owner now requires one horizontal PCB with every connector directly soldered, including speaker clips. A8 is a fit experiment with component side downward and solder tails upward. See [current hardware context](hardware-repository-and-kicad.md) and [decision0011](../../decisions/0011-horizontal-pcb-with-all-connectors.md).
+The PSU spans the rear; the Pi/electronics and amplifier are at the front. The A8 fit study placed all connectors on one horizontal PCB. A8 is a fit experiment with component side downward and solder tails upward. See [current hardware context](hardware-repository-and-kicad.md) and [decision0011](../../decisions/0011-horizontal-pcb-with-all-connectors.md).
 
 The owner has enlarged the enclosure. Current live CAD shows a **250 × 51 mm opening**, X±125, Z18…69, in a 290 × 80 mm rear frame. The PSU-to-inner-rear-wall gap is about 32.7 mm. A9's PCB is unchanged and its current assembled setback needs correction before assessing airflow. Its older 220 × 35 fit result does not validate this new placement. See the [new geometry and architecture discussion](../../worklog/2026-11-03-enlarged-enclosure-and-input-architecture.md). The owner still designs the backplate and brackets.
 
@@ -137,7 +140,7 @@ DFM review and first-article inspection.
 - Internal height datum, overall width/depth, actual PSU-to-panel gap and native
   CAD revision/export; screenshots are not dimensional authority.
 - Receiver/module circuitry, final footprint qualification and full insertion/service volumes.
-- Six pairs use conventional red/black clips directly soldered to the horizontal board. A8 KLS candidate current rating, supply and physical qualification remain open. Pins point upward in the proposed installation. See [decision0011](../../decisions/0011-horizontal-pcb-with-all-connectors.md).
+- Six wired speaker pairs use two panel-mounted Cliff FE6930 blocks. The A13 mounting and sample-fit work is recorded in [decision 0016](../../decisions/0016-panel-mounted-cliff-speaker-blocks.md).
 - Native tab/support geometry, final finish, JLCCNC DFM confirmation and
   first-article verification of the selected fastening system. Protective-earth
   hardware remains a separate design question.

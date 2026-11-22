@@ -8,6 +8,8 @@ record with status `Supersedes` and link the earlier record rather than erasing 
 
 ## Records
 
+- [0016 — Two panel-mounted Cliff FE6930 blocks](0016-panel-mounted-cliff-speaker-blocks.md)
+
 - [0015: Retain ADV7511 with owner-accepted LCSC sourcing](0015-retain-adv7511-lcsc-source.md) — chip accepted; speaker references and owner Fusion review pending.
 
 - [0014: ARC for the first version](0014-use-arc-for-first-version.md) — current HDMI scope; DD+ Atmos retained, eARC/lossless return audio deferred; partially supersedes 0003/0012.
@@ -16,7 +18,7 @@ record with status `Supersedes` and link the earlier record rather than erasing 
 
 - [0012: Lossless/Atmos extraction with processing on the Pi](0012-require-lossless-audio-and-atmos.md) — initial lossless requirement superseded by 0014; Pi processing allocation retained.
 
-- [0011: Horizontal PCB with all connectors soldered](0011-horizontal-pcb-with-all-connectors.md) — current owner direction; fit/candidate qualification remains open.
+- [0011: Horizontal PCB with all connectors soldered](0011-horizontal-pcb-with-all-connectors.md) — historical speaker mounting, superseded by 0016.
 
 - [0010: Select Cliff FE6930 and allow two spare pairs](0010-select-cliff-fe6930-and-two-spare-pairs.md) — accepted fit-model selection; production qualification pending.
 - [0009: Prefer JLCPCB, permit external suppliers](0009-prefer-jlcpcb-allow-external-parts.md) — accepted sourcing policy; no order placed.

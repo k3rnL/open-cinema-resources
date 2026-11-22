@@ -24,7 +24,7 @@
 - [x] Replace rejected downward speaker tails with straight rear-facing pins in the A3 fit study; record measured 220 × 35 opening
 - [x] Select 7 A Cliff FE6930 blocks, accept two spare pairs and verify the revised A7 nominal layout
 - [x] Build A8 horizontal fit study with all connectors directly soldered and upward tails
-- [ ] Qualify a horizontal conventional speaker block: current rating, exact supply, samples, lands and mounting
+- [x] Select two panel-mounted Cliff FE6930 blocks and free the speaker side of the PCB. [Decision 0016](docs/decisions/0016-panel-mounted-cliff-speaker-blocks.md)
 - [x] Add A6 rigid Fusion integration files and a bolted optical-cradle prototype
 - [x] Audit connector sourcing and record permission to use outside suppliers
 - [ ] Owner to design backplate and L brackets; then verify plate cutouts, cable insertion, tolerances, loads and temperatures
@@ -33,7 +33,7 @@
 - [x] Draft A11 ADV7511 ARC support circuit into CS8416 selection and three-pair LVDS; two static reviews and rigid exports; [evidence](docs/worklog/2026-11-04-a11-arc-electrical-study.md)
 - [x] Route A12, add coax ESD, pass ERC/DRC with no unrouted items, and export a manufacturing-review package; [evidence](docs/worklog/2026-11-04-a12-routing-and-manufacturing-review.md)
 - [x] Retain ADV7511KSTZ with owner-accepted LCSC sourcing; availability owner-reported, no order placed; [decision 0015](docs/decisions/0015-retain-adv7511-lcsc-source.md)
-- [ ] Owner to confirm A12 mechanical fit in Fusion and review KLS speaker references
+- [ ] Check the A13 compact board, clip fixing holes, harness clearance and lever access in the enclosure and against samples.
 - [ ] Validate ADV7511 ARC-only/DD+ operation; implement CEC and qualify physical protection plus HAT/capture
 - [ ] Define delegated power/control electronics
 - [x] Reserve rear-board control/status connections in A11/A12
@@ -58,7 +58,7 @@
 ## Open questions
 
 - KiCad is selected for PCB work and Fusion is used for the enclosure. STEP is
-  the mechanical exchange format; A8 uses horizontal input parts and an unqualified KLS speaker candidate; nominal frame/PSU fit passes, production qualification remains open.
+  the mechanical exchange format; A8 used horizontal input parts and a provisional speaker candidate; nominal frame/PSU fit passes, production qualification remains open.
 - Which components have acceptable substitutes?
 - How many input boards are required, and which functions and interfaces belong
   on the input and power/control boards?

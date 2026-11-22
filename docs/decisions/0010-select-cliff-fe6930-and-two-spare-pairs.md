@@ -22,3 +22,7 @@ The owner confirmed 4 Ω or mixed/unknown loads. The stocked 3 A WP6-03 alternat
 - Six active pairs plus two spares require sixteen independent contacts; no negatives are commoned. The FE6930 colour layout pairs contacts horizontally. No circuitry or harness has been designed.
 - Outside purchase is permitted if JLC sourcing or assembly is unavailable. This is not authorization to purchase, nor confirmed JLC inventory/acceptance.
 - Nominal fit and rigid Fusion movement pass. Physical sample dimensions, project-derived plated slots, mounting loads, plate depth, real tolerances, PSU clearance and production qualification remain open. The cradle remains an assistant-proposed prototype, not an owner-approved production part.
+
+## Later speaker decision
+
+On 2026-11-22 the owner selected two panel-mounted Cliff blocks and a smaller input PCB. [Decision 0016](0016-panel-mounted-cliff-speaker-blocks.md)
